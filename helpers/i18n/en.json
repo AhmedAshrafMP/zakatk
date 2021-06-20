@@ -1,0 +1,9 @@
+{
+  "NODE_000": {
+    "title": "Choose your language",
+    "opt1": "English",
+    "opt2": "العربية"
+  },
+  "NODE_002": { "hello": "Hello from node 002" },
+  "NODE_003": { "hello": "Hello from node 003" }
+}

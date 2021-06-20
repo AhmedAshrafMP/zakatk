@@ -1,0 +1,21 @@
+{
+  "name": "typescript-nodemon-ultimate-setup",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon --config nodemon.json ./index.ts",
+    "dev:debug": "nodemon --config nodemon.json --inspect-brk ./index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^14.11.2",
+    "nodemon": "^2.0.4",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "@types/i18n-js": "^3.8.1",
+    "botkit": "^4.10.0",
+    "i18n-js": "^3.8.0"
+  }
+}
