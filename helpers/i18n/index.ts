@@ -11,6 +11,5 @@ export function translate(key: string, options?: object) {
     defaultValue: key,
     defaults: [{ message: key }],
   };
-  console.log("Currnet", i18n.t(key), i18n.currentLocale());
   return key ? i18n.t(key, opts) : "";
 }

@@ -1,9 +1,8 @@
 import { BotkitConversation } from "botkit";
-import I18n from "i18n-js";
 import bkQRAsk from "../../bot_nodes/ask_qr";
 
-const NODE_ID = "NODE_000";
-export default function NODE_000(convo: BotkitConversation): void {
+const NODE_ID = "NODE_014";
+export default function NODE_014(convo: BotkitConversation): string {
   bkQRAsk(
     convo,
     NODE_ID + ".title",
@@ -12,17 +11,19 @@ export default function NODE_000(convo: BotkitConversation): void {
         title: NODE_ID + ".opt1",
         payload: NODE_ID + ".choice0",
         onChoose: async (answer, convo, bot, msg) => {
-          I18n.locale = "en";
+          convo.gotoThread("t_d_014_023");
         },
       },
       {
         title: NODE_ID + ".opt2",
         payload: NODE_ID + ".choice1",
         onChoose: async (answer, convo, bot, msg) => {
-          I18n.locale = "ar";
+          convo.gotoThread("t_NODE_009");
         },
       },
     ],
     NODE_ID
   );
+
+  return `t_${NODE_ID}`;
 }

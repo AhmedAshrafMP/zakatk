@@ -3,9 +3,20 @@ import { translate } from "../helpers";
 
 export default function bkSay(
   dialogue: BotkitConversation,
-  tx: string
+  tx: string,
+  key: string,
+  attachment?: any
 ): BotkitConversation {
-  return dialogue.say({
-    text: () => translate(tx),
-  });
+  return dialogue.addMessage(
+    {
+      text: () => translate(tx),
+      attachments: [
+        {
+          title: key,
+          ...attachment,
+        },
+      ],
+    },
+    `t_${key}`
+  );
 }

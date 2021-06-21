@@ -29,21 +29,30 @@ export default function bkQRAsk(
     | {
         key: string;
       }
-    | string
+    | string,
+  attachment?: any
 ): BotkitConversation {
-  return dialogue.ask(
+  return dialogue.addQuestion(
     {
       text: () => translate(tx),
-      quick_replies: replies.map((el) => ({
-        ...el,
-        title: translate(el.title),
-      })),
+      quick_replies: () =>
+        replies.map((el) => ({
+          ...el,
+          title: translate(el.title),
+        })),
+      attachments: [
+        {
+          title: key,
+          ...attachment,
+        },
+      ],
     },
     async (answer, convo, bot, msg) => {
       replies
         .filter((el) => el.payload === answer)[0]
         .onChoose(answer, convo, bot, msg);
     },
-    key
+    key,
+    `t_${key}`
   );
 }

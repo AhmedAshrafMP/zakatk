@@ -3,7 +3,7 @@ import i18n from "i18n-js";
 const en = require("./en");
 const ar = require("./ar");
 
-i18n.fallbacks = false;
+i18n.fallbacks = true;
 export const availableTrans = { ar, en };
 i18n.translations = availableTrans;
 

@@ -1,8 +1,8 @@
 import { BotkitConversation } from "botkit";
 import bkQRAsk from "../../bot_nodes/ask_qr";
 
-const NODE_ID = "NODE_002";
-export default function NODE_002(convo: BotkitConversation): string {
+const NODE_ID = "NODE_009";
+export default function NODE_009(convo: BotkitConversation): string {
   bkQRAsk(
     convo,
     NODE_ID + ".title",
@@ -10,30 +10,29 @@ export default function NODE_002(convo: BotkitConversation): string {
       {
         title: NODE_ID + ".opt1",
         payload: NODE_ID + ".choice0",
-        onChoose: async (answer, convo, bot, msg) => {
-          convo.gotoThread("t_NODE_003");
-        },
+        onChoose: async (answer, convo, bot, msg) => {},
       },
       {
         title: NODE_ID + ".opt2",
         payload: NODE_ID + ".choice1",
-        onChoose: async (answer, convo, bot, msg) => {
-          convo.gotoThread("t_NODE_004");
-        },
+        onChoose: async (answer, convo, bot, msg) => {},
       },
       {
         title: NODE_ID + ".opt3",
         payload: NODE_ID + ".choice2",
         onChoose: async (answer, convo, bot, msg) => {
-          convo.gotoThread("t_NODE_003");
+          convo.gotoThread("t_NODE_014");
         },
       },
       {
         title: NODE_ID + ".opt4",
-        payload: NODE_ID + ".choice3",
-        onChoose: async (answer, convo, bot, msg) => {
-          convo.gotoThread("t_NODE_004");
-        },
+        payload: NODE_ID + ".choice2",
+        onChoose: async (answer, convo, bot, msg) => {},
+      },
+      {
+        title: NODE_ID + ".opt5",
+        payload: NODE_ID + ".choice2",
+        onChoose: async (answer, convo, bot, msg) => {},
       },
     ],
     NODE_ID

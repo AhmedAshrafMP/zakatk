@@ -23,7 +23,21 @@ export default function bkStrAsk(
     | {
         key: string;
       }
-    | string
+    | string,
+  attachment?: any
 ): BotkitConversation {
-  return dialogue.ask(translate(tx), handler, key);
+  return dialogue.addQuestion(
+    {
+      text: () => translate(tx),
+      attachment: [
+        {
+          title: key,
+          ...attachment,
+        },
+      ],
+    },
+    handler,
+    key,
+    `t_${key}`
+  );
 }
