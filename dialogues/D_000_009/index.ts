@@ -34,4 +34,6 @@ export function D_000_009(botCtrl: Botkit) {
   thisDialogue.addChildDialog("d_014_023", "d_014_023", "t_d_014_023");
 
   botCtrl.addDialog(thisDialogue);
+
+  return thisDialogue;
 }

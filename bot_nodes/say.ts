@@ -5,11 +5,12 @@ export default function bkSay(
   dialogue: BotkitConversation,
   tx: string,
   key: string,
-  attachment?: any
+  attachment?: any,
+  txVars?: any
 ): BotkitConversation {
   return dialogue.addMessage(
     {
-      text: () => translate(tx),
+      text: () => translate(tx, txVars),
       attachments: [
         {
           title: key,

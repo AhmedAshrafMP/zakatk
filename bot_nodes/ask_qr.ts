@@ -30,11 +30,12 @@ export default function bkQRAsk(
         key: string;
       }
     | string,
-  attachment?: any
+  attachment?: any,
+  txVars?: any
 ): BotkitConversation {
   return dialogue.addQuestion(
     {
-      text: () => translate(tx),
+      text: () => translate(tx, txVars),
       quick_replies: () =>
         replies.map((el) => ({
           ...el,
