@@ -25,11 +25,11 @@ export default function bkStrAsk(
       }
     | string,
   attachment?: any,
-  txVars?: any
+  txFn?: (template: any, vars: any) => string
 ): BotkitConversation {
   return dialogue.addQuestion(
     {
-      text: () => translate(tx, txVars),
+      text: txFn ? txFn : () => translate(tx),
       attachment: [
         {
           title: key,

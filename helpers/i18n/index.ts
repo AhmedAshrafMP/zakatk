@@ -13,3 +13,8 @@ export function translate(key: string, options?: object) {
   };
   return key ? i18n.t(key, opts) : "";
 }
+
+export function convertVarToCurrency(varValue: string) {
+  const currencySymp = varValue.substr(varValue.indexOf(".") + 1);
+  return translate("NODE_004.currency." + currencySymp);
+}

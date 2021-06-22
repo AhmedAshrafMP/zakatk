@@ -15,7 +15,7 @@ export default function NODE_018(convo: BotkitConversation): string {
           .diff(moment(moment(answer)), "days");
         const NoOfYears = Math.floor(NoOfDays / 365);
         if (NoOfYears > 0) {
-          convo.setVar("NO_OF_YEARS", NoOfYears);
+          convo.setVar("NO_OF_YEARS_LEFT", NoOfYears);
           convo.gotoThread("t_d_023_071");
         } else {
           convo.gotoThread("t_d_055_056");

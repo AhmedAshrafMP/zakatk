@@ -31,11 +31,11 @@ export default function bkQRAsk(
       }
     | string,
   attachment?: any,
-  txVars?: any
+  txFn?: (template: any, vars: any) => string
 ): BotkitConversation {
   return dialogue.addQuestion(
     {
-      text: () => translate(tx, txVars),
+      text: txFn ? txFn : () => translate(tx),
       quick_replies: () =>
         replies.map((el) => ({
           ...el,
