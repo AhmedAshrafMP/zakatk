@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --config nodemon.json ./index.ts",
+    "dev": "nodemon --config nodemon.json ./index.ts ",
     "dev:debug": "nodemon --config nodemon.json --inspect-brk ./index.ts"
   },
   "devDependencies": {

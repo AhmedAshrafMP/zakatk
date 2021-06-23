@@ -3,6 +3,8 @@ import bkQRAsk from "../../bot_nodes/ask_qr";
 
 const NODE_ID = "NODE_031";
 export function NODE_031(convo: BotkitConversation): string {
+  // clear each period
+
   bkQRAsk(
     convo,
     NODE_ID + ".title",

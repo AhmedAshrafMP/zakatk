@@ -2,6 +2,7 @@ import { BotkitConversation } from "botkit";
 import bkStrAsk from "../../bot_nodes/ask_str";
 import { translate } from "../../helpers";
 import { getYearsDiff } from "../../helpers/dates/yearsdiff";
+import { markOptionAsDone } from "../N_023";
 
 const NODE_ID = "NODE_036";
 export function NODE_036(convo: BotkitConversation): string {
@@ -12,7 +13,14 @@ export function NODE_036(convo: BotkitConversation): string {
       const nodeIntValue = parseFloat(answer);
       if (nodeIntValue && nodeIntValue > 0) {
         convo.setVar("totalDebit", parseFloat(answer));
-        convo.gotoThread("t_NODE_037");
+        // clear each period
+
+        if (convo.vars.NODE_039) {
+          markOptionAsDone(convo);
+          convo.gotoThread("t_NODE_040_1");
+        } else {
+          convo.gotoThread("t_NODE_037");
+        }
       } else {
         convo.repeat();
       }

@@ -24,7 +24,7 @@ export interface QuickReplay {
 export default function bkQRAsk(
   dialogue: BotkitConversation,
   tx: string,
-  replies: QuickReplay[],
+  replies: QuickReplay[] | ((template: any, vars: any) => QuickReplay[]),
   key:
     | {
         key: string;
@@ -36,11 +36,14 @@ export default function bkQRAsk(
   return dialogue.addQuestion(
     {
       text: txFn ? txFn : () => translate(tx),
-      quick_replies: () =>
-        replies.map((el) => ({
-          ...el,
-          title: translate(el.title),
-        })),
+      quick_replies:
+        typeof replies === "function"
+          ? replies
+          : () =>
+              replies.map((el) => ({
+                ...el,
+                title: translate(el.title),
+              })),
       attachments: [
         {
           title: key,
@@ -49,9 +52,13 @@ export default function bkQRAsk(
       ],
     },
     async (answer, convo, bot, msg) => {
-      replies
-        .filter((el) => el.payload === answer)[0]
-        .onChoose(answer, convo, bot, msg);
+      typeof replies === "function"
+        ? replies(msg, convo.vars)
+            .filter((el) => el.payload === answer)[0]
+            .onChoose(answer, convo, bot, msg)
+        : replies
+            .filter((el) => el.payload === answer)[0]
+            .onChoose(answer, convo, bot, msg);
     },
     key,
     `t_${key}`

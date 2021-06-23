@@ -12,6 +12,42 @@ import {
   NODE_035_2,
   NODE_035_3,
   NODE_036,
+  NODE_034,
+  NODE_040_1,
+  NODE_034_1,
+  NODE_034_2,
+  NODE_038,
+  NODE_039,
+  NODE_040,
+  NODE_025,
+  NODE_024,
+  NODE_067,
+  NODE_062,
+  NODE_062_1,
+  NODE_062_2,
+  NODE_063,
+  NODE_065,
+  NODE_067_1,
+  NODE_069,
+  NODE_070,
+  NODE_068,
+  NODE_071,
+  NODE_056,
+  NODE_056_1,
+  NODE_056_2,
+  NODE_056_3,
+  NODE_056_4,
+  NODE_057,
+  NODE_060,
+  NODE_060_1,
+  NODE_060_2,
+  NODE_068_2,
+  NODE_061,
+  NODE_061_1,
+  NODE_058,
+  NODE_066,
+  NODE_059,
+  NODE_041,
 } from "../../nodes";
 import { NODE_037 } from "../../nodes/N_037";
 
@@ -22,6 +58,8 @@ export function D_023_071(botCtrl: Botkit) {
   const begin = NODE_023(thisDialogue);
   thisDialogue.addAction(begin);
   NODE_023_1(thisDialogue);
+  NODE_025(thisDialogue);
+  NODE_024(thisDialogue);
 
   NODE_029(thisDialogue);
 
@@ -31,14 +69,58 @@ export function D_023_071(botCtrl: Botkit) {
   NODE_032(thisDialogue);
   NODE_032_1(thisDialogue);
 
+  NODE_034(thisDialogue);
+  NODE_034_1(thisDialogue);
+  NODE_034_2(thisDialogue);
+
   NODE_035(thisDialogue);
   NODE_035_1(thisDialogue);
   NODE_035_2(thisDialogue);
   NODE_035_3(thisDialogue);
 
   NODE_036(thisDialogue);
-
   NODE_037(thisDialogue);
+  NODE_038(thisDialogue);
+  NODE_039(thisDialogue);
+
+  NODE_040(thisDialogue);
+  NODE_040_1(thisDialogue);
+
+  NODE_041(thisDialogue);
+
+  NODE_056(thisDialogue);
+  NODE_056_1(thisDialogue);
+  NODE_056_2(thisDialogue);
+  NODE_056_3(thisDialogue);
+  NODE_056_4(thisDialogue);
+
+  NODE_057(thisDialogue);
+
+  NODE_058(thisDialogue);
+  NODE_059(thisDialogue);
+  NODE_060(thisDialogue);
+  NODE_060_1(thisDialogue);
+  NODE_060_2(thisDialogue);
+
+  NODE_061(thisDialogue);
+  NODE_061_1(thisDialogue);
+
+  NODE_062(thisDialogue);
+  NODE_062_1(thisDialogue);
+  NODE_062_2(thisDialogue);
+
+  NODE_063(thisDialogue);
+  NODE_065(thisDialogue);
+  NODE_066(thisDialogue);
+
+  NODE_067(thisDialogue);
+  NODE_067_1(thisDialogue);
+
+  NODE_068(thisDialogue);
+  NODE_068_2(thisDialogue);
+  NODE_069(thisDialogue);
+  NODE_070(thisDialogue);
+  NODE_071(thisDialogue);
 
   thisDialogue.addQuestion(
     "Hello i`m d_023_071 {{vars.NO_OF_YEARS_LEFT}} {{vars.NODE_029}}",
