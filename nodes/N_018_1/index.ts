@@ -28,7 +28,7 @@ export default function NODE_018_1(convo: BotkitConversation): string {
     {
       contentType: "application/vnd.microsoft.card.calendar",
       content: {
-        title: "CALENDER_UI",
+        type: "calendar",
         calendar_type: "HIJRI",
       },
     }

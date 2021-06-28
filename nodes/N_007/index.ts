@@ -17,7 +17,9 @@ export default function NODE_007(convo: BotkitConversation): string {
       {
         title: NODE_ID + ".opt2",
         payload: NODE_ID + ".choice1",
-        onChoose: async (answer, convo, bot, msg) => {},
+        onChoose: async (answer, convo, bot, msg) => {
+          return;
+        },
       },
       {
         title: NODE_ID + ".opt3",

@@ -52,13 +52,14 @@ export default function bkQRAsk(
       ],
     },
     async (answer, convo, bot, msg) => {
+      console.log("ONBOTRESP", answer);
       typeof replies === "function"
         ? replies(msg, convo.vars)
-            .filter((el) => el.payload === answer)[0]
-            .onChoose(answer, convo, bot, msg)
+            ?.filter((el) => el.payload === answer)[0]
+            ?.onChoose(answer, convo, bot, msg)
         : replies
-            .filter((el) => el.payload === answer)[0]
-            .onChoose(answer, convo, bot, msg);
+            ?.filter((el) => el.payload === answer)[0]
+            ?.onChoose(answer, convo, bot, msg);
     },
     key,
     `t_${key}`

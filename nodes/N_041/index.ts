@@ -131,7 +131,7 @@ export function NODE_041(convo: BotkitConversation): string {
         translate(NODE_ID + ".NODE_PERIOD", { from: diff.from, to: diff.to })
       );
 
-      return " - " + text.join("\n\n - ");
+      return " - " + text.join("\n - ");
     }
   );
 

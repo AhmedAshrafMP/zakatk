@@ -22,7 +22,7 @@ export function NODE_032_1(convo: BotkitConversation): string {
       contentType: "application/vnd.microsoft.input",
       content: {
         validation: "*",
-        type: "number",
+        type: "money",
       },
     },
     (tmp, vars) => {

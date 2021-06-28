@@ -3,23 +3,7 @@ import bkQRAsk from "../../bot_nodes/ask_qr";
 
 const NODE_ID = "NODE_004";
 export default function NODE_004(convo: BotkitConversation): string {
-  const CurrencyList = [
-    "USD",
-    "EURO",
-    "EGP",
-    "SAR",
-    "AED",
-    "KWD",
-    "OMR",
-    "BD",
-    "LL",
-    "JOD",
-    "TND",
-    "LYD",
-    "MAD",
-    "DT",
-    "DA",
-  ];
+  const CurrencyList = ["EGP", "SAR", "AED", "KWD", "USD", "EURO"];
 
   bkQRAsk(
     convo,

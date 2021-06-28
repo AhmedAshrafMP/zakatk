@@ -17,10 +17,15 @@ export default function NODE_001(convo: BotkitConversation): string {
       {
         title: NODE_ID + ".opt2",
         payload: NODE_ID + ".choice1",
-        onChoose: async (answer, convo, bot, msg) => {},
+        onChoose: async (answer, convo, bot, msg) => {
+          convo.gotoThread("t_NODE_002");
+        },
       },
     ],
-    NODE_ID
+    NODE_ID,
+    {
+      hello: "world",
+    }
   );
 
   return `t_${NODE_ID}`;
