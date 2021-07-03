@@ -7,7 +7,7 @@
     "dev": "DEBUG=botkit:web  nodemon --config nodemon.json ./index.ts ",
     "dev:debug": "DEBUG=botkit:web  nodemon --config nodemon.json --inspect-brk ./index.ts",
     "build": "rimraf ./build && npx tsc -v && npx tsc",
-    "start": "npm run build && node build/index.js"
+    "start": "yarn run build && node build/index.js"
   },
   "devDependencies": {
     "@types/node": "^14.11.2",
