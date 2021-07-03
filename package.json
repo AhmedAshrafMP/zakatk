@@ -1,11 +1,13 @@
 {
-  "name": "typescript-nodemon-ultimate-setup",
+  "name": "zakatk-botkit-backend",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "dev": "DEBUG=botkit:web  nodemon --config nodemon.json ./index.ts ",
-    "dev:debug": "DEBUG=botkit:web  nodemon --config nodemon.json --inspect-brk ./index.ts"
+    "dev:debug": "DEBUG=botkit:web  nodemon --config nodemon.json --inspect-brk ./index.ts",
+    "build": "rimraf ./build && tsc",
+    "start": "npm run build && node build/index.js"
   },
   "devDependencies": {
     "@types/node": "^14.11.2",
@@ -15,11 +17,13 @@
   },
   "dependencies": {
     "@types/i18n-js": "^3.8.1",
+    "axios": "^0.21.1",
     "botbuilder-adapter-web": "cloudx9/botbuilder-adapter-web#master",
     "botkit": "^4.10.0",
     "cors": "^2.8.5",
     "i18n-js": "^3.8.0",
     "moment": "^2.29.1",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "rimraf": "^3.0.2"
   }
 }

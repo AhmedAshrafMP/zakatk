@@ -7,6 +7,7 @@ import { D_000_009, D_014_023, D_055_056 } from "./dialogues";
 import { D_023_071 } from "./dialogues/D_023_071";
 import { translate } from "./helpers";
 import "./helpers/i18n/i18n";
+import { getGoldPrices } from "./helpers/apis";
 
 const adapter = new WebAdapter({});
 //
@@ -15,9 +16,7 @@ export const botCtrl = new Botkit({
   adapter: adapter,
 });
 
-// botCtrl.publicFolder("/", path.join(__dirname, "..", "public"));
-
-console.log("Chat with me: http://localhost:" + (process.env.PORT || 3000));
+botCtrl; // botCtrl.publicFolder("/", path.join(__dirname, "..", "public"));
 
 const d_000_009 = D_000_009(botCtrl);
 D_014_023(botCtrl, d_000_009);
@@ -30,7 +29,7 @@ botCtrl.hears(
   async (bot, message) => {
     I18n.locale = "ar";
     moment.locale("ar");
-
+    await bot.cancelAllDialogs();
     return bot.beginDialog("d_000_009");
   }
 );

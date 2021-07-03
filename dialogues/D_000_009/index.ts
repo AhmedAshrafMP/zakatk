@@ -28,10 +28,9 @@ export function D_000_009(botCtrl: Botkit) {
   NODE_007_1(thisDialogue);
   NODE_007_2(thisDialogue);
   NODE_008(thisDialogue);
-  NODE_009(thisDialogue);
-  NODE_014(thisDialogue);
 
   thisDialogue.addChildDialog("d_014_023", "d_014_023", "t_d_014_023");
+  thisDialogue.addChildDialog("d_000_009", "d_000_009", "t_d_000_009");
 
   botCtrl.addDialog(thisDialogue);
 

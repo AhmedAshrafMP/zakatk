@@ -9,7 +9,10 @@ export default function NODE_018(convo: BotkitConversation): string {
     `${NODE_ID}.hello`,
     async (answer, convo, bot, message) => {
       if (moment(answer).isValid()) {
-        convo.setVar("LAST_ZAKAT_DAY", moment(answer).toISOString());
+        convo.setVar(
+          "LAST_ZAKAT_DAY",
+          moment(answer).add(1, "days").toISOString()
+        );
         const NoOfDays = moment()
           .startOf("D")
           .diff(moment(moment(answer)), "days");

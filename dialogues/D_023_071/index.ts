@@ -48,6 +48,11 @@ import {
   NODE_066,
   NODE_059,
   NODE_041,
+  NODE_049,
+  NODE_043,
+  NODE_046,
+  NODE_045,
+  NODE_050,
 } from "../../nodes";
 import { NODE_037 } from "../../nodes/N_037";
 
@@ -87,7 +92,11 @@ export function D_023_071(botCtrl: Botkit) {
   NODE_040_1(thisDialogue);
 
   NODE_041(thisDialogue);
-
+  NODE_043(thisDialogue);
+  NODE_045(thisDialogue);
+  NODE_046(thisDialogue);
+  NODE_049(thisDialogue);
+  NODE_050(thisDialogue);
   NODE_056(thisDialogue);
   NODE_056_1(thisDialogue);
   NODE_056_2(thisDialogue);

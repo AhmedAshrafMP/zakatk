@@ -1,5 +1,9 @@
 import { BotkitConversation, Botkit } from "botkit";
 import moment from "moment";
+import { convertVarToCurrencySym } from "../../helpers";
+import { getGoldPrices } from "../../helpers/apis";
+import NODE_009 from "../../nodes/N_009";
+import NODE_014 from "../../nodes/N_014";
 import NODE_015 from "../../nodes/N_015";
 import NODE_016 from "../../nodes/N_016";
 import NODE_017 from "../../nodes/N_017";
@@ -13,9 +17,10 @@ export function D_014_023(botCtrl: Botkit, parent: BotkitConversation) {
   thisDialogue.addChildDialog("d_023_071", "d_023_071", "t_d_023_071");
   thisDialogue.addChildDialog("d_055_056", "d_055_056", "t_d_055_056");
 
-  const begin = NODE_015(thisDialogue);
+  const begin = NODE_009(thisDialogue);
   thisDialogue.addAction(begin);
 
+  NODE_014(thisDialogue);
   NODE_015(thisDialogue);
   NODE_016(thisDialogue);
   NODE_017(thisDialogue);
@@ -33,6 +38,35 @@ export function D_014_023(botCtrl: Botkit, parent: BotkitConversation) {
   //     return bot.beginDialog("d_055_056");
   //   }
   // });
+
+  thisDialogue.before("t_NODE_015", async (convo, bot) => {
+    try {
+      console.log(convo.vars, "stri");
+      if (!convo.vars.gold_prices) {
+        const prices = await getGoldPrices(
+          convertVarToCurrencySym(convo.vars.NODE_004)
+        );
+        console.log("gold_prices", prices);
+        convo.setVar("gold_prices", prices);
+      }
+    } catch (err) {
+      await bot.cancelAllDialogs();
+      return bot.say("Wrong gold prices");
+    }
+  });
+
+  thisDialogue.after((v, bot) => {
+    // restart the dialogue after finishing
+    return bot.beginDialog("d_014_023", {
+      NODE_002: v.NODE_002,
+      NODE_003: v.NODE_003,
+      NODE_004: v.NODE_004,
+      NODE_006: v.NODE_006,
+      NODE_006_1: v.NODE_006_1,
+      NODE_008: v.NODE_008,
+      gold_prices: v.gold_prices,
+    });
+  });
 
   botCtrl.addDialog(thisDialogue);
 }

@@ -3,6 +3,8 @@ import moment from "moment";
 interface getYearsDiffResult {
   from: string;
   to: string;
+  fromMoment: moment.Moment;
+  toMoment: moment.Moment;
 }
 
 export function getYearsDiff(
@@ -23,13 +25,16 @@ export function getYearsDiff(
    */
   const YearDiff = NoOFYears - TotalNoOfZakatYears;
 
-  const from = moment(lastZakatDay).add(YearDiff, "years").format("ll");
+  const from = moment(lastZakatDay).add(TotalNoOfZakatYears - 1, "years");
+
   const to = moment(lastZakatDay)
-    .add(YearDiff + 1, "years")
-    .format("ll");
+    .add(TotalNoOfZakatYears, "years")
+    .subtract(1, "days");
 
   return {
-    from,
-    to,
+    from: from.format("ll"),
+    to: to.format("ll"),
+    fromMoment: from,
+    toMoment: to,
   };
 }

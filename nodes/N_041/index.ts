@@ -2,21 +2,56 @@ import { BotkitConversation } from "botkit";
 import bkQRAsk from "../../bot_nodes/ask_qr";
 import { convertVarToCurrency, translate } from "../../helpers";
 import { getYearsDiff } from "../../helpers/dates/yearsdiff";
-import { safeParseFloat } from "../../helpers/variables";
+import { numberWithCommas, safeParseFloat } from "../../helpers/variables";
 
 const NODE_ID = "NODE_041";
+
+function setZakatPerYear(vars, leftYears) {
+  const diff = getYearsDiff(vars.LAST_ZAKAT_DAY, leftYears + 1);
+
+  const zakat_per_years = vars.zakat_per_years || {};
+  const zkataValues = {
+    money:
+      safeParseFloat(vars.NODE_029) -
+      safeParseFloat(vars.totalDebit) +
+      safeParseFloat(vars.totalCredit),
+    savings: safeParseFloat(vars.NODE_066) + safeParseFloat(vars.NODE_065),
+    stocks: safeParseFloat(vars.NODE_070) + safeParseFloat(vars.NODE_071),
+    gold_gram: safeParseFloat(vars.totalGold),
+    silver_gram: safeParseFloat(vars.totalSilver),
+    gold_money: safeParseFloat(vars.totalGold) * vars.gold_prices.gold,
+    silver_money: safeParseFloat(vars.totalGold) * vars.gold_prices.silver,
+    resolved: false,
+  };
+  console.log(zkataValues, vars.gold_prices);
+  // add this year if it passed silver threshold
+  if (
+    zkataValues.money +
+      zkataValues.savings +
+      zkataValues.stocks +
+      zkataValues.gold_money +
+      zkataValues.silver_money >
+    vars.gold_prices.sThreshold
+  ) {
+    // add year to years object
+    zakat_per_years[diff.toMoment.toISOString()] = zkataValues;
+  }
+
+  return zakat_per_years;
+}
+
 export function NODE_041(convo: BotkitConversation): string {
   bkQRAsk(
     convo,
     NODE_ID + ".title",
-    (tmp, vars) => {
+    (_tmp, vars) => {
       let leftYears = parseFloat(vars.NO_OF_YEARS_LEFT) - 1;
       if (leftYears > 0) {
         return [
           {
             title: translate(NODE_ID + ".opt1"),
             payload: NODE_ID + ".choice0",
-            onChoose: async (answer, convo, bot, msg) => {
+            onChoose: async (_answer, convo, _bot, _msg) => {
               // TODO: reset resettable variables
               convo.setVar("doneMoneyOptions", []);
               convo.setVar("NODE_031", "");
@@ -26,6 +61,13 @@ export function NODE_041(convo: BotkitConversation): string {
               convo.setVar("totalSilver", 0);
               convo.setVar("NODE_038", "");
               convo.setVar("NO_OF_YEARS_LEFT", leftYears);
+
+              /// set period current value
+              convo.setVar(
+                "zakat_per_years",
+                setZakatPerYear(convo.vars, leftYears)
+              );
+
               convo.gotoThread("t_NODE_023");
             },
           },
@@ -35,7 +77,12 @@ export function NODE_041(convo: BotkitConversation): string {
           {
             title: translate(NODE_ID + ".opt2"),
             payload: NODE_ID + ".choice0",
-            onChoose: async (answer, convo, bot, msg) => {
+            onChoose: async (_answer, convo, bot, _msg) => {
+              /// set period current value
+              const zakat_per_years = setZakatPerYear(convo.vars, leftYears);
+              convo.setVar("zakat_per_years", zakat_per_years);
+
+              console.log(zakat_per_years);
               await bot.say("TODO: TOTAL ZAKAT CARD");
               return bot.cancelAllDialogs();
             },
@@ -45,7 +92,7 @@ export function NODE_041(convo: BotkitConversation): string {
     },
     NODE_ID,
     {},
-    (tmp, vars) => {
+    (_tmp, vars) => {
       const text: string[] = [];
       const currency = convertVarToCurrency(vars.NODE_004);
 
@@ -54,7 +101,7 @@ export function NODE_041(convo: BotkitConversation): string {
       if (NODE_029 > 0) {
         text.push(
           translate(NODE_ID + ".NODE_029", {
-            value: NODE_029,
+            value: numberWithCommas(NODE_029),
             currency,
           })
         );
@@ -65,7 +112,7 @@ export function NODE_041(convo: BotkitConversation): string {
       if (TOTAL_DEBIT > 0) {
         text.push(
           translate(NODE_ID + ".NODE_DEBIT", {
-            value: TOTAL_DEBIT,
+            value: numberWithCommas(TOTAL_DEBIT),
             currency,
           })
         );
@@ -76,7 +123,7 @@ export function NODE_041(convo: BotkitConversation): string {
       if (TOTAL_CREDIT > 0) {
         text.push(
           translate(NODE_ID + ".NODE_CREDIT", {
-            value: TOTAL_CREDIT,
+            value: numberWithCommas(TOTAL_CREDIT),
             currency,
           })
         );
@@ -88,7 +135,7 @@ export function NODE_041(convo: BotkitConversation): string {
       if (NODE_025 > 0) {
         text.push(
           translate(NODE_ID + ".NODE_025", {
-            value: NODE_025,
+            value: numberWithCommas(NODE_025),
             currency,
           })
         );
@@ -100,7 +147,7 @@ export function NODE_041(convo: BotkitConversation): string {
       if (NODE_024 > 0) {
         text.push(
           translate(NODE_ID + ".NODE_024", {
-            value: NODE_024,
+            value: numberWithCommas(NODE_024),
             currency,
           })
         );
