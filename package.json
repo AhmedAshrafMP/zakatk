@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "DEBUG=botkit:web  nodemon --config nodemon.json ./index.ts ",
     "dev:debug": "DEBUG=botkit:web  nodemon --config nodemon.json --inspect-brk ./index.ts",
-    "build": "rimraf ./build && npx tsc -v && npx tsc",
+    "build": "rimraf ./build && tsc",
     "start": "yarn run build && node build/index.js"
   },
   "devDependencies": {
