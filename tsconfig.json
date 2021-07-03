@@ -11,6 +11,7 @@
     "sourceMap": true,
     "lib": ["esnext", "dom"],
     "checkJs": true,
+    "resolveJsonModule": true,
 
     "module": "commonjs",
 
@@ -20,5 +21,13 @@
     "outDir": "build"
   },
   "exclude": ["node_modules"],
-  "include": ["index.ts", "dialogues", "nodes", "helpers"]
+  "include": [
+    "index.ts",
+    "dialogues",
+    "nodes",
+    "helpers",
+    "public",
+    "bot_nodes",
+    "helpers/i18n/*.json"
+  ]
 }
