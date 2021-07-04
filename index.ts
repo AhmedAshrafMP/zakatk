@@ -24,6 +24,8 @@ export const botCtrl = new Botkit({
   adapter: adapter,
   storage: mongoDbStorage,
 });
+I18n.locale = "ar";
+moment.locale("ar");
 
 botCtrl; // botCtrl.publicFolder("/", path.join(__dirname, "..", "public"));
 
