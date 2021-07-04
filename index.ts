@@ -14,10 +14,6 @@ console.log("MONGO_URI", process.env.MONGO_URI);
 export const botCtrl = (async () => {
   const mongoClient = new MongoClient(process.env.MONGO_URI || "", {
     useUnifiedTopology: true,
-    auth: {
-      user: "botkitdb",
-      password: "d26a19ff5153c0a62c3e345c30ad110b",
-    },
   });
   await mongoClient.connect();
 
