@@ -21,20 +21,6 @@ export default function NODE_002(convo: BotkitConversation): string {
           convo.gotoThread("t_NODE_004");
         },
       },
-      {
-        title: NODE_ID + ".opt3",
-        payload: NODE_ID + ".choice2",
-        onChoose: async (answer, convo, bot, msg) => {
-          convo.gotoThread("t_NODE_003");
-        },
-      },
-      {
-        title: NODE_ID + ".opt4",
-        payload: NODE_ID + ".choice3",
-        onChoose: async (answer, convo, bot, msg) => {
-          convo.gotoThread("t_NODE_004");
-        },
-      },
     ],
     NODE_ID
   );
