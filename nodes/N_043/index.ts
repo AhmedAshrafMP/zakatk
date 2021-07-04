@@ -33,7 +33,7 @@ export function NODE_043(convo: BotkitConversation): string {
         silverZakat: numberWithCommas(Math.round(silverZakat / 40)),
         moneyZakat: numberWithCommas(Math.round(paperZakat / 40)),
         totalZakat: numberWithCommas(
-          Math.round(goldZakat + silverZakat + paperZakat / 40)
+          Math.round((goldZakat + silverZakat + paperZakat) / 40)
         ),
         currency: convertVarToCurrency(vars.NODE_004),
       });
