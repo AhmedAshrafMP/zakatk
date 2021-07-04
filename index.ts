@@ -20,7 +20,7 @@ export const botCtrl = (async () => {
   // Grab a collection handle off the connected client
   const mongoDbStorage = new MongoDbStorage(
     process.env.MONGO_URI || "",
-    "testDatabase",
+    "botkitdb",
     "testCollection"
   );
 
