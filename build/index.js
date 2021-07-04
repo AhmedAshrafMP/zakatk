@@ -48,19 +48,18 @@ var dialogues_1 = require("./dialogues");
 var D_023_071_1 = require("./dialogues/D_023_071");
 require("./helpers/i18n/i18n");
 var storage = undefined;
-if (process.env.MONGO_URI) {
-    console.log("MONGO_URI", process.env.MONGO_URI);
-    var MongoDbStorage = require("botbuilder-storage-mongodb").MongoDbStorage;
-    storage = new MongoDbStorage({
-        url: process.env.MONGO_URI
-    });
-}
+// if (process.env.MONGO_URI) {
+//   console.log("MONGO_URI", process.env.MONGO_URI);
+//   const { MongoDbStorage } = require("botbuilder-storage-mongodb");
+//   storage = new MongoDbStorage({
+//     url: process.env.MONGO_URI,
+//   });
+// }
 var adapter = new botbuilder_adapter_web_1.WebAdapter({});
 //
 exports.botCtrl = new botkit_1.Botkit({
     webhook_uri: "/api/messages",
-    adapter: adapter,
-    storage: storage
+    adapter: adapter
 });
 exports.botCtrl; // botCtrl.publicFolder("/", path.join(__dirname, "..", "public"));
 var d_000_009 = dialogues_1.D_000_009(exports.botCtrl);
