@@ -29,10 +29,12 @@ export function NODE_043(convo: BotkitConversation): string {
       return translate(NODE_ID + ".title", {
         from: diff.from,
         to: diff.to,
-        goldZakat: numberWithCommas(goldZakat / 40),
-        silverZakat: numberWithCommas(silverZakat / 40),
-        moneyZakat: numberWithCommas(paperZakat / 40),
-        totalZakat: numberWithCommas(goldZakat + silverZakat + paperZakat / 40),
+        goldZakat: numberWithCommas(Math.round(goldZakat / 40)),
+        silverZakat: numberWithCommas(Math.round(silverZakat / 40)),
+        moneyZakat: numberWithCommas(Math.round(paperZakat / 40)),
+        totalZakat: numberWithCommas(
+          Math.round(goldZakat + silverZakat + paperZakat / 40)
+        ),
         currency: convertVarToCurrency(vars.NODE_004),
       });
     }
