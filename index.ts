@@ -5,7 +5,7 @@ import moment from "moment";
 import { D_000_009, D_014_023, D_055_056 } from "./dialogues";
 import { D_023_071 } from "./dialogues/D_023_071";
 import "./helpers/i18n/i18n";
-import { MongoDbStorage } from "botbuilder-storage-mongodb";
+import { MongoDbStorage } from "@botbuildercommunity/storage-mongodb";
 import { MongoClient } from "mongodb";
 
 // if (process.env.MONGO_URI) {
@@ -18,17 +18,18 @@ export const botCtrl = (async () => {
   await mongoClient.connect();
 
   // Grab a collection handle off the connected client
-  const collection = MongoDbStorage.getCollection(mongoClient);
-
-  const storage = new MongoDbStorage(collection);
-  // }
+  const mongoDbStorage = new MongoDbStorage(
+    process.env.MONGO_URI || "",
+    "testDatabase",
+    "testCollection"
+  );
 
   const adapter = new WebAdapter({});
   //
   const botCtrl = new Botkit({
     webhook_uri: "/api/messages",
     adapter: adapter,
-    storage: storage,
+    storage: mongoDbStorage,
   });
 
   botCtrl; // botCtrl.publicFolder("/", path.join(__dirname, "..", "public"));
