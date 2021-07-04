@@ -16,7 +16,7 @@ export const botCtrl = (async () => {
     useUnifiedTopology: true,
     auth: {
       user: "botkitdb",
-      password: "botkitdb",
+      password: "d26a19ff5153c0a62c3e345c30ad110b",
     },
   });
   await mongoClient.connect();
