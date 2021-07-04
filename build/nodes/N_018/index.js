@@ -58,7 +58,7 @@ function NODE_018(convo) {
                     convo.gotoThread("t_d_023_071");
                 }
                 else {
-                    convo.gotoThread("t_d_055_056");
+                    convo.gotoThread("t_NODE_055");
                 }
             }
             else {

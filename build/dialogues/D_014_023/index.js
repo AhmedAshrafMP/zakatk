@@ -50,6 +50,7 @@ var N_016_1 = __importDefault(require("../../nodes/N_016"));
 var N_017_1 = __importDefault(require("../../nodes/N_017"));
 var N_018_1 = __importDefault(require("../../nodes/N_018"));
 var N_018_1_1 = __importDefault(require("../../nodes/N_018_1"));
+var N_055_1 = __importDefault(require("../../nodes/N_055"));
 function D_014_023(botCtrl, parent) {
     var _this = this;
     // init dialogue
@@ -64,6 +65,7 @@ function D_014_023(botCtrl, parent) {
     N_017_1["default"](thisDialogue);
     N_018_1["default"](thisDialogue);
     N_018_1_1["default"](thisDialogue);
+    N_055_1["default"](thisDialogue);
     // thisDialogue.after(async (results, bot) => {
     //   const NoOfDays = moment()
     //     .startOf("D")
