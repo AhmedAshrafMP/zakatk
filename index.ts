@@ -8,19 +8,19 @@ import "./helpers/i18n/i18n";
 
 let storage = undefined;
 
-// if (process.env.MONGO_URI) {
-//   console.log("MONGO_URI", process.env.MONGO_URI);
-//   const { MongoDbStorage } = require("botbuilder-storage-mongodb");
-//   storage = new MongoDbStorage({
-//     url: process.env.MONGO_URI,
-//   });
-// }
+if (process.env.MONGO_URI) {
+  console.log("MONGO_URI", process.env.MONGO_URI);
+  const { MongoDbStorage } = require("botbuilder-storage-mongodb");
+  storage = new MongoDbStorage({
+    url: process.env.MONGO_URI,
+  });
+}
 const adapter = new WebAdapter({});
 //
 export const botCtrl = new Botkit({
   webhook_uri: "/api/messages",
   adapter: adapter,
-  // storage: storage,
+  storage: storage,
 });
 
 botCtrl; // botCtrl.publicFolder("/", path.join(__dirname, "..", "public"));
