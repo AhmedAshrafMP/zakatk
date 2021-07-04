@@ -15,13 +15,13 @@ export function NODE_057(convo: BotkitConversation): string {
         onChoose: async (answer, convo, bot, msg) => {
           convo.setVar(
             "totalGold",
-            safeParseFloat(`${convo.vars.NODE_056_1}`) * 0.008 +
+            safeParseFloat(`${convo.vars.NODE_056_1}`) * 8 +
               safeParseFloat(convo.vars.NODE_056_2) +
               safeParseFloat(convo.vars.NODE_061)
           );
           convo.setVar(
             "totalSilver",
-            safeParseFloat(`${convo.vars.NODE_056_3}`) * 0.008 +
+            safeParseFloat(`${convo.vars.NODE_056_3}`) * 8 +
               safeParseFloat(convo.vars.NODE_056_4) +
               safeParseFloat(convo.vars.NODE_061_1)
           );
@@ -34,11 +34,11 @@ export function NODE_057(convo: BotkitConversation): string {
     (tmp, vars) => {
       return translate(NODE_ID + ".title", {
         totalGold:
-          safeParseFloat(`${vars.NODE_056_1}`) * 0.008 +
+          safeParseFloat(`${vars.NODE_056_1}`) * 8 +
           safeParseFloat(vars.NODE_056_2) +
           safeParseFloat(vars.NODE_061),
         totalSilver:
-          safeParseFloat(`${vars.NODE_056_3}`) * 0.008 +
+          safeParseFloat(`${vars.NODE_056_3}`) * 8 +
           safeParseFloat(vars.NODE_056_4) +
           safeParseFloat(vars.NODE_061_1),
       });
