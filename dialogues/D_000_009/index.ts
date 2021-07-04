@@ -1,4 +1,4 @@
-import { BotkitConversation, Botkit } from "botkit";
+import { Botkit, BotkitConversation } from "botkit";
 import NODE_001 from "../../nodes/N_001";
 import NODE_002 from "../../nodes/N_002";
 import NODE_003 from "../../nodes/N_003";
@@ -9,8 +9,6 @@ import NODE_007 from "../../nodes/N_007";
 import NODE_007_1 from "../../nodes/N_007_1";
 import NODE_007_2 from "../../nodes/N_007_2";
 import NODE_008 from "../../nodes/N_008";
-import NODE_009 from "../../nodes/N_009";
-import NODE_014 from "../../nodes/N_014";
 
 export function D_000_009(botCtrl: Botkit) {
   // init dialogue

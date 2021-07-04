@@ -15,7 +15,7 @@ export const botCtrl = (async () => {
   const mongoClient = new MongoClient(process.env.MONGO_URI || "", {
     useUnifiedTopology: true,
   });
-  mongoClient.connect();
+  await mongoClient.connect();
 
   // Grab a collection handle off the connected client
   const collection = MongoDbStorage.getCollection(mongoClient);
