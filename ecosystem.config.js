@@ -13,7 +13,7 @@ module.exports = {
         MONGO_URI:
           "mongodb://botkitdb:d26a19ff5153c0a62c3e345c30ad110b@dokku-mongo-botkitdb:27017/botkitdb",
       },
-      max_restarts: 1,
+      max_restarts: 100,
     },
   ],
 };
