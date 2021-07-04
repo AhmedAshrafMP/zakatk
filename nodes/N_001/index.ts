@@ -19,7 +19,7 @@ export default function NODE_001(convo: BotkitConversation): string {
         title: translate(NODE_ID + ".opt2"),
         payload: NODE_ID + ".choice1",
         onChoose: async (answer, convo, bot, msg) => {
-          convo.gotoThread("t_NODE_002");
+          convo.gotoThread("t_NODE_00222");
         },
       },
     ],

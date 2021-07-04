@@ -40,18 +40,27 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 exports.__esModule = true;
 exports.botCtrl = void 0;
+var botbuilder_adapter_web_1 = require("botbuilder-adapter-web");
 var botkit_1 = require("botkit");
 var i18n_js_1 = __importDefault(require("i18n-js"));
 var moment_1 = __importDefault(require("moment"));
-var botbuilder_adapter_web_1 = require("botbuilder-adapter-web");
 var dialogues_1 = require("./dialogues");
 var D_023_071_1 = require("./dialogues/D_023_071");
 require("./helpers/i18n/i18n");
+var storage = undefined;
+if (process.env.MONGO_URI) {
+    console.log("MONGO_URI", process.env.MONGO_URI);
+    var MongoDbStorage = require("botbuilder-storage-mongodb").MongoDbStorage;
+    storage = new MongoDbStorage({
+        url: process.env.MONGO_URI
+    });
+}
 var adapter = new botbuilder_adapter_web_1.WebAdapter({});
 //
 exports.botCtrl = new botkit_1.Botkit({
     webhook_uri: "/api/messages",
-    adapter: adapter
+    adapter: adapter,
+    storage: storage
 });
 exports.botCtrl; // botCtrl.publicFolder("/", path.join(__dirname, "..", "public"));
 var d_000_009 = dialogues_1.D_000_009(exports.botCtrl);
@@ -67,6 +76,7 @@ exports.botCtrl.hears(["hello", "bot_start_action"], "message", function (bot, m
                 return [4 /*yield*/, bot.cancelAllDialogs()];
             case 1:
                 _a.sent();
+                console.log(process.env.MONGO_URI);
                 return [2 /*return*/, bot.beginDialog("d_000_009")];
         }
     });
