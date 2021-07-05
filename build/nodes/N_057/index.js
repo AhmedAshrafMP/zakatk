@@ -52,10 +52,10 @@ function NODE_057(convo) {
             payload: NODE_ID + ".choice0",
             onChoose: function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
                 return __generator(this, function (_a) {
-                    convo.setVar("totalGold", variables_1.safeParseFloat("" + convo.vars.NODE_056_1) * 0.008 +
+                    convo.setVar("totalGold", variables_1.safeParseFloat("" + convo.vars.NODE_056_1) * 8 +
                         variables_1.safeParseFloat(convo.vars.NODE_056_2) +
                         variables_1.safeParseFloat(convo.vars.NODE_061));
-                    convo.setVar("totalSilver", variables_1.safeParseFloat("" + convo.vars.NODE_056_3) * 0.008 +
+                    convo.setVar("totalSilver", variables_1.safeParseFloat("" + convo.vars.NODE_056_3) * 8 +
                         variables_1.safeParseFloat(convo.vars.NODE_056_4) +
                         variables_1.safeParseFloat(convo.vars.NODE_061_1));
                     convo.gotoThread("t_NODE_040_1");
@@ -65,10 +65,10 @@ function NODE_057(convo) {
         },
     ], NODE_ID, {}, function (tmp, vars) {
         return helpers_1.translate(NODE_ID + ".title", {
-            totalGold: variables_1.safeParseFloat("" + vars.NODE_056_1) * 0.008 +
+            totalGold: variables_1.safeParseFloat("" + vars.NODE_056_1) * 8 +
                 variables_1.safeParseFloat(vars.NODE_056_2) +
                 variables_1.safeParseFloat(vars.NODE_061),
-            totalSilver: variables_1.safeParseFloat("" + vars.NODE_056_3) * 0.008 +
+            totalSilver: variables_1.safeParseFloat("" + vars.NODE_056_3) * 8 +
                 variables_1.safeParseFloat(vars.NODE_056_4) +
                 variables_1.safeParseFloat(vars.NODE_061_1)
         });

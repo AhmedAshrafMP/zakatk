@@ -25,10 +25,10 @@ function NODE_043(convo) {
         return helpers_1.translate(NODE_ID + ".title", {
             from: diff.from,
             to: diff.to,
-            goldZakat: variables_1.numberWithCommas(goldZakat / 40),
-            silverZakat: variables_1.numberWithCommas(silverZakat / 40),
-            moneyZakat: variables_1.numberWithCommas(paperZakat / 40),
-            totalZakat: variables_1.numberWithCommas(goldZakat + silverZakat + paperZakat / 40),
+            goldZakat: variables_1.numberWithCommas(Math.round(goldZakat / 40)),
+            silverZakat: variables_1.numberWithCommas(Math.round(silverZakat / 40)),
+            moneyZakat: variables_1.numberWithCommas(Math.round(paperZakat / 40)),
+            totalZakat: variables_1.numberWithCommas(Math.round((goldZakat + silverZakat + paperZakat) / 40)),
             currency: helpers_1.convertVarToCurrency(vars.NODE_004)
         });
     });

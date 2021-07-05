@@ -50,7 +50,8 @@ function NODE_035_1(convo) {
             payload: NODE_ID + ".choice0",
             onChoose: function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
                 return __generator(this, function (_a) {
-                    convo.gotoThread("t_NODE_035_2");
+                    convo.setVar("totalDebit", 0);
+                    convo.gotoThread("t_NODE_037");
                     return [2 /*return*/];
                 });
             }); }
@@ -59,8 +60,17 @@ function NODE_035_1(convo) {
             title: NODE_ID + ".opt2",
             payload: NODE_ID + ".choice1",
             onChoose: function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
+                var totalGameyaPaid, totalGameyaReceivable;
                 return __generator(this, function (_a) {
-                    convo.gotoThread("t_NODE_035_3");
+                    if (convo.vars.NODE_031 === "NODE_031.choice0") {
+                        totalGameyaPaid = parseFloat(convo.vars.NODE_032);
+                        totalGameyaReceivable = parseFloat(convo.vars.NODE_032_1);
+                        convo.setVar("totalDebit", Math.abs(totalGameyaPaid - totalGameyaReceivable));
+                        convo.gotoThread("t_NODE_037");
+                    }
+                    else {
+                        convo.gotoThread("t_NODE_036");
+                    }
                     return [2 /*return*/];
                 });
             }); }
