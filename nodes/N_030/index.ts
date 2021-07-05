@@ -1,7 +1,7 @@
 import { BotkitConversation } from "botkit";
 import bkQRAsk from "../../bot_nodes/ask_qr";
 import { convertVarToCurrency, translate } from "../../helpers";
-import { numberWithCommas } from "../../helpers/variables";
+import { numberWithCommas, safeParseFloat } from "../../helpers/variables";
 import { markOptionAsDone } from "../N_023";
 
 const NODE_ID = "NODE_030";
@@ -26,28 +26,36 @@ export function NODE_030(convo: BotkitConversation): string {
     NODE_ID,
     {},
     (tm, vars) => {
-      const totalCurrency = numberWithCommas(vars.NODE_029 || 0);
-      const totalSavings = numberWithCommas(
-        vars.NODE_065 || vars.NODE_066 || 0
-      );
-      const totalStocks = numberWithCommas(vars.NODE_070 || vars.NODE_071 || 0);
+      const totalCurrency = safeParseFloat(vars.NODE_029 || 0);
+      const totalSavings = safeParseFloat(vars.NODE_065 || vars.NODE_066 || 0);
+      const totalStocks = safeParseFloat(vars.NODE_070 || vars.NODE_071 || 0);
       const currency = convertVarToCurrency(vars.NODE_004);
       let title = "";
 
       if (totalCurrency > 0) {
         title =
           title +
-          translate(NODE_ID + ".title.one", { totalCurrency, currency });
+          translate(NODE_ID + ".title.one", {
+            totalCurrency: numberWithCommas(totalCurrency),
+            currency,
+          });
       }
       if (totalSavings > 0) {
         title =
-          title + translate(NODE_ID + ".title.two", { totalSavings, currency });
+          title +
+          translate(NODE_ID + ".title.two", {
+            totalSavings: numberWithCommas(totalSavings),
+            currency,
+          });
       }
 
       if (totalStocks > 0) {
         title =
           title +
-          translate(NODE_ID + ".title.three", { totalStocks, currency });
+          translate(NODE_ID + ".title.three", {
+            totalStocks: numberWithCommas(totalStocks),
+            currency,
+          });
       }
 
       return title;
