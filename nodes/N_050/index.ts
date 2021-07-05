@@ -110,6 +110,13 @@ export function NODE_050(convo: BotkitConversation): string {
               currency: convertVarToCurrency(vars.NODE_004),
             });
         }
+
+        title =
+          "\n" +
+          translate(`${NODE_ID}.TOTAL`, {
+            totalZakat: total,
+            currency: convertVarToCurrency(vars.NODE_004),
+          });
       }
 
       return (
