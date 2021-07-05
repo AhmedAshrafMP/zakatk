@@ -72,7 +72,12 @@ export function NODE_050(convo: BotkitConversation): string {
           });
       } else {
         let total = 0;
-        if (paperZakat > threshould) {
+        let allowZakat =
+          paperZakat +
+            calculatedZakat.gold_money +
+            calculatedZakat.silver_money >
+          threshould;
+        if (allowZakat) {
           const thisZakat = Math.round(paperZakat / 40);
           total = total + thisZakat;
           title =
@@ -83,7 +88,7 @@ export function NODE_050(convo: BotkitConversation): string {
               currency: convertVarToCurrency(vars.NODE_004),
             });
         }
-        if (calculatedZakat.gold_money > threshould) {
+        if (allowZakat) {
           const thisZakat = Math.round(calculatedZakat.gold_money / 40);
           total = total + thisZakat;
           title =
@@ -94,7 +99,7 @@ export function NODE_050(convo: BotkitConversation): string {
               currency: convertVarToCurrency(vars.NODE_004),
             });
         }
-        if (calculatedZakat.silver_money > threshould) {
+        if (allowZakat) {
           const thisZakat = Math.round(calculatedZakat.silver_money / 40);
           total = total + thisZakat;
           title =
