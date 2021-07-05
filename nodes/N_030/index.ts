@@ -25,13 +25,33 @@ export function NODE_030(convo: BotkitConversation): string {
     ],
     NODE_ID,
     {},
-    (tm, vars) =>
-      translate(NODE_ID + ".title", {
-        totalCurrency: numberWithCommas(vars.NODE_029 || 0),
-        totalSavings: numberWithCommas(vars.NODE_065 || vars.NODE_066 || 0),
-        totalStocks: numberWithCommas(vars.NODE_070 || vars.NODE_071 || 0),
-        currency: convertVarToCurrency(vars.NODE_004),
-      })
+    (tm, vars) => {
+      const totalCurrency = numberWithCommas(vars.NODE_029 || 0);
+      const totalSavings = numberWithCommas(
+        vars.NODE_065 || vars.NODE_066 || 0
+      );
+      const totalStocks = numberWithCommas(vars.NODE_070 || vars.NODE_071 || 0);
+      const currency = convertVarToCurrency(vars.NODE_004);
+      let title = "";
+
+      if (totalCurrency > 0) {
+        title =
+          title +
+          translate(NODE_ID + ".title.one", { totalCurrency, currency });
+      }
+      if (totalSavings > 0) {
+        title =
+          title + translate(NODE_ID + ".title.two", { totalSavings, currency });
+      }
+
+      if (totalStocks > 0) {
+        title =
+          title +
+          translate(NODE_ID + ".title.three", { totalStocks, currency });
+      }
+
+      return title;
+    }
   );
 
   return `t_${NODE_ID}`;

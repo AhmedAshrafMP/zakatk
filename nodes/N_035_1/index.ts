@@ -11,14 +11,25 @@ export function NODE_035_1(convo: BotkitConversation): string {
         title: NODE_ID + ".opt1",
         payload: NODE_ID + ".choice0",
         onChoose: async (answer, convo, bot, msg) => {
-          convo.gotoThread("t_NODE_035_2");
+          convo.setVar("totalDebit", 0);
+          convo.gotoThread("t_NODE_037");
         },
       },
       {
         title: NODE_ID + ".opt2",
         payload: NODE_ID + ".choice1",
         onChoose: async (answer, convo, bot, msg) => {
-          convo.gotoThread("t_NODE_035_3");
+          if (convo.vars.NODE_031 === "NODE_031.choice0") {
+            const totalGameyaPaid = parseFloat(convo.vars.NODE_032);
+            const totalGameyaReceivable = parseFloat(convo.vars.NODE_032_1);
+            convo.setVar(
+              "totalDebit",
+              Math.abs(totalGameyaPaid - totalGameyaReceivable)
+            );
+            convo.gotoThread("t_NODE_037");
+          } else {
+            convo.gotoThread("t_NODE_036");
+          }
         },
       },
     ],

@@ -10,13 +10,16 @@ import "./helpers/i18n/i18n";
 // if (process.env.MONGO_URI) {
 console.log("MONGO_URI", process.env.MONGO_URI);
 
-// Grab a collection handle off the connected client
-const mongoDbStorage = new MongoDbStorage(
-  process.env.MONGO_URI || "",
-  "botkitdb",
-  "testCollection"
-);
+let mongoDbStorage: MongoDbStorage | undefined = undefined;
 
+// Grab a collection handle off the connected client
+if (process.env.MONGO_URI) {
+  mongoDbStorage = new MongoDbStorage(
+    process.env.MONGO_URI || "",
+    "botkitdb",
+    "testCollection"
+  );
+}
 const adapter = new WebAdapter({});
 //
 export const botCtrl = new Botkit({

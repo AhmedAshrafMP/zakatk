@@ -29,7 +29,7 @@ export function NODE_023(convo: BotkitConversation): string {
           title: translate(NODE_ID + ".opt2"),
           payload: NODE_ID + ".choice1",
           onChoose: async (answer, convo, bot, msg) => {
-            convo.gotoThread("t_NODE_025");
+            convo.gotoThread("t_NODE_062");
           },
         });
       }
@@ -38,7 +38,7 @@ export function NODE_023(convo: BotkitConversation): string {
           title: translate(NODE_ID + ".opt3"),
           payload: NODE_ID + ".choice2",
           onChoose: async (answer, convo, bot, msg) => {
-            convo.gotoThread("t_NODE_024");
+            convo.gotoThread("t_NODE_067");
           },
         });
       }
