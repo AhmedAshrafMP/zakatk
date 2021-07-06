@@ -70,7 +70,15 @@ export function NODE_023(convo: BotkitConversation): string {
       //     },
       //   });
       // }
-
+      if (vars.NODE_023) {
+        quickReplies.push({
+          title: translate(NODE_ID + ".opt6"),
+          payload: NODE_ID + ".choice5",
+          onChoose: async (answer, convo, bot, msg) => {
+            convo.stop();
+          },
+        });
+      }
       return quickReplies;
     },
     NODE_ID,

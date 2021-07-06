@@ -44,7 +44,6 @@ botCtrl.hears(
     I18n.locale = "ar";
     moment.locale("ar");
     await bot.cancelAllDialogs();
-    console.log(process.env.MONGO_URI);
 
     return bot.beginDialog("d_000_009");
   }
