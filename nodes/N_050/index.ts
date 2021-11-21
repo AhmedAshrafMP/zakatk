@@ -114,7 +114,7 @@ export function NODE_050(convo: BotkitConversation): string {
         title =
           "\n" +
           translate(`${NODE_ID}.TOTAL`, {
-            totalZakat: total,
+            totalZakat: numberWithCommas(total),
             currency: convertVarToCurrency(vars.NODE_004),
           });
       }

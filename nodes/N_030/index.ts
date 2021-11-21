@@ -27,7 +27,8 @@ export function NODE_030(convo: BotkitConversation): string {
     {},
     (tm, vars) => {
       const totalCurrency = safeParseFloat(vars.NODE_029 || 0);
-      const totalSavings = safeParseFloat(vars.NODE_065 || vars.NODE_066 || 0);
+      const totalSavings = safeParseFloat(vars.NODE_066 || 0);
+      const totalRevSavings = safeParseFloat(vars.NODE_065 || 0);
       const totalStocks = safeParseFloat(vars.NODE_070 || vars.NODE_071 || 0);
       const currency = convertVarToCurrency(vars.NODE_004);
       let title = "";
@@ -45,6 +46,14 @@ export function NODE_030(convo: BotkitConversation): string {
           title +
           translate(NODE_ID + ".title.two", {
             totalSavings: numberWithCommas(totalSavings),
+            currency,
+          });
+      }
+      if (totalRevSavings > 0) {
+        title =
+          title +
+          translate(NODE_ID + ".title.four", {
+            totalRevSavings: numberWithCommas(totalRevSavings),
             currency,
           });
       }

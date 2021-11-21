@@ -14,10 +14,16 @@ export default function NODE_017(convo: BotkitConversation): string {
         onChoose: async (answer, convo, bot, msg) => {
           convo.setVar(
             "LAST_ZAKAT_DAY",
-            moment().subtract(364, "days").toISOString()
+            moment().subtract(366, "days").toISOString()
           );
-          convo.setVar("ZAKAT_PERIOD_VALUES", {});
-          return convo.gotoThread("t_d_023_071");
+          const NoOfDays = moment()
+            .startOf("D")
+            .diff(moment(moment().subtract(366, "days")), "days");
+          const NoOfYears = Math.floor(NoOfDays / 365);
+          if (NoOfYears > 0) {
+            convo.setVar("NO_OF_YEARS_LEFT", NoOfYears);
+            convo.gotoThread("t_d_023_071");
+          }
         },
       },
     ],

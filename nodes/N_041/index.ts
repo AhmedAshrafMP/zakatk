@@ -15,7 +15,7 @@ function setZakatPerYear(vars, leftYears) {
       safeParseFloat(vars.NODE_029) -
       safeParseFloat(vars.totalDebit) +
       safeParseFloat(vars.totalCredit),
-    savings: safeParseFloat(vars.NODE_066) + safeParseFloat(vars.NODE_065),
+    savings: safeParseFloat(vars.NODE_066) + safeParseFloat(vars.NODE_065) * 4,
     stocks: safeParseFloat(vars.NODE_070) + safeParseFloat(vars.NODE_071),
     gold_gram: safeParseFloat(vars.totalGold),
     silver_gram: safeParseFloat(vars.totalSilver),
@@ -131,7 +131,7 @@ export function NODE_041(convo: BotkitConversation): string {
 
       //savings
       const NODE_025 =
-        safeParseFloat(vars.NODE_066) + safeParseFloat(vars.NODE_065);
+        safeParseFloat(vars.NODE_066) + safeParseFloat(vars.NODE_065) * 4;
       if (NODE_025 > 0) {
         text.push(
           translate(NODE_ID + ".NODE_025", {
