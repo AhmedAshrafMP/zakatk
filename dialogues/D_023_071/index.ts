@@ -54,6 +54,7 @@ import {
   NODE_045,
   NODE_050,
 } from "../../nodes";
+import NODE_000 from "../../nodes/N_000";
 import { NODE_037 } from "../../nodes/N_037";
 
 export function D_023_071(botCtrl: Botkit) {
@@ -129,6 +130,7 @@ export function D_023_071(botCtrl: Botkit) {
   NODE_068_2(thisDialogue);
   NODE_069(thisDialogue);
   NODE_070(thisDialogue);
+  NODE_000(thisDialogue);
   NODE_071(thisDialogue);
 
   thisDialogue.addQuestion(

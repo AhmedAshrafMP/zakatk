@@ -1,4 +1,5 @@
 import { Botkit, BotkitConversation } from "botkit";
+import NODE_000 from "../../nodes/N_000";
 import NODE_001 from "../../nodes/N_001";
 import NODE_002 from "../../nodes/N_002";
 import NODE_003 from "../../nodes/N_003";
@@ -26,6 +27,7 @@ export function D_000_009(botCtrl: Botkit) {
   NODE_007_1(thisDialogue);
   NODE_007_2(thisDialogue);
   NODE_008(thisDialogue);
+  NODE_000(thisDialogue);
 
   thisDialogue.addChildDialog("d_014_023", "d_014_023", "t_d_014_023");
   thisDialogue.addChildDialog("d_000_009", "d_000_009", "t_d_000_009");

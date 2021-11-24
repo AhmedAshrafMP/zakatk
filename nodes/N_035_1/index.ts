@@ -1,5 +1,6 @@
 import { BotkitConversation } from "botkit";
 import bkQRAsk from "../../bot_nodes/ask_qr";
+import { safeParseFloat } from "../../helpers/variables";
 
 const NODE_ID = "NODE_035_1";
 export function NODE_035_1(convo: BotkitConversation): string {
@@ -19,17 +20,15 @@ export function NODE_035_1(convo: BotkitConversation): string {
         title: NODE_ID + ".opt2",
         payload: NODE_ID + ".choice1",
         onChoose: async (answer, convo, bot, msg) => {
-          if (convo.vars.NODE_031 === "NODE_031.choice0") {
-            const totalGameyaPaid = parseFloat(convo.vars.NODE_032);
-            const totalGameyaReceivable = parseFloat(convo.vars.NODE_032_1);
-            convo.setVar(
-              "totalDebit",
-              Math.abs(totalGameyaPaid - totalGameyaReceivable)
-            );
-            convo.gotoThread("t_NODE_037");
-          } else {
-            convo.gotoThread("t_NODE_036");
-          }
+          const totalGameyaPaid = safeParseFloat(convo.vars.NODE_032 || 0);
+          const totalGameyaReceivable = safeParseFloat(
+            convo.vars.NODE_032_1 || 0
+          );
+          convo.setVar(
+            "totalDebit",
+            Math.abs(totalGameyaPaid - totalGameyaReceivable)
+          );
+          convo.gotoThread("t_NODE_036");
         },
       },
     ],

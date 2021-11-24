@@ -19,7 +19,7 @@ export function NODE_036(convo: BotkitConversation): string {
           markOptionAsDone(convo);
           convo.gotoThread("t_NODE_040_1");
         } else {
-          convo.gotoThread("t_NODE_037");
+          convo.gotoThread("t_NODE_035");
         }
       } else {
         convo.repeat();

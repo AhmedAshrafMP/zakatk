@@ -24,6 +24,17 @@ export function NODE_023(convo: BotkitConversation): string {
           },
         });
       }
+
+      if (doneOptions.indexOf(NODE_ID + ".choice6") < 0) {
+        quickReplies.push({
+          title: translate(NODE_ID + ".opt7"),
+          payload: NODE_ID + ".choice6",
+          onChoose: async (answer, convo, bot, msg) => {
+            convo.gotoThread("t_NODE_031");
+          },
+        });
+      }
+
       if (doneOptions.indexOf(NODE_ID + ".choice1") < 0) {
         quickReplies.push({
           title: translate(NODE_ID + ".opt2"),
@@ -51,6 +62,7 @@ export function NODE_023(convo: BotkitConversation): string {
           },
         });
       }
+
       if (doneOptions.indexOf(NODE_ID + ".choice4") < 0) {
         quickReplies.push({
           title: translate(NODE_ID + ".opt5"),

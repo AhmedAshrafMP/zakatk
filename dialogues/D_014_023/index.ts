@@ -2,6 +2,7 @@ import { BotkitConversation, Botkit } from "botkit";
 import moment from "moment";
 import { convertVarToCurrencySym } from "../../helpers";
 import { getGoldPrices } from "../../helpers/apis";
+import NODE_000 from "../../nodes/N_000";
 import NODE_009 from "../../nodes/N_009";
 import NODE_014 from "../../nodes/N_014";
 import NODE_015 from "../../nodes/N_015";
@@ -26,6 +27,7 @@ export function D_014_023(botCtrl: Botkit, parent: BotkitConversation) {
   NODE_017(thisDialogue);
   NODE_018(thisDialogue);
   NODE_018_1(thisDialogue);
+  NODE_000(thisDialogue);
   NODE_055(thisDialogue);
   // thisDialogue.after(async (results, bot) => {
   //   const NoOfDays = moment()

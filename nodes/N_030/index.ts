@@ -14,12 +14,8 @@ export function NODE_030(convo: BotkitConversation): string {
         title: NODE_ID + ".opt1",
         payload: NODE_ID + ".choice0",
         onChoose: async (answer, convo, bot, msg) => {
-          if (convo.vars.NODE_031) {
-            markOptionAsDone(convo);
-            convo.gotoThread("t_NODE_040_1");
-          } else {
-            convo.gotoThread("t_NODE_031");
-          }
+          markOptionAsDone(convo);
+          convo.gotoThread("t_NODE_040_1");
         },
       },
     ],

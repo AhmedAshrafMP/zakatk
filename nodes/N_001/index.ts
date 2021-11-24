@@ -15,13 +15,14 @@ export default function NODE_001(convo: BotkitConversation): string {
           convo.gotoThread("t_NODE_002");
         },
       },
-      {
-        title: translate(NODE_ID + ".opt2"),
-        payload: NODE_ID + ".choice1",
-        onChoose: async (answer, convo, bot, msg) => {
-          convo.gotoThread("t_NODE_002");
-        },
-      },
+      // TODO: add zkatak desc
+      // {
+      //   title: translate(NODE_ID + ".opt2"),
+      //   payload: NODE_ID + ".choice1",
+      //   onChoose: async (answer, convo, bot, msg) => {
+      //     convo.gotoThread("t_NODE_002");
+      //   },
+      // },
     ],
     NODE_ID,
     {
