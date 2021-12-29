@@ -23,7 +23,7 @@ export function getZakatForThisYear(vars): ZakatForThisYear {
       safeParseFloat(vars.totalDebit) +
       safeParseFloat(vars.totalCredit),
     savings: safeParseFloat(vars.NODE_066) + safeParseFloat(vars.NODE_065) * 4,
-    stocks: safeParseFloat(vars.NODE_070) + safeParseFloat(vars.NODE_071),
+    stocks: safeParseFloat(vars.NODE_070) * 4 + safeParseFloat(vars.NODE_071),
     gold_gram: safeParseFloat(vars.totalGold),
     silver_gram: safeParseFloat(vars.totalSilver),
     gold_money: safeParseFloat(vars.totalGold) * vars.gold_prices.gold,

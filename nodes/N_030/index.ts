@@ -25,9 +25,10 @@ export function NODE_030(convo: BotkitConversation): string {
       const totalCurrency = safeParseFloat(vars.NODE_029 || 0);
       const totalSavings = safeParseFloat(vars.NODE_066 || 0);
       const totalRevSavings = safeParseFloat(vars.NODE_065 || 0);
-      const totalStocks = safeParseFloat(vars.NODE_070 || vars.NODE_071 || 0);
+      const totalStocks = safeParseFloat(vars.NODE_071 || 0);
+      const totalRevStocks = safeParseFloat(vars.NODE_070 || 0);
       const currency = convertVarToCurrency(vars.NODE_004);
-      let title = "";
+      let title = translate(NODE_ID + ".title.zero");
 
       if (totalCurrency > 0) {
         title =
@@ -54,11 +55,11 @@ export function NODE_030(convo: BotkitConversation): string {
           });
       }
 
-      if (totalStocks > 0) {
+      if (totalRevStocks > 0) {
         title =
           title +
-          translate(NODE_ID + ".title.three", {
-            totalStocks: numberWithCommas(totalStocks),
+          translate(NODE_ID + ".title.five", {
+            totalRevStocks: numberWithCommas(totalRevStocks),
             currency,
           });
       }

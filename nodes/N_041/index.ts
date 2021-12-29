@@ -16,7 +16,7 @@ function setZakatPerYear(vars, leftYears) {
       safeParseFloat(vars.totalDebit) +
       safeParseFloat(vars.totalCredit),
     savings: safeParseFloat(vars.NODE_066) + safeParseFloat(vars.NODE_065) * 4,
-    stocks: safeParseFloat(vars.NODE_070) + safeParseFloat(vars.NODE_071),
+    stocks: safeParseFloat(vars.NODE_070) * 4 + safeParseFloat(vars.NODE_071),
     gold_gram: safeParseFloat(vars.totalGold),
     silver_gram: safeParseFloat(vars.totalSilver),
     gold_money: safeParseFloat(vars.totalGold) * vars.gold_prices.gold,
@@ -40,6 +40,21 @@ function setZakatPerYear(vars, leftYears) {
   return zakat_per_years;
 }
 
+function clearYearsValue(convo, leftYears) {
+  // TODO: reset resettable variables
+  convo.setVar("doneMoneyOptions", []);
+  convo.setVar("NODE_031", "");
+  convo.setVar("totalDebit", 0);
+  convo.setVar("totalCredit", 0);
+  convo.setVar("totalGold", 0);
+  convo.setVar("totalSilver", 0);
+  convo.setVar("NODE_038", "");
+  convo.setVar("NO_OF_YEARS_LEFT", leftYears);
+
+  /// set period current value
+  convo.setVar("zakat_per_years", setZakatPerYear(convo.vars, leftYears));
+}
+
 export function NODE_041(convo: BotkitConversation): string {
   bkQRAsk(
     convo,
@@ -52,23 +67,16 @@ export function NODE_041(convo: BotkitConversation): string {
             title: translate(NODE_ID + ".opt1"),
             payload: NODE_ID + ".choice0",
             onChoose: async (_answer, convo, _bot, _msg) => {
-              // TODO: reset resettable variables
-              convo.setVar("doneMoneyOptions", []);
-              convo.setVar("NODE_031", "");
-              convo.setVar("totalDebit", 0);
-              convo.setVar("totalCredit", 0);
-              convo.setVar("totalGold", 0);
-              convo.setVar("totalSilver", 0);
-              convo.setVar("NODE_038", "");
-              convo.setVar("NO_OF_YEARS_LEFT", leftYears);
-
-              /// set period current value
-              convo.setVar(
-                "zakat_per_years",
-                setZakatPerYear(convo.vars, leftYears)
-              );
-
+              clearYearsValue(convo, leftYears);
               convo.gotoThread("t_NODE_023");
+            },
+          },
+          {
+            title: translate(NODE_ID + ".opt3"),
+            payload: NODE_ID + ".choice2",
+            onChoose: async (_answer, convo, _bot, _msg) => {
+              clearYearsValue(convo, leftYears);
+              convo.stop();
             },
           },
         ];
@@ -143,7 +151,7 @@ export function NODE_041(convo: BotkitConversation): string {
 
       //stocks
       const NODE_024 =
-        safeParseFloat(vars.NODE_070) + safeParseFloat(vars.NODE_071);
+        safeParseFloat(vars.NODE_070) * 4 + safeParseFloat(vars.NODE_071);
       if (NODE_024 > 0) {
         text.push(
           translate(NODE_ID + ".NODE_024", {

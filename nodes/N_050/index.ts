@@ -39,16 +39,16 @@ export function NODE_050(convo: BotkitConversation): string {
         groupedZakatSecond = 0;
       if (GroupingType === "GROUP") {
         if (thresholdMetal === "GOLD") {
-          groupedZakatFirst = calculatedZakat.gold_money + paperZakat / 40;
+          groupedZakatFirst = calculatedZakat.gold_money + paperZakat / 38.8;
           groupedZakatSecond =
             calculatedZakat.silver_money > vars.gold_prices.sThreshold
-              ? calculatedZakat.silver_money / 40
+              ? calculatedZakat.silver_money / 38.8
               : 0;
         } else {
-          groupedZakatFirst = calculatedZakat.silver_money + paperZakat / 40;
+          groupedZakatFirst = calculatedZakat.silver_money + paperZakat / 38.8;
           groupedZakatSecond =
             calculatedZakat.silver_money > vars.gold_prices.gThreshold
-              ? calculatedZakat.gold_money / 40
+              ? calculatedZakat.gold_money / 38.8
               : 0;
         }
         // print money + selected metal to metal
@@ -78,7 +78,7 @@ export function NODE_050(convo: BotkitConversation): string {
             calculatedZakat.silver_money >
           threshould;
         if (allowZakat) {
-          const thisZakat = Math.round(paperZakat / 40);
+          const thisZakat = Math.round(paperZakat / 38.8);
           total = total + thisZakat;
           title =
             title +
@@ -89,7 +89,7 @@ export function NODE_050(convo: BotkitConversation): string {
             });
         }
         if (allowZakat) {
-          const thisZakat = Math.round(calculatedZakat.gold_money / 40);
+          const thisZakat = Math.round(calculatedZakat.gold_money / 38.8);
           total = total + thisZakat;
           title =
             title +
@@ -100,7 +100,7 @@ export function NODE_050(convo: BotkitConversation): string {
             });
         }
         if (allowZakat) {
-          const thisZakat = Math.round(calculatedZakat.silver_money / 40);
+          const thisZakat = Math.round(calculatedZakat.silver_money / 38.8);
           total = total + thisZakat;
           title =
             title +
