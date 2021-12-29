@@ -25,7 +25,9 @@ export async function getGoldPrices(currency: string): Promise<GoldPrices> {
       "https://data-asg.goldprice.org/dbXRates/" + currency
     );
     const goldGramPrice = resp.data.items[0].xauPrice / 31.1;
-    const silverGramPrice = resp.data.items[0].xagPrice / 31.1;
+    const silverGramPrice = resp.data.items[0].xagPrice / 28.3495;
+    console.log("respose", resp.data.items[0]);
+
     return {
       gold: goldGramPrice,
       silver: silverGramPrice,

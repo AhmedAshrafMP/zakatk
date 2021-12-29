@@ -11,7 +11,7 @@ export function NODE_056_4(convo: BotkitConversation): string {
     async (answer, convo, bot, message) => {
       const inputValue = parseFloat(answer);
       if (inputValue >= 0) {
-        convo.gotoThread("t_NODE_057");
+        convo.gotoThread("t_NODE_056_4_1");
       } else {
         convo.gotoThread("t_" + NODE_ID);
       }

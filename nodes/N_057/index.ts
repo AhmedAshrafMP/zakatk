@@ -17,13 +17,21 @@ export function NODE_057(convo: BotkitConversation): string {
             "totalGold",
             safeParseFloat(`${convo.vars.NODE_056_1}`) * 8 +
               safeParseFloat(convo.vars.NODE_056_2) +
-              safeParseFloat(convo.vars.NODE_061)
+              safeParseFloat(convo.vars.NODE_056_2_1) * 0.9166 +
+              safeParseFloat(convo.vars.NODE_056_2_2) * 0.75 +
+              safeParseFloat(convo.vars.NODE_061_0) +
+              safeParseFloat(convo.vars.NODE_061_0_1) * 0.9166 +
+              safeParseFloat(convo.vars.NODE_061_0_2) * 0.75
           );
           convo.setVar(
             "totalSilver",
             safeParseFloat(`${convo.vars.NODE_056_3}`) * 8 +
               safeParseFloat(convo.vars.NODE_056_4) +
-              safeParseFloat(convo.vars.NODE_061_1)
+              safeParseFloat(convo.vars.NODE_056_4_1) * 0.9259 +
+              safeParseFloat(convo.vars.NODE_056_4_2) * 0.9009 +
+              safeParseFloat(convo.vars.NODE_061_1) +
+              safeParseFloat(convo.vars.NODE_061_1_1) * 0.9259 +
+              safeParseFloat(convo.vars.NODE_061_1_2) * 0.9009
           );
           convo.gotoThread("t_NODE_040_1");
         },
@@ -36,11 +44,19 @@ export function NODE_057(convo: BotkitConversation): string {
         totalGold:
           safeParseFloat(`${vars.NODE_056_1}`) * 8 +
           safeParseFloat(vars.NODE_056_2) +
-          safeParseFloat(vars.NODE_061),
+          safeParseFloat(vars.NODE_056_2_1) * 0.9166 +
+          safeParseFloat(vars.NODE_056_2_2) * 0.75 +
+          safeParseFloat(vars.NODE_061_0) +
+          safeParseFloat(vars.NODE_061_0_1) * 0.9166 +
+          safeParseFloat(vars.NODE_061_0_2) * 0.75,
         totalSilver:
           safeParseFloat(`${vars.NODE_056_3}`) * 8 +
           safeParseFloat(vars.NODE_056_4) +
-          safeParseFloat(vars.NODE_061_1),
+          safeParseFloat(vars.NODE_056_4_1) * 0.9259 +
+          safeParseFloat(vars.NODE_056_4_2) * 0.9009 +
+          safeParseFloat(vars.NODE_061_1) +
+          safeParseFloat(vars.NODE_061_1_1) * 0.9259 +
+          safeParseFloat(vars.NODE_061_1_2) * 0.9009,
       });
     }
   );

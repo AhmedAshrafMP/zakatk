@@ -42,7 +42,7 @@ import {
   NODE_060_1,
   NODE_060_2,
   NODE_068_2,
-  NODE_061,
+  NODE_061_0,
   NODE_061_1,
   NODE_058,
   NODE_066,
@@ -53,9 +53,17 @@ import {
   NODE_046,
   NODE_045,
   NODE_050,
+  NODE_056_4_1,
+  NODE_056_4_2,
 } from "../../nodes";
 import NODE_000 from "../../nodes/N_000";
 import { NODE_037 } from "../../nodes/N_037";
+import { NODE_056_2_1 } from "../../nodes/N_056_2_1";
+import { NODE_056_2_2 } from "../../nodes/N_056_2_2";
+import { NODE_061_0_1 } from "../../nodes/N_061_0_1";
+import { NODE_061_0_2 } from "../../nodes/N_061_0_2";
+import { NODE_061_1_1 } from "../../nodes/N_061_1_1";
+import { NODE_061_1_2 } from "../../nodes/N_061_1_2";
 
 export function D_023_071(botCtrl: Botkit) {
   // init dialogue
@@ -100,9 +108,13 @@ export function D_023_071(botCtrl: Botkit) {
   NODE_050(thisDialogue);
   NODE_056(thisDialogue);
   NODE_056_1(thisDialogue);
+  NODE_056_2_1(thisDialogue);
+  NODE_056_2_2(thisDialogue);
   NODE_056_2(thisDialogue);
   NODE_056_3(thisDialogue);
   NODE_056_4(thisDialogue);
+  NODE_056_4_1(thisDialogue);
+  NODE_056_4_2(thisDialogue);
 
   NODE_057(thisDialogue);
 
@@ -112,9 +124,12 @@ export function D_023_071(botCtrl: Botkit) {
   NODE_060_1(thisDialogue);
   NODE_060_2(thisDialogue);
 
-  NODE_061(thisDialogue);
+  NODE_061_0(thisDialogue);
+  NODE_061_0_1(thisDialogue);
+  NODE_061_0_2(thisDialogue);
   NODE_061_1(thisDialogue);
-
+  NODE_061_1_1(thisDialogue);
+  NODE_061_1_2(thisDialogue);
   NODE_062(thisDialogue);
   NODE_062_1(thisDialogue);
   NODE_062_2(thisDialogue);
