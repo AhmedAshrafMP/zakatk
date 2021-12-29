@@ -59,8 +59,7 @@ var adapter = new botbuilder_adapter_web_1.WebAdapter({});
 //
 exports.botCtrl = new botkit_1.Botkit({
     webhook_uri: "/api/messages",
-    adapter: adapter,
-    storage: mongoDbStorage
+    adapter: adapter
 });
 i18n_js_1["default"].locale = "ar";
 moment_1["default"].locale("ar");
@@ -69,6 +68,9 @@ var d_000_009 = dialogues_1.D_000_009(exports.botCtrl);
 dialogues_1.D_014_023(exports.botCtrl, d_000_009);
 dialogues_1.D_055_056(exports.botCtrl);
 D_023_071_1.D_023_071(exports.botCtrl);
+dialogues_1.D_386_406(exports.botCtrl);
+dialogues_1.D_393_406(exports.botCtrl);
+dialogues_1.D_408_439(exports.botCtrl);
 exports.botCtrl.hears(["hello", "bot_start_action"], "message", function (bot, message) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -78,7 +80,6 @@ exports.botCtrl.hears(["hello", "bot_start_action"], "message", function (bot, m
                 return [4 /*yield*/, bot.cancelAllDialogs()];
             case 1:
                 _a.sent();
-                console.log(process.env.MONGO_URI);
                 return [2 /*return*/, bot.beginDialog("d_000_009")];
         }
     });

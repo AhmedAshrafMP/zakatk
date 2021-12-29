@@ -53,23 +53,20 @@ function NODE_030(convo) {
             payload: NODE_ID + ".choice0",
             onChoose: function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
                 return __generator(this, function (_a) {
-                    if (convo.vars.NODE_031) {
-                        N_023_1.markOptionAsDone(convo);
-                        convo.gotoThread("t_NODE_040_1");
-                    }
-                    else {
-                        convo.gotoThread("t_NODE_031");
-                    }
+                    N_023_1.markOptionAsDone(convo);
+                    convo.gotoThread("t_NODE_040_1");
                     return [2 /*return*/];
                 });
             }); }
         },
     ], NODE_ID, {}, function (tm, vars) {
         var totalCurrency = variables_1.safeParseFloat(vars.NODE_029 || 0);
-        var totalSavings = variables_1.safeParseFloat(vars.NODE_065 || vars.NODE_066 || 0);
-        var totalStocks = variables_1.safeParseFloat(vars.NODE_070 || vars.NODE_071 || 0);
+        var totalSavings = variables_1.safeParseFloat(vars.NODE_066 || 0);
+        var totalRevSavings = variables_1.safeParseFloat(vars.NODE_065 || 0);
+        var totalStocks = variables_1.safeParseFloat(vars.NODE_071 || 0);
+        var totalRevStocks = variables_1.safeParseFloat(vars.NODE_070 || 0);
         var currency = helpers_1.convertVarToCurrency(vars.NODE_004);
-        var title = "";
+        var title = helpers_1.translate(NODE_ID + ".title.zero");
         if (totalCurrency > 0) {
             title =
                 title +
@@ -86,11 +83,19 @@ function NODE_030(convo) {
                         currency: currency
                     });
         }
-        if (totalStocks > 0) {
+        if (totalRevSavings > 0) {
             title =
                 title +
-                    helpers_1.translate(NODE_ID + ".title.three", {
-                        totalStocks: variables_1.numberWithCommas(totalStocks),
+                    helpers_1.translate(NODE_ID + ".title.four", {
+                        totalRevSavings: variables_1.numberWithCommas(totalRevSavings),
+                        currency: currency
+                    });
+        }
+        if (totalRevStocks > 0) {
+            title =
+                title +
+                    helpers_1.translate(NODE_ID + ".title.five", {
+                        totalRevStocks: variables_1.numberWithCommas(totalRevStocks),
                         currency: currency
                     });
         }

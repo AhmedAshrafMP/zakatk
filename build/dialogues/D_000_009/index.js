@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 exports.__esModule = true;
 exports.D_000_009 = void 0;
 var botkit_1 = require("botkit");
+var N_000_1 = __importDefault(require("../../nodes/N_000"));
 var N_001_1 = __importDefault(require("../../nodes/N_001"));
 var N_002_1 = __importDefault(require("../../nodes/N_002"));
 var N_003_1 = __importDefault(require("../../nodes/N_003"));
@@ -29,6 +30,7 @@ function D_000_009(botCtrl) {
     N_007_1_1["default"](thisDialogue);
     N_007_2_1["default"](thisDialogue);
     N_008_1["default"](thisDialogue);
+    N_000_1["default"](thisDialogue);
     thisDialogue.addChildDialog("d_014_023", "d_014_023", "t_d_014_023");
     thisDialogue.addChildDialog("d_000_009", "d_000_009", "t_d_000_009");
     botCtrl.addDialog(thisDialogue);

@@ -62,6 +62,18 @@ function NODE_023(convo) {
                 }); }
             });
         }
+        if (doneOptions.indexOf(NODE_ID + ".choice6") < 0) {
+            quickReplies.push({
+                title: helpers_1.translate(NODE_ID + ".opt7"),
+                payload: NODE_ID + ".choice6",
+                onChoose: function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
+                    return __generator(this, function (_a) {
+                        convo.gotoThread("t_NODE_031");
+                        return [2 /*return*/];
+                    });
+                }); }
+            });
+        }
         if (doneOptions.indexOf(NODE_ID + ".choice1") < 0) {
             quickReplies.push({
                 title: helpers_1.translate(NODE_ID + ".opt2"),
@@ -110,13 +122,22 @@ function NODE_023(convo) {
                 }); }
             });
         }
-        if (doneOptions.indexOf(NODE_ID + ".choice5") < 0) {
+        // if (doneOptions.indexOf(NODE_ID + ".choice5") < 0) {
+        //   quickReplies.push({
+        //     title: translate(NODE_ID + ".opt6"),
+        //     payload: NODE_ID + ".choice5",
+        //     onChoose: async (answer, convo, bot, msg) => {
+        //       convo.gotoThread("t_NODE_023_1");
+        //     },
+        //   });
+        // }
+        if (vars.NODE_023) {
             quickReplies.push({
                 title: helpers_1.translate(NODE_ID + ".opt6"),
                 payload: NODE_ID + ".choice5",
                 onChoose: function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
                     return __generator(this, function (_a) {
-                        convo.gotoThread("t_NODE_023_1");
+                        convo.stop();
                         return [2 /*return*/];
                     });
                 }); }

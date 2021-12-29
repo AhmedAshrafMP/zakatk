@@ -49,10 +49,18 @@ function NODE_017(convo) {
             title: "" + (NODE_ID + ".opt1"),
             payload: NODE_ID + ".choice0",
             onChoose: function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
+                var NoOfDays, NoOfYears;
                 return __generator(this, function (_a) {
-                    convo.setVar("LAST_ZAKAT_DAY", moment_1["default"]().subtract(364, "days").toISOString());
-                    convo.setVar("ZAKAT_PERIOD_VALUES", {});
-                    return [2 /*return*/, convo.gotoThread("t_d_023_071")];
+                    convo.setVar("LAST_ZAKAT_DAY", moment_1["default"]().subtract(366, "days").toISOString());
+                    NoOfDays = moment_1["default"]()
+                        .startOf("D")
+                        .diff(moment_1["default"](moment_1["default"]().subtract(366, "days")), "days");
+                    NoOfYears = Math.floor(NoOfDays / 365);
+                    if (NoOfYears > 0) {
+                        convo.setVar("NO_OF_YEARS_LEFT", NoOfYears);
+                        convo.gotoThread("t_d_023_071");
+                    }
+                    return [2 /*return*/];
                 });
             }); }
         },

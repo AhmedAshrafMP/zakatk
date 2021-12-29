@@ -54,6 +54,7 @@ function NODE_040(convo) {
             if (intAnswer && intAnswer >= 0) {
                 convo.setVar("totalCredit", Math.abs(intAnswer));
                 N_023_1.markOptionAsDone(convo);
+                // go to calc node
                 convo.gotoThread("t_NODE_040_1");
             }
             else {

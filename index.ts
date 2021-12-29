@@ -3,7 +3,14 @@ import { WebAdapter } from "botbuilder-adapter-web";
 import { Botkit } from "botkit";
 import I18n from "i18n-js";
 import moment from "moment";
-import { D_000_009, D_014_023, D_055_056 } from "./dialogues";
+import {
+  D_000_009,
+  D_014_023,
+  D_055_056,
+  D_386_406,
+  D_393_406,
+  D_408_439,
+} from "./dialogues";
 import { D_023_071 } from "./dialogues/D_023_071";
 import "./helpers/i18n/i18n";
 
@@ -36,6 +43,9 @@ const d_000_009 = D_000_009(botCtrl);
 D_014_023(botCtrl, d_000_009);
 D_055_056(botCtrl);
 D_023_071(botCtrl);
+D_386_406(botCtrl);
+D_393_406(botCtrl);
+D_408_439(botCtrl);
 
 botCtrl.hears(
   ["hello", "bot_start_action"],

@@ -31,17 +31,17 @@ function NODE_050(convo) {
         var groupedZakatFirst, groupedZakatSecond = 0;
         if (GroupingType === "GROUP") {
             if (thresholdMetal === "GOLD") {
-                groupedZakatFirst = calculatedZakat.gold_money + paperZakat / 40;
+                groupedZakatFirst = calculatedZakat.gold_money + paperZakat / 38.8;
                 groupedZakatSecond =
                     calculatedZakat.silver_money > vars.gold_prices.sThreshold
-                        ? calculatedZakat.silver_money / 40
+                        ? calculatedZakat.silver_money / 38.8
                         : 0;
             }
             else {
-                groupedZakatFirst = calculatedZakat.silver_money + paperZakat / 40;
+                groupedZakatFirst = calculatedZakat.silver_money + paperZakat / 38.8;
                 groupedZakatSecond =
                     calculatedZakat.silver_money > vars.gold_prices.gThreshold
-                        ? calculatedZakat.gold_money / 40
+                        ? calculatedZakat.gold_money / 38.8
                         : 0;
             }
             // print money + selected metal to metal
@@ -65,8 +65,12 @@ function NODE_050(convo) {
         }
         else {
             var total = 0;
-            if (paperZakat > threshould) {
-                var thisZakat = Math.round(paperZakat / 40);
+            var allowZakat = paperZakat +
+                calculatedZakat.gold_money +
+                calculatedZakat.silver_money >
+                threshould;
+            if (allowZakat) {
+                var thisZakat = Math.round(paperZakat / 38.8);
                 total = total + thisZakat;
                 title =
                     title +
@@ -76,8 +80,8 @@ function NODE_050(convo) {
                             currency: helpers_1.convertVarToCurrency(vars.NODE_004)
                         });
             }
-            if (calculatedZakat.gold_money > threshould) {
-                var thisZakat = Math.round(calculatedZakat.gold_money / 40);
+            if (allowZakat) {
+                var thisZakat = Math.round(calculatedZakat.gold_money / 38.8);
                 total = total + thisZakat;
                 title =
                     title +
@@ -87,8 +91,8 @@ function NODE_050(convo) {
                             currency: helpers_1.convertVarToCurrency(vars.NODE_004)
                         });
             }
-            if (calculatedZakat.silver_money > threshould) {
-                var thisZakat = Math.round(calculatedZakat.silver_money / 40);
+            if (allowZakat) {
+                var thisZakat = Math.round(calculatedZakat.silver_money / 38.8);
                 total = total + thisZakat;
                 title =
                     title +
@@ -98,6 +102,12 @@ function NODE_050(convo) {
                             currency: helpers_1.convertVarToCurrency(vars.NODE_004)
                         });
             }
+            title =
+                "\n" +
+                    helpers_1.translate(NODE_ID + ".TOTAL", {
+                        totalZakat: variables_1.numberWithCommas(total),
+                        currency: helpers_1.convertVarToCurrency(vars.NODE_004)
+                    });
         }
         return (title + helpers_1.translate(NODE_ID + ".title", { from: diff.from, to: diff.to }));
     });

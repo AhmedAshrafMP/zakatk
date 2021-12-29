@@ -52,12 +52,12 @@ function setZakatPerYear(vars, leftYears) {
         money: variables_1.safeParseFloat(vars.NODE_029) -
             variables_1.safeParseFloat(vars.totalDebit) +
             variables_1.safeParseFloat(vars.totalCredit),
-        savings: variables_1.safeParseFloat(vars.NODE_066) + variables_1.safeParseFloat(vars.NODE_065),
-        stocks: variables_1.safeParseFloat(vars.NODE_070) + variables_1.safeParseFloat(vars.NODE_071),
+        savings: variables_1.safeParseFloat(vars.NODE_066) + variables_1.safeParseFloat(vars.NODE_065) * 4,
+        stocks: variables_1.safeParseFloat(vars.NODE_070) * 4 + variables_1.safeParseFloat(vars.NODE_071),
         gold_gram: variables_1.safeParseFloat(vars.totalGold),
         silver_gram: variables_1.safeParseFloat(vars.totalSilver),
         gold_money: variables_1.safeParseFloat(vars.totalGold) * vars.gold_prices.gold,
-        silver_money: variables_1.safeParseFloat(vars.totalGold) * vars.gold_prices.silver,
+        silver_money: variables_1.safeParseFloat(vars.totalSilver) * vars.gold_prices.silver,
         resolved: false
     };
     console.log(zkataValues, vars.gold_prices);
@@ -73,6 +73,19 @@ function setZakatPerYear(vars, leftYears) {
     }
     return zakat_per_years;
 }
+function clearYearsValue(convo, leftYears) {
+    // TODO: reset resettable variables
+    convo.setVar("doneMoneyOptions", []);
+    convo.setVar("NODE_031", "");
+    convo.setVar("totalDebit", 0);
+    convo.setVar("totalCredit", 0);
+    convo.setVar("totalGold", 0);
+    convo.setVar("totalSilver", 0);
+    convo.setVar("NODE_038", "");
+    convo.setVar("NO_OF_YEARS_LEFT", leftYears);
+    /// set period current value
+    convo.setVar("zakat_per_years", setZakatPerYear(convo.vars, leftYears));
+}
 function NODE_041(convo) {
     var _this = this;
     ask_qr_1["default"](convo, NODE_ID + ".title", function (_tmp, vars) {
@@ -84,18 +97,19 @@ function NODE_041(convo) {
                     payload: NODE_ID + ".choice0",
                     onChoose: function (_answer, convo, _bot, _msg) { return __awaiter(_this, void 0, void 0, function () {
                         return __generator(this, function (_a) {
-                            // TODO: reset resettable variables
-                            convo.setVar("doneMoneyOptions", []);
-                            convo.setVar("NODE_031", "");
-                            convo.setVar("totalDebit", 0);
-                            convo.setVar("totalCredit", 0);
-                            convo.setVar("totalGold", 0);
-                            convo.setVar("totalSilver", 0);
-                            convo.setVar("NODE_038", "");
-                            convo.setVar("NO_OF_YEARS_LEFT", leftYears);
-                            /// set period current value
-                            convo.setVar("zakat_per_years", setZakatPerYear(convo.vars, leftYears));
+                            clearYearsValue(convo, leftYears);
                             convo.gotoThread("t_NODE_023");
+                            return [2 /*return*/];
+                        });
+                    }); }
+                },
+                {
+                    title: helpers_1.translate(NODE_ID + ".opt3"),
+                    payload: NODE_ID + ".choice2",
+                    onChoose: function (_answer, convo, _bot, _msg) { return __awaiter(_this, void 0, void 0, function () {
+                        return __generator(this, function (_a) {
+                            clearYearsValue(convo, leftYears);
+                            convo.stop();
                             return [2 /*return*/];
                         });
                     }); }
@@ -153,7 +167,7 @@ function NODE_041(convo) {
             }));
         }
         //savings
-        var NODE_025 = variables_1.safeParseFloat(vars.NODE_066) + variables_1.safeParseFloat(vars.NODE_065);
+        var NODE_025 = variables_1.safeParseFloat(vars.NODE_066) + variables_1.safeParseFloat(vars.NODE_065) * 4;
         if (NODE_025 > 0) {
             text.push(helpers_1.translate(NODE_ID + ".NODE_025", {
                 value: variables_1.numberWithCommas(NODE_025),
@@ -161,7 +175,7 @@ function NODE_041(convo) {
             }));
         }
         //stocks
-        var NODE_024 = variables_1.safeParseFloat(vars.NODE_070) + variables_1.safeParseFloat(vars.NODE_071);
+        var NODE_024 = variables_1.safeParseFloat(vars.NODE_070) * 4 + variables_1.safeParseFloat(vars.NODE_071);
         if (NODE_024 > 0) {
             text.push(helpers_1.translate(NODE_ID + ".NODE_024", {
                 value: variables_1.numberWithCommas(NODE_024),

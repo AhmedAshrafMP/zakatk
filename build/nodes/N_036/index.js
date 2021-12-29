@@ -59,7 +59,7 @@ function NODE_036(convo) {
                     convo.gotoThread("t_NODE_040_1");
                 }
                 else {
-                    convo.gotoThread("t_NODE_037");
+                    convo.gotoThread("t_NODE_035");
                 }
             }
             else {

@@ -64,16 +64,6 @@ function NODE_006(convo) {
                 });
             }); }
         },
-        {
-            title: NODE_ID + ".opt3",
-            payload: NODE_ID + ".choice2",
-            onChoose: function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
-                return __generator(this, function (_a) {
-                    convo.gotoThread("t_NODE_006_1");
-                    return [2 /*return*/];
-                });
-            }); }
-        },
     ], NODE_ID);
     return "t_" + NODE_ID;
 }

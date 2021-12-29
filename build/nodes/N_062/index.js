@@ -50,7 +50,7 @@ function NODE_062(convo) {
             payload: NODE_ID + ".choice0",
             onChoose: function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
                 return __generator(this, function (_a) {
-                    convo.gotoThread("t_NODE_062_1");
+                    convo.gotoThread("t_NODE_063");
                     return [2 /*return*/];
                 });
             }); }
@@ -60,7 +60,7 @@ function NODE_062(convo) {
             payload: NODE_ID + ".choice1",
             onChoose: function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
                 return __generator(this, function (_a) {
-                    convo.gotoThread("t_NODE_062_2");
+                    convo.gotoThread("t_NODE_066");
                     return [2 /*return*/];
                 });
             }); }

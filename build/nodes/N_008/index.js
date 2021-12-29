@@ -59,7 +59,7 @@ function NODE_008(convo) {
             payload: NODE_ID + ".choice1",
             onChoose: function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
                 return __generator(this, function (_a) {
-                    convo.gotoThread("t_d_014_023");
+                    convo.gotoThread("t_NODE_000");
                     return [2 /*return*/];
                 });
             }); }

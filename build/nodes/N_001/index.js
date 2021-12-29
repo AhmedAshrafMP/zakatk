@@ -55,16 +55,14 @@ function NODE_001(convo) {
                 });
             }); }
         },
-        {
-            title: helpers_1.translate(NODE_ID + ".opt2"),
-            payload: NODE_ID + ".choice1",
-            onChoose: function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
-                return __generator(this, function (_a) {
-                    convo.gotoThread("t_NODE_00222");
-                    return [2 /*return*/];
-                });
-            }); }
-        },
+        // TODO: add zkatak desc
+        // {
+        //   title: translate(NODE_ID + ".opt2"),
+        //   payload: NODE_ID + ".choice1",
+        //   onChoose: async (answer, convo, bot, msg) => {
+        //     convo.gotoThread("t_NODE_002");
+        //   },
+        // },
     ]; }, NODE_ID, {
         hello: "world"
     });

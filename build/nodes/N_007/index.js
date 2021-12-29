@@ -59,31 +59,25 @@ function NODE_007(convo) {
             payload: NODE_ID + ".choice1",
             onChoose: function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
                 return __generator(this, function (_a) {
-                    convo.gotoThread("t_NODE_008");
+                    convo.gotoThread("t_NODE_001");
                     return [2 /*return*/];
                 });
             }); }
         },
-        {
-            title: NODE_ID + ".opt3",
-            payload: NODE_ID + ".choice2",
-            onChoose: function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
-                return __generator(this, function (_a) {
-                    convo.gotoThread("t_NODE_008");
-                    return [2 /*return*/];
-                });
-            }); }
-        },
-        {
-            title: NODE_ID + ".opt4",
-            payload: NODE_ID + ".choice3",
-            onChoose: function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
-                return __generator(this, function (_a) {
-                    convo.gotoThread("t_NODE_008");
-                    return [2 /*return*/];
-                });
-            }); }
-        },
+        // {
+        //   title: NODE_ID + ".opt3",
+        //   payload: NODE_ID + ".choice2",
+        //   onChoose: async (answer, convo, bot, msg) => {
+        //     convo.gotoThread("t_NODE_008");
+        //   },
+        // },
+        // {
+        //   title: NODE_ID + ".opt4",
+        //   payload: NODE_ID + ".choice3",
+        //   onChoose: async (answer, convo, bot, msg) => {
+        //     convo.gotoThread("t_NODE_008");
+        //   },
+        // },
     ], NODE_ID);
     return "t_" + NODE_ID;
 }

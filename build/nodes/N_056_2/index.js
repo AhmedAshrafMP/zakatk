@@ -51,7 +51,7 @@ function NODE_056_2(convo) {
         return __generator(this, function (_a) {
             inputValue = parseFloat(answer);
             if (inputValue >= 0) {
-                convo.gotoThread("t_NODE_056_3");
+                convo.gotoThread("t_NODE_056_2_1");
             }
             else {
                 convo.gotoThread("t_" + NODE_ID);

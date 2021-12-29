@@ -35,11 +35,21 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 exports.__esModule = true;
 exports.D_023_071 = void 0;
 var botkit_1 = require("botkit");
 var nodes_1 = require("../../nodes");
+var N_000_1 = __importDefault(require("../../nodes/N_000"));
 var N_037_1 = require("../../nodes/N_037");
+var N_056_2_1_1 = require("../../nodes/N_056_2_1");
+var N_056_2_2_1 = require("../../nodes/N_056_2_2");
+var N_061_0_1_1 = require("../../nodes/N_061_0_1");
+var N_061_0_2_1 = require("../../nodes/N_061_0_2");
+var N_061_1_1_1 = require("../../nodes/N_061_1_1");
+var N_061_1_2_1 = require("../../nodes/N_061_1_2");
 function D_023_071(botCtrl) {
     var _this = this;
     // init dialogue
@@ -75,17 +85,25 @@ function D_023_071(botCtrl) {
     nodes_1.NODE_050(thisDialogue);
     nodes_1.NODE_056(thisDialogue);
     nodes_1.NODE_056_1(thisDialogue);
+    N_056_2_1_1.NODE_056_2_1(thisDialogue);
+    N_056_2_2_1.NODE_056_2_2(thisDialogue);
     nodes_1.NODE_056_2(thisDialogue);
     nodes_1.NODE_056_3(thisDialogue);
     nodes_1.NODE_056_4(thisDialogue);
+    nodes_1.NODE_056_4_1(thisDialogue);
+    nodes_1.NODE_056_4_2(thisDialogue);
     nodes_1.NODE_057(thisDialogue);
     nodes_1.NODE_058(thisDialogue);
     nodes_1.NODE_059(thisDialogue);
     nodes_1.NODE_060(thisDialogue);
     nodes_1.NODE_060_1(thisDialogue);
     nodes_1.NODE_060_2(thisDialogue);
-    nodes_1.NODE_061(thisDialogue);
+    nodes_1.NODE_061_0(thisDialogue);
+    N_061_0_1_1.NODE_061_0_1(thisDialogue);
+    N_061_0_2_1.NODE_061_0_2(thisDialogue);
     nodes_1.NODE_061_1(thisDialogue);
+    N_061_1_1_1.NODE_061_1_1(thisDialogue);
+    N_061_1_2_1.NODE_061_1_2(thisDialogue);
     nodes_1.NODE_062(thisDialogue);
     nodes_1.NODE_062_1(thisDialogue);
     nodes_1.NODE_062_2(thisDialogue);
@@ -98,6 +116,7 @@ function D_023_071(botCtrl) {
     nodes_1.NODE_068_2(thisDialogue);
     nodes_1.NODE_069(thisDialogue);
     nodes_1.NODE_070(thisDialogue);
+    N_000_1["default"](thisDialogue);
     nodes_1.NODE_071(thisDialogue);
     thisDialogue.addQuestion("Hello i`m d_023_071 {{vars.NO_OF_YEARS_LEFT}} {{vars.NODE_029}}", function (answer, convo, bot) { return __awaiter(_this, void 0, void 0, function () {
         var leftYears;

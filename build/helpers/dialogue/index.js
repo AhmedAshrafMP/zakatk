@@ -38,6 +38,17 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 exports.__esModule = true;
 exports.contiuneOrRepeatDialogue = void 0;
 var i18n_1 = require("../i18n");
+function clearValues(convo, leftYears) {
+    // TODO: reset resettable variables
+    convo.setVar("doneMoneyOptions", []);
+    convo.setVar("NODE_031", "");
+    convo.setVar("totalDebit", 0);
+    convo.setVar("totalCredit", 0);
+    convo.setVar("totalGold", 0);
+    convo.setVar("totalSilver", 0);
+    convo.setVar("NODE_038", "");
+    convo.setVar("NO_OF_YEARS_LEFT", leftYears);
+}
 function contiuneOrRepeatDialogue(vars, contiuneTx, continueNode) {
     var _this = this;
     var NODE_ID = "NODE_041";
@@ -49,21 +60,19 @@ function contiuneOrRepeatDialogue(vars, contiuneTx, continueNode) {
                 payload: NODE_ID + ".choice0",
                 onChoose: function (_answer, convo, _bot, _msg) { return __awaiter(_this, void 0, void 0, function () {
                     return __generator(this, function (_a) {
-                        // TODO: reset resettable variables
-                        convo.setVar("doneMoneyOptions", []);
-                        convo.setVar("NODE_031", "");
-                        convo.setVar("totalDebit", 0);
-                        convo.setVar("totalCredit", 0);
-                        convo.setVar("totalGold", 0);
-                        convo.setVar("totalSilver", 0);
-                        convo.setVar("NODE_038", "");
-                        convo.setVar("NO_OF_YEARS_LEFT", leftYears);
-                        // /// set period current value
-                        // convo.setVar(
-                        //   "zakat_per_years",
-                        //   setZakatPerYear(convo.vars, leftYears)
-                        // );
+                        clearValues(convo, leftYears);
                         convo.gotoThread("t_NODE_023");
+                        return [2 /*return*/];
+                    });
+                }); }
+            },
+            {
+                title: i18n_1.translate(NODE_ID + ".opt3"),
+                payload: NODE_ID + ".choice2",
+                onChoose: function (_answer, convo, _bot, _msg) { return __awaiter(_this, void 0, void 0, function () {
+                    return __generator(this, function (_a) {
+                        clearValues(convo, leftYears);
+                        convo.stop();
                         return [2 /*return*/];
                     });
                 }); }
