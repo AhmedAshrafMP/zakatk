@@ -2,6 +2,7 @@ import { BotkitConversation } from "botkit";
 import bkStrAsk from "../../bot_nodes/ask_str";
 import { translate } from "../../helpers";
 import { getYearsDiff } from "../../helpers/dates/yearsdiff";
+import { safeParseFloat } from "../../helpers/variables";
 
 const NODE_ID = "NODE_032";
 export function NODE_032(convo: BotkitConversation): string {
@@ -9,8 +10,8 @@ export function NODE_032(convo: BotkitConversation): string {
     convo,
     NODE_ID + ".hello",
     async (answer, convo, bot, message) => {
-      const totalPaid = parseFloat(answer);
-      if (totalPaid && totalPaid >= 0) {
+      const totalPaid = safeParseFloat(answer);
+      if ( totalPaid >= 0) {
         convo.gotoThread("t_NODE_032_1");
       } else {
         convo.repeat();

@@ -1,4 +1,5 @@
 import { Botkit, BotkitConversation } from "botkit";
+import { safeParseFloat } from "../../helpers/variables";
 import {
   NODE_023_1,
   NODE_023,
@@ -55,6 +56,8 @@ import {
   NODE_050,
   NODE_056_4_1,
   NODE_056_4_2,
+  NODE_058_5,
+  NODE_059_6,
 } from "../../nodes";
 import NODE_000 from "../../nodes/N_000";
 import { NODE_037 } from "../../nodes/N_037";
@@ -115,6 +118,8 @@ export function D_023_071(botCtrl: Botkit) {
   NODE_056_4(thisDialogue);
   NODE_056_4_1(thisDialogue);
   NODE_056_4_2(thisDialogue);
+  NODE_058_5(thisDialogue);
+  NODE_059_6(thisDialogue)
 
   NODE_057(thisDialogue);
 
@@ -151,7 +156,7 @@ export function D_023_071(botCtrl: Botkit) {
   thisDialogue.addQuestion(
     "Hello i`m d_023_071 {{vars.NO_OF_YEARS_LEFT}} {{vars.NODE_029}}",
     async (answer, convo, bot) => {
-      let leftYears = parseFloat(convo.vars.NO_OF_YEARS_LEFT) - 1;
+      let leftYears = safeParseFloat(convo.vars.NO_OF_YEARS_LEFT) - 1;
       convo.setVar("NO_OF_YEARS_LEFT", leftYears);
       if (leftYears > 0) {
         // console.log("resp", convo.vars);

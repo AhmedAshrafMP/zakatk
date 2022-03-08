@@ -1,18 +1,21 @@
 import { BotkitConversation } from "botkit";
 import bkStrAsk from "../../bot_nodes/ask_str";
-import bkSay from "../../bot_nodes/say";
 import { convertVarToCurrency, translate } from "../../helpers";
 import { safeParseFloat } from "../../helpers/variables";
 
-const NODE_ID = "NODE_029";
-export function NODE_029(convo: BotkitConversation): string {
+const NODE_ID = "NODE_058_5";
+export function NODE_058_5(convo: BotkitConversation): string {
   bkStrAsk(
     convo,
     NODE_ID + ".hello",
     async (answer, convo, bot, message) => {
-      const nodeIntValue = safeParseFloat(answer);
-      if (nodeIntValue >= 0) {
-        convo.gotoThread("t_NODE_030");
+      const intAnswer = safeParseFloat(answer);
+      if (intAnswer >= 0) {
+        convo.setVar(
+          "totalGold",
+          safeParseFloat(intAnswer / convo.vars.gold_prices.gold)
+        );
+        convo.gotoThread("t_NODE_059_6");
       } else {
         convo.repeat();
       }
@@ -21,16 +24,15 @@ export function NODE_029(convo: BotkitConversation): string {
     {
       contentType: "application/vnd.microsoft.input",
       content: {
-        validation: "",
+        validation: "*",
         type: "money",
       },
     },
-    (tmp, vars) => {
-      return translate(NODE_ID + ".hello", {
+    (_tmp, vars) => {
+      return translate(NODE_ID + ".title", {
         currency: convertVarToCurrency(vars.NODE_004),
       });
     }
   );
-
   return `t_${NODE_ID}`;
 }

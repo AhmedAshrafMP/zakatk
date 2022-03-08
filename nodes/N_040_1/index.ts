@@ -26,8 +26,12 @@ export function getZakatForThisYear(vars): ZakatForThisYear {
     stocks: safeParseFloat(vars.NODE_070) * 4 + safeParseFloat(vars.NODE_071),
     gold_gram: safeParseFloat(vars.totalGold),
     silver_gram: safeParseFloat(vars.totalSilver),
-    gold_money: safeParseFloat(vars.totalGold) * vars.gold_prices.gold,
-    silver_money: safeParseFloat(vars.totalSilver) * vars.gold_prices.silver,
+    gold_money:
+      safeParseFloat(vars.NODE_58_5) ||
+      safeParseFloat(vars.totalGold) * vars.gold_prices.gold,
+    silver_money:
+      safeParseFloat(vars.NODE_59_6) ||
+      safeParseFloat(vars.totalSilver) * vars.gold_prices.silver,
     resolved: false,
   };
   console.log("zkataValues", zkataValues, vars.gold_prices);

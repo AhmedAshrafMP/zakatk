@@ -25,7 +25,7 @@ type QuickReplayTranslated =
   | QuickReplay[]
   | ((template: any, vars: any) => QuickReplay[]);
 
-export const BlackListedBack = ["NODE_001", "NODE_023", "NODE_009"];
+export const BlackListedBack = ["NODE_001", "NODE_023", "NODE_009", "NODE_408"];
 
 export default function bkQRAsk(
   dialogue: BotkitConversation,
