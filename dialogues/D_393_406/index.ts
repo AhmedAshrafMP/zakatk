@@ -32,6 +32,7 @@ import { NODE_461 } from "../../nodes/N_461/index";
 import { NODE_462 } from "../../nodes/N_462/index";
 import { NODE_406 } from "../../nodes/N_406/index";
 import { NODE_435 } from "../../nodes/N_435/index";
+import { NODE_040_2 } from "../../nodes/N_040_2";
 
 export function D_393_406(botCtrl: Botkit) {
   // init dialogue
@@ -75,6 +76,9 @@ export function D_393_406(botCtrl: Botkit) {
   NODE_461(thisDialogue);
   NODE_462(thisDialogue);
   NODE_435(thisDialogue);
+  //back to the main menu
+  NODE_040_2(thisDialogue);
+
   thisDialogue.addChildDialog("d_014_023", "d_014_023", "t_d_014_023");
   thisDialogue.addChildDialog("d_386_406", "d_386_406", "t_d_386_406");
   thisDialogue.addChildDialog("d_000_009", "d_000_009", "t_d_000_009");

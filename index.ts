@@ -13,6 +13,7 @@ import {
 } from "./dialogues";
 import { D_023_071 } from "./dialogues/D_023_071";
 import "./helpers/i18n/i18n";
+import { D_362_385 } from "./dialogues/D_362_385";
 
 // if (process.env.MONGO_URI) {
 console.log("MONGO_URI", process.env.MONGO_URI);
@@ -43,6 +44,7 @@ const d_000_009 = D_000_009(botCtrl);
 D_014_023(botCtrl, d_000_009);
 D_055_056(botCtrl);
 D_023_071(botCtrl);
+D_362_385(botCtrl);
 D_386_406(botCtrl);
 D_393_406(botCtrl);
 D_408_439(botCtrl);

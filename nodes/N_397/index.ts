@@ -95,9 +95,9 @@ export function NODE_397(convo: BotkitConversation): string {
 
   return `t_${NODE_ID}`;
 }
-// export function markOptionAsDone(convo: BotkitDialogWrapper) {
-//   const oldOptions = convo.vars.doneMoneyOptions || [];
-//   oldOptions.push(convo.vars.NODE_023);
-//   convo.setVar("doneMoneyOptions", oldOptions);
-//   // clear each period
-// }
+export function markOptionAsDone(convo: BotkitDialogWrapper) {
+  const oldOptions = convo.vars.doneMoneyOptions || [];
+  oldOptions.push(convo.vars.NODE_023);
+  convo.setVar("doneMoneyOptions", oldOptions);
+  // clear each period
+}
