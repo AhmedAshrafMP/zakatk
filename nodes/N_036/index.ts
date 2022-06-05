@@ -2,6 +2,7 @@ import { BotkitConversation } from "botkit";
 import bkStrAsk from "../../bot_nodes/ask_str";
 import { translate } from "../../helpers";
 import { getYearsDiff } from "../../helpers/dates/yearsdiff";
+import { safeParseFloat } from "../../helpers/variables";
 import { markOptionAsDone } from "../N_023";
 
 const NODE_ID = "NODE_036";
@@ -10,9 +11,12 @@ export function NODE_036(convo: BotkitConversation): string {
     convo,
     NODE_ID + ".hello",
     async (answer, convo, bot, message) => {
-      const nodeIntValue = parseFloat(answer);
-      if (nodeIntValue && nodeIntValue > 0) {
-        convo.setVar("totalDebit", parseFloat(answer));
+      const nodeIntValue = safeParseFloat(answer);
+      if (nodeIntValue >= 0) {
+        convo.setVar(
+          "totalDebit",
+          safeParseFloat(convo.vars.totalDebit) + safeParseFloat(answer)
+        );
         // clear each period
 
         if (convo.vars.NODE_039) {

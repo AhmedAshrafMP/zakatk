@@ -1,4 +1,4 @@
-export function safeParseFloat(n: string) {
+export function safeParseFloat(n: string | number) {
   return parseFloat(
     parseFloat(
       typeof n != "undefined" && n != "undefined" ? `${n}` : "0"

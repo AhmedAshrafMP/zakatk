@@ -12,26 +12,18 @@ export function NODE_385(convo: BotkitConversation): string {
       {
         title: NODE_ID + ".opt1",
         payload: NODE_ID + ".choice0",
-        onChoose: async (answer, convo, bot, msg) => {},
+        onChoose: async (answer, convo, bot, msg) => {
+          convo.stop();
+        },
       },
     ],
     NODE_ID,
-
     {},
     (_tmp, vars) => {
-      const anaamzakat = safeParseFloat(vars.NODE_374);
-      const anaamzakat2 = safeParseFloat(vars.NODE_381);
-      console.log(anaamzakat, "hello from anam zakattttttttttTTttttttttttt");
-      console.log(anaamzakat2, "hello from anam zakattttttttttTTttttttttttt");
-      if (anaamzakat2 > anaamzakat) {
-        return translate(NODE_ID + ".title", {
-          anaamzakat,
-        });
-      } else {
-        return translate(NODE_ID + ".title2", {
-          anaamzakat2,
-        });
-      }
+      return translate(NODE_ID + ".title", {
+        anaamzakat: vars.totalZoro3Zakat,
+        currency: convertVarToCurrency(vars.NODE_004),
+      });
     }
   );
 

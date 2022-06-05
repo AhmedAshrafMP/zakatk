@@ -33,7 +33,7 @@ const adapter = new WebAdapter({});
 export const botCtrl = new Botkit({
   webhook_uri: "/api/messages",
   adapter: adapter,
-  // storage: mongoDbStorage,
+  storage: mongoDbStorage,
 });
 I18n.locale = "ar";
 moment.locale("ar");

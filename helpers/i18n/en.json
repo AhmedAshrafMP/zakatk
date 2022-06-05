@@ -23,7 +23,10 @@
 		"opt3": "Choice 3"
 	},
 	"NODE_004_1": {
-		"hello": "Hello from node 004_1"
+		"title": "Hello from node 004_1",
+		"opt1": "Choice 1 ",
+		"opt2": "Choice 2",
+		"opt3": "Choice 3"
 	},
 	"NODE_006": {
 		"title": "Hello from node 006",
@@ -513,6 +516,12 @@
 	},
 	"NODE_386": {
 		"title": "Hello from node 386",
+		"opt1": "Choice 1 ",
+		"opt2": "Choice 2",
+		"opt3": "Choice 3"
+	},
+	"NODE_382": {
+		"title": "Hello from node 382",
 		"opt1": "Choice 1 ",
 		"opt2": "Choice 2",
 		"opt3": "Choice 3"

@@ -19,8 +19,12 @@ function setZakatPerYear(vars, leftYears) {
     stocks: safeParseFloat(vars.NODE_070) * 4 + safeParseFloat(vars.NODE_071),
     gold_gram: safeParseFloat(vars.totalGold),
     silver_gram: safeParseFloat(vars.totalSilver),
-    gold_money: safeParseFloat(vars.totalGold) * vars.gold_prices.gold,
-    silver_money: safeParseFloat(vars.totalSilver) * vars.gold_prices.silver,
+    gold_money:
+      safeParseFloat(vars.NODE_58_5) ||
+      safeParseFloat(vars.totalGold) * vars.gold_prices.gold,
+    silver_money:
+      safeParseFloat(vars.NODE_59_6) ||
+      safeParseFloat(vars.totalSilver) * vars.gold_prices.silver,
     resolved: false,
   };
   console.log(zkataValues, vars.gold_prices);
@@ -47,6 +51,8 @@ function clearYearsValue(convo, leftYears) {
   convo.setVar("totalDebit", 0);
   convo.setVar("totalCredit", 0);
   convo.setVar("totalGold", 0);
+  convo.setVar("NODE_59_6", 0);
+  convo.setVar("NODE_58_5", 0);
   convo.setVar("totalSilver", 0);
   convo.setVar("NODE_038", "");
   convo.setVar("NO_OF_YEARS_LEFT", leftYears);

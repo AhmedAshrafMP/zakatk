@@ -29,7 +29,7 @@ export function NODE_434(convo: BotkitConversation): string {
     (_tmp, vars) => {
       const rekazzakat = safeParseFloat(
         `${
-          (safeParseFloat(vars.NODE_429) - safeParseFloat(vars.NODE_430)) / 38
+          (safeParseFloat(vars.NODE_429) - safeParseFloat(vars.NODE_430)) / 38.8
         }`
       );
       return translate(NODE_ID + ".title", {

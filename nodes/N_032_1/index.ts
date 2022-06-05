@@ -2,6 +2,7 @@ import { BotkitConversation } from "botkit";
 import bkStrAsk from "../../bot_nodes/ask_str";
 import { translate } from "../../helpers";
 import { getYearsDiff } from "../../helpers/dates/yearsdiff";
+import { safeParseFloat } from "../../helpers/variables";
 
 const NODE_ID = "NODE_032_1";
 export function NODE_032_1(convo: BotkitConversation): string {
@@ -9,8 +10,8 @@ export function NODE_032_1(convo: BotkitConversation): string {
     convo,
     NODE_ID + ".hello",
     async (answer, convo, bot, message) => {
-      const totalGameyaPaid = parseFloat(convo.vars.NODE_032);
-      const totalGameyaReceivable = parseFloat(answer);
+      const totalGameyaPaid = safeParseFloat(convo.vars.NODE_032);
+      const totalGameyaReceivable = safeParseFloat(answer);
       if (totalGameyaPaid - totalGameyaReceivable > 0) {
         convo.gotoThread("t_NODE_034");
       } else {

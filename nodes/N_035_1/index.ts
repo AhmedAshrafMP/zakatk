@@ -20,10 +20,8 @@ export function NODE_035_1(convo: BotkitConversation): string {
         title: NODE_ID + ".opt2",
         payload: NODE_ID + ".choice1",
         onChoose: async (answer, convo, bot, msg) => {
-          const totalGameyaPaid = safeParseFloat(convo.vars.NODE_032 || 0);
-          const totalGameyaReceivable = safeParseFloat(
-            convo.vars.NODE_032_1 || 0
-          );
+          const totalGameyaPaid = safeParseFloat(convo.vars.NODE_032);
+          const totalGameyaReceivable = safeParseFloat(convo.vars.NODE_032_1);
           convo.setVar(
             "totalDebit",
             Math.abs(totalGameyaPaid - totalGameyaReceivable)

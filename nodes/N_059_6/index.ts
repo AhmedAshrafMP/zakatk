@@ -1,21 +1,20 @@
 import { BotkitConversation } from "botkit";
 import bkStrAsk from "../../bot_nodes/ask_str";
-import { translate } from "../../helpers";
-import { getYearsDiff } from "../../helpers/dates/yearsdiff";
+import { convertVarToCurrency, translate } from "../../helpers";
 import { safeParseFloat } from "../../helpers/variables";
-import { markOptionAsDone } from "../N_023";
 
-const NODE_ID = "NODE_040";
-export function NODE_040(convo: BotkitConversation): string {
+const NODE_ID = "NODE_059_6";
+export function NODE_059_6(convo: BotkitConversation): string {
   bkStrAsk(
     convo,
     NODE_ID + ".hello",
     async (answer, convo, bot, message) => {
       const intAnswer = safeParseFloat(answer);
       if (intAnswer >= 0) {
-        convo.setVar("totalCredit", Math.abs(intAnswer));
-        markOptionAsDone(convo);
-        // go to calc node
+        convo.setVar(
+          "totalSilver",
+          safeParseFloat(intAnswer / convo.vars.gold_prices.silver)
+        );
         convo.gotoThread("t_NODE_040_1");
       } else {
         convo.repeat();
@@ -29,11 +28,9 @@ export function NODE_040(convo: BotkitConversation): string {
         type: "money",
       },
     },
-    (tmp, vars) => {
-      const diff = getYearsDiff(vars.LAST_ZAKAT_DAY, vars.NO_OF_YEARS_LEFT);
-      return translate(NODE_ID + ".hello", {
-        from: diff.from,
-        to: diff.to,
+    (_tmp, vars) => {
+      return translate(NODE_ID + ".title", {
+        currency: convertVarToCurrency(vars.NODE_004),
       });
     }
   );

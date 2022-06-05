@@ -28,7 +28,7 @@ export function NODE_418(convo: BotkitConversation): string {
     {},
     (_tmp, vars) => {
       const rekazzakat =
-        (safeParseFloat(vars.NODE_411) - safeParseFloat(vars.NODE_412)) / 38;
+        (safeParseFloat(vars.NODE_411) - safeParseFloat(vars.NODE_412)) / 38.8;
       return translate(NODE_ID + ".title", {
         rekazzakat,
         currency: convertVarToCurrency(vars.NODE_004),

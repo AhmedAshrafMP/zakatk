@@ -2,6 +2,7 @@ import { BotkitConversation } from "botkit";
 import bkStrAsk from "../../bot_nodes/ask_str";
 import bkSay from "../../bot_nodes/say";
 import { convertVarToCurrency, translate } from "../../helpers";
+import { safeParseFloat } from "../../helpers/variables";
 
 const NODE_ID = "NODE_400";
 export function NODE_400(convo: BotkitConversation): string {
@@ -9,7 +10,7 @@ export function NODE_400(convo: BotkitConversation): string {
     convo,
     NODE_ID + ".hello",
     async (answer, convo, bot, message) => {
-      const nodeIntValue = parseFloat(answer);
+      const nodeIntValue = safeParseFloat(answer);
 
       if (nodeIntValue && nodeIntValue >= 100) {
         if (nodeIntValue && nodeIntValue <= 120) {

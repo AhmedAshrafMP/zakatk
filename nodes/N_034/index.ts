@@ -1,5 +1,6 @@
 import { BotkitConversation } from "botkit";
 import bkQRAsk from "../../bot_nodes/ask_qr";
+import { safeParseFloat } from "../../helpers/variables";
 import { markOptionAsDone } from "../N_023";
 
 const NODE_ID = "NODE_034";
@@ -27,14 +28,15 @@ export function NODE_034(convo: BotkitConversation): string {
         payload: NODE_ID + ".choice2",
         onChoose: async (answer, convo, bot, msg) => {
           if (convo.vars.NODE_031 === "NODE_031.choice0") {
-            const totalGameyaPaid = parseFloat(convo.vars.NODE_032);
-            const totalGameyaReceivable = parseFloat(convo.vars.NODE_032_1);
+            const totalGameyaPaid = safeParseFloat(convo.vars.NODE_032);
+            const totalGameyaReceivable = safeParseFloat(convo.vars.NODE_032_1);
             convo.setVar(
               "totalCredit",
               Math.abs(totalGameyaPaid - totalGameyaReceivable)
             );
             markOptionAsDone(convo);
-            convo.gotoThread("t_NODE_040_1");
+
+            convo.gotoThread("t_NODE_035");
           } else {
             convo.gotoThread("t_NODE_040");
           }
