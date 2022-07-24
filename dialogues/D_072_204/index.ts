@@ -168,6 +168,9 @@ import {
   NODE_350_1,
   NODE_351,
   NODE_352,
+  NODE_354,
+  NODE_357,
+  NODE_358,
   NODE_998,
   NODE_999,
 } from "../../nodes";
@@ -408,6 +411,9 @@ export function D_072_204(botCtrl: Botkit) {
   NODE_350_1(thisDialogue);
   NODE_351(thisDialogue);
   NODE_352(thisDialogue);
+  NODE_354(thisDialogue);
+  NODE_357(thisDialogue);
+  NODE_358(thisDialogue);
 
   thisDialogue.addChildDialog("d_014_023", "d_014_023", "t_d_014_023");
   thisDialogue.addChildDialog("d_393_406", "d_393_406", "t_d_393_406");

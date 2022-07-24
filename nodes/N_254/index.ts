@@ -18,17 +18,21 @@ export function NODE_254(convo: BotkitConversation): string {
       const NODE_248 = safeParseFloat(convo.vars.NODE_248);
       const NODE_250 = safeParseFloat(convo.vars.NODE_250);
       const NODE_251 = safeParseFloat(convo.vars.NODE_251);
-      const nodeIntValue = safeParseFloat(convo.vars.NODE_254);
+      const nodeIntValue = safeParseFloat(answer);
+
+      const calcPercentage = nodeIntValue / 100;
 
       //calc zakat
       const netStocked = NODE_245 - NODE_246;
-      const netEarthMoney = NODE_240 - NODE_241;
-      const isChecked = netEarthMoney + netStocked;
-      const rentZakat = isChecked * nodeIntValue;
+      const earthMeter = NODE_250 - NODE_251;
+      const calcRentZakat =
+        NODE_240 + NODE_242 + netStocked + NODE_248 - (NODE_241 + NODE_247);
+      const zakatRent = (calcRentZakat * earthMeter) / NODE_250;
 
       if (nodeIntValue && nodeIntValue > 0) {
-        if (rentZakat && rentZakat >= convo.vars.gold_prices.gThreshold) {
-          convo.setVar("rentZakat", rentZakat);
+        if (zakatRent && zakatRent >= convo.vars.gold_prices.gThreshold) {
+          convo.setVar("zakatRent", zakatRent);
+          convo.setVar("calcPercentage", calcPercentage);
           convo.gotoThread("t_NODE_998");
         } else {
           convo.gotoThread("t_NODE_209");
