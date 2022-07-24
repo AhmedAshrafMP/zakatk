@@ -20,6 +20,7 @@ export function D_014_023(botCtrl: Botkit, parent: BotkitConversation) {
   thisDialogue.addChildDialog("d_362_385", "d_362_385", "t_d_362_385");
   thisDialogue.addChildDialog("d_386_406", "d_386_406", "t_d_386_406");
   thisDialogue.addChildDialog("d_408_439", "d_408_439", "t_d_408_439");
+  thisDialogue.addChildDialog("d_072_204", "d_072_204", "t_d_072_204");
 
   const begin = NODE_009(thisDialogue);
   thisDialogue.addAction(begin);

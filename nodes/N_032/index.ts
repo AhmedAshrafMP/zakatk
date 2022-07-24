@@ -11,7 +11,7 @@ export function NODE_032(convo: BotkitConversation): string {
     NODE_ID + ".hello",
     async (answer, convo, bot, message) => {
       const totalPaid = safeParseFloat(answer);
-      if ( totalPaid >= 0) {
+      if (totalPaid >= 0) {
         convo.gotoThread("t_NODE_032_1");
       } else {
         convo.repeat();

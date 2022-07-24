@@ -76,7 +76,6 @@ export function NODE_382(convo: BotkitConversation): string {
               safeParseFloat(vars.totalZoro3Zakat) + rayZakatAmount
             );
             convo.gotoThread("t_NODE_385");
-            console.log(zakatCurrency, "hey from the zakatCurrency");
           },
         });
       } else {

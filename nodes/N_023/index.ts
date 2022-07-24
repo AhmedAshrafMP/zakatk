@@ -107,7 +107,10 @@ export function NODE_023(convo: BotkitConversation): string {
 
   return `t_${NODE_ID}`;
 }
-export function markOptionAsDone(convo: BotkitDialogWrapper, parentNode: string = "NODE_023") {
+export function markOptionAsDone(
+  convo: BotkitDialogWrapper,
+  parentNode: string = "NODE_023"
+) {
   const oldOptions = convo.vars.doneMoneyOptions || [];
   oldOptions.push(convo.vars[parentNode]);
   convo.setVar("doneMoneyOptions", oldOptions);

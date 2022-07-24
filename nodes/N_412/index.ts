@@ -19,10 +19,6 @@ export function NODE_412(convo: BotkitConversation): string {
       if (inputValue >= 0) {
         if (NODE_411 - inputValue > convo.vars.gold_prices.gThreshold) {
           convo.gotoThread("t_NODE_418");
-          console.log(
-            convo.vars.gold_prices.gThreshold,
-            "hello from threshgold Node-412"
-          );
         } else if (NODE_411 - inputValue > 0) {
           convo.gotoThread("t_NODE_415");
         } else {
