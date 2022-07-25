@@ -8,14 +8,17 @@ export function NODE_274(convo: BotkitConversation): string {
     convo,
     NODE_ID + ".hello",
     async (answer, convo, bot, message) => {
-      const NODE_274 = safeParseFloat(answer);
       const NODE_273 = safeParseFloat(convo.vars.NODE_273);
+      const NODE_274 = safeParseFloat(answer);
 
-      const zakatSupply = NODE_274 - NODE_273;
+      const zakatSupply = NODE_273 - NODE_274;
 
-      if (zakatSupply >= safeParseFloat(convo.vars.gold_prices_gThreshold)) {
+      if (
+        zakatSupply >= safeParseFloat(convo.vars.gold_prices.sThreshold) ||
+        safeParseFloat(convo.vars.gold_prices.gThreshold)
+      ) {
         convo.setVar("zakatSupply", zakatSupply);
-        convo.gotoThread("t_NDOE_280");
+        convo.gotoThread("t_NODE_280");
       } else {
         convo.gotoThread("t_NODE_277");
       }
