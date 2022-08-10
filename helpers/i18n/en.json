@@ -539,10 +539,7 @@
 		"opt3": "Choice 3"
 	},
 	"NODE_076": {
-		"title": "Hello from node 076",
-		"opt1": "Choice 1 ",
-		"opt2": "Choice 2",
-		"opt3": "Choice 3"
+		"hello": "Hello from node 076"
 	},
 	"NODE_NaN": {
 		"hello": "Hello from node NaN"
@@ -620,10 +617,7 @@
 		"opt3": "Choice 3"
 	},
 	"NODE_095": {
-		"title": "Hello from node 095",
-		"opt1": "Choice 1 ",
-		"opt2": "Choice 2",
-		"opt3": "Choice 3"
+		"hello": "Hello from node 095"
 	},
 	"NODE_094": {
 		"hello": "Hello from node 094"
@@ -689,10 +683,7 @@
 		"opt3": "Choice 3"
 	},
 	"NODE_109": {
-		"title": "Hello from node 109",
-		"opt1": "Choice 1 ",
-		"opt2": "Choice 2",
-		"opt3": "Choice 3"
+		"hello": "Hello from node 109"
 	},
 	"NODE_110": {
 		"title": "Hello from node 110",
@@ -1374,5 +1365,17 @@
 	},
 	"NODE_358": {
 		"hello": "Hello from node 358"
+	},
+	"NODE_420": {
+		"title": "Hello from node 420",
+		"opt1": "Choice 1 ",
+		"opt2": "Choice 2",
+		"opt3": "Choice 3"
+	},
+	"NODE_666": {
+		"title": "Hello from node 666",
+		"opt1": "Choice 1 ",
+		"opt2": "Choice 2",
+		"opt3": "Choice 3"
 	}
 }

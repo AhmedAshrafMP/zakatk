@@ -24,7 +24,7 @@ export function NODE_098_2_2(convo: BotkitConversation): string {
             "singleCompanyWithMaterials",
             singleCompanyWithMaterials
           );
-          convo.gotoThread("t_NODE_104");
+          convo.gotoThread("t_NODE_104_1");
         } else {
           convo.gotoThread("t_NODE_101");
         }

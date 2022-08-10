@@ -28,6 +28,7 @@ import { NODE_415 } from "../../nodes/N_415/index";
 import { NODE_437 } from "../../nodes/N_437/index";
 import { NODE_439 } from "../../nodes/N_439/index";
 import { NODE_436 } from "../../nodes/N_436/index";
+import { NODE_420 } from "../../nodes";
 
 export function D_408_439(botCtrl: Botkit) {
   // init dialogue
@@ -75,6 +76,7 @@ export function D_408_439(botCtrl: Botkit) {
   NODE_437(thisDialogue);
   NODE_439(thisDialogue);
   NODE_436(thisDialogue);
+  NODE_420(thisDialogue);
 
   botCtrl.addDialog(thisDialogue);
 }

@@ -6,6 +6,7 @@ import { BotkitConversation, Botkit } from "botkit";
 import { getGoldPrices } from "../../helpers/apis";
 import { NODE_386 } from "../../nodes/N_386/index";
 import { NODE_387 } from "../../nodes/N_387/index";
+import { NODE_389 } from "../../nodes/N_389/index";
 import { NODE_388 } from "../../nodes/N_388/index";
 
 import { NODE_393 } from "../../nodes/N_393/index";
@@ -16,9 +17,6 @@ import NODE_392 from "../../nodes/N_392";
 import NODE_395 from "../../nodes/N_395";
 import NODE_394 from "../../nodes/N_394/index";
 import { NODE_397 } from "../../nodes/N_397/index";
-import { NODE_389 } from "../../nodes/N_389/index";
-import { NODE_406 } from "../../nodes/N_406/index";
-import { NODE_435 } from "../../nodes/N_435/index";
 
 export function D_386_406(botCtrl: Botkit) {
   // init dialogue
@@ -31,16 +29,14 @@ export function D_386_406(botCtrl: Botkit) {
   NODE_008(thisDialogue);
   NODE_386(thisDialogue);
   NODE_387(thisDialogue);
-  NODE_388(thisDialogue);
   NODE_389(thisDialogue);
+  NODE_388(thisDialogue);
   NODE_391(thisDialogue);
   NODE_393(thisDialogue);
   NODE_394(thisDialogue);
   NODE_395(thisDialogue);
   NODE_392(thisDialogue);
   NODE_397(thisDialogue);
-  NODE_406(thisDialogue);
-  NODE_435(thisDialogue);
 
   thisDialogue.addChildDialog("d_014_023", "d_014_023", "t_d_014_023");
   thisDialogue.addChildDialog("d_393_406", "d_393_406", "t_d_393_406");

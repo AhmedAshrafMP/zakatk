@@ -12,17 +12,17 @@ export function NODE_999(convo: BotkitConversation): string {
       {
         title: NODE_ID + ".opt1",
         payload: NODE_ID + ".choice0",
-        onChoose: async (answer, convo, bot, msg) => {
-          convo.gotoThread("t_NODE_009");
-        },
+        onChoose: async (answer, convo, bot, msg) => {},
       },
     ],
     NODE_ID,
 
     {},
     (_tmp, vars) => {
+      const calcPercentage = vars.calcPercentage;
+
       return translate(NODE_ID + ".title", {
-        rentZakat: vars.rentZakat / 40,
+        rentZakat: (vars.rentZakat * calcPercentage) / 40,
         currency: convertVarToCurrency(vars.NODE_004),
         fromYear: vars.NO_OF_RENTYEARS_LEFT,
         fromDay: vars.LAST_RENT_DAY,
