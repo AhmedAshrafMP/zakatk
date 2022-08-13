@@ -34,10 +34,8 @@ export function NODE_401(convo: BotkitConversation): string {
           convo.gotoThread("t_NODE_449");
         } else if (nodeIntValue && nodeIntValue <= 149) {
           convo.gotoThread("t_NODE_450");
-        } else if (nodeIntValue && nodeIntValue <= 150) {
+        } else if (nodeIntValue && nodeIntValue >= 150) {
           convo.gotoThread("t_NODE_451");
-        } else {
-          convo.repeat();
         }
       } else {
         convo.gotoThread("t_NODE_435");

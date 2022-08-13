@@ -12,17 +12,20 @@ export function NODE_400(convo: BotkitConversation): string {
     async (answer, convo, bot, message) => {
       const nodeIntValue = safeParseFloat(answer);
 
+      const calcShahZakat = nodeIntValue / 100;
+
       if (nodeIntValue && nodeIntValue >= 100) {
         if (nodeIntValue && nodeIntValue <= 120) {
           convo.gotoThread("t_NODE_459");
         } else if (nodeIntValue && nodeIntValue <= 200) {
           convo.gotoThread("t_NODE_460");
         } else if (nodeIntValue && nodeIntValue <= 299) {
-          convo.gotoThread("t_NODE_4461");
+          convo.gotoThread("t_NODE_461");
         } else if (nodeIntValue && nodeIntValue <= 300) {
           convo.gotoThread("t_NODE_462");
-        } else {
-          convo.repeat();
+        } else if (nodeIntValue && nodeIntValue >= 300) {
+          convo.setVar("calcShahZakat", calcShahZakat);
+          convo.gotoThread("t_NODE_463");
         }
       } else {
         convo.gotoThread("t_NODE_435");

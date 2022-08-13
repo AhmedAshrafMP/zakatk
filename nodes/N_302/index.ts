@@ -11,7 +11,7 @@ export function NODE_302(convo: BotkitConversation): string {
       const calcPercentage = safeParseFloat(answer) / 100;
 
       convo.setVar("calcPercentage", calcPercentage);
-      convo.gotoThread("t_NODE_302");
+      convo.gotoThread("t_NODE_301");
     },
     NODE_ID,
     {

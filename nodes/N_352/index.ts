@@ -16,10 +16,7 @@ export function NODE_352(convo: BotkitConversation): string {
       const zakatSas1 =
         NODE_349 + NODE_350 + NODE_352 - (NODE_351 + NODE_350_1);
 
-      if (
-        zakatSas1 >= safeParseFloat(convo.vars.gold_prices.sTheshold) ||
-        safeParseFloat(convo.vars.gold_prices.gTheshold)
-      ) {
+      if (zakatSas1 >= safeParseFloat(convo.vars.gold_prices.sTheshold)) {
         convo.setVar("zakatSas1", zakatSas1);
         convo.gotoThread("t_NODE_358");
       } else {

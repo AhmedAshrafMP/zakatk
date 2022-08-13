@@ -40,8 +40,6 @@ export function NODE_127(convo: BotkitConversation): string {
 
       const icaZakat = safeParseFloat(vars.iacZakat);
 
-      console.log(icaZakat, "icaZakat");
-      console.log(NODE_127_1, "NODE_127_1");
       return translate(NODE_ID + ".title", {
         iacZakat: (icaZakat * NODE_127_1) / 40,
         currency: convertVarToCurrency(vars.NODE_004),

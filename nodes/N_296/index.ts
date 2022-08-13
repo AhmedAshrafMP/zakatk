@@ -12,22 +12,23 @@ export function NODE_296(convo: BotkitConversation): string {
       const NODE_293_1 = safeParseFloat(convo.vars.NODE_293_1);
       const NODE_294 = safeParseFloat(convo.vars.NODE_294);
       const NODE_295 = safeParseFloat(convo.vars.NODE_295);
-      const NODE_296 = safeParseFloat(answer);
+      const nodeIntValue = safeParseFloat(answer);
       const calcContracting = NODE_293 - NODE_293_1;
-      const zakatContracting = calcContracting + NODE_294 + NODE_296 - NODE_295;
-      if (
-        zakatContracting >= safeParseFloat(convo.vars.gold_prices.gThreshold)
-      ) {
-        convo.setVar("zakatContracting", zakatContracting);
-        convo.gotoThread("t_NODE_302");
-      } else if (
-        zakatContracting >= safeParseFloat(convo.vars.gold_prices.sThreshold)
-      ) {
-        convo.setVar("zakatContracting", zakatContracting);
-        convo.gotoThread("t_NODE_298");
+      const zakatContracting =
+        calcContracting + NODE_294 + nodeIntValue - NODE_295;
+
+      if (nodeIntValue && nodeIntValue >= 0) {
+        if (
+          zakatContracting >= safeParseFloat(convo.vars.gold_prices.gThreshold)
+        ) {
+          convo.setVar("zakatContracting", zakatContracting);
+          convo.gotoThread("t_NODE_302");
+        } else {
+          convo.gotoThread("t_NODE_298");
+        }
       } else {
+        convo.gotoThread("t_NODE_209");
       }
-      convo.gotoThread("t_NODE_209");
     },
     NODE_ID,
     {

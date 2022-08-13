@@ -10,14 +10,17 @@ export function NODE_227(convo: BotkitConversation): string {
     async (answer, convo, bot, message) => {
       const NODE_225 = safeParseFloat(convo.vars.NODE_225);
       const NODE_225_1 = safeParseFloat(convo.vars.NODE_225_1);
-      const nodeIntValue = safeParseFloat(convo.vars.NODE_227);
+      const nodeIntValue = safeParseFloat(answer);
 
-      const rentZakat = NODE_225 - NODE_225_1 * nodeIntValue;
+      const rentZakat = NODE_225 - NODE_225_1;
+
+      const calcPercentage = safeParseFloat(answer) / 100;
 
       if (nodeIntValue && nodeIntValue > 0) {
         if (rentZakat && rentZakat >= convo.vars.gold_prices.gThreshold) {
           convo.setVar("rentZakat", rentZakat);
-          convo.gotoThread("t_NODE_999");
+          convo.setVar("calcPercentage", calcPercentage);
+          convo.gotoThread("t_NODE_226");
         } else {
           convo.gotoThread("t_NODE_209");
         }

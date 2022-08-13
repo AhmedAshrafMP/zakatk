@@ -13,6 +13,14 @@ export function NODE_399(convo: BotkitConversation): string {
     async (answer, convo, bot, message) => {
       const nodeIntValue = safeParseFloat(answer);
 
+      const calcCows = nodeIntValue / 40;
+
+      const stringCalcCows = JSON.stringify(calcCows);
+
+      const splitCows = stringCalcCows.split(".");
+
+      const calcCowsAdd = splitCows[1];
+
       if (nodeIntValue && nodeIntValue >= 30) {
         if (nodeIntValue && nodeIntValue <= 39) {
           convo.gotoThread("t_NODE_452");
@@ -26,7 +34,9 @@ export function NODE_399(convo: BotkitConversation): string {
           convo.gotoThread("t_NODE_456");
         } else if (nodeIntValue && nodeIntValue <= 99) {
           convo.gotoThread("t_NODE_457");
-        } else if (nodeIntValue && nodeIntValue <= 100) {
+        } else if (nodeIntValue && nodeIntValue >= 100) {
+          convo.setVar("calcCows", calcCows);
+          convo.setVar("calcCowsAdd", calcCowsAdd);
           convo.gotoThread("t_NODE_458");
         } else {
           convo.repeat();

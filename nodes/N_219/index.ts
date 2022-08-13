@@ -9,9 +9,15 @@ export function NODE_219(convo: BotkitConversation): string {
     NODE_ID + ".hello",
 
     async (answer, convo, bot, message) => {
+      const NODE_217 = safeParseFloat(convo.vars.NODE_217);
+      const NODE_217_1 = safeParseFloat(convo.vars.NODE_217_1);
+
+      const rentZakat = NODE_217 - NODE_217_1;
+
       const calcPercentage = safeParseFloat(answer) / 100;
       convo.setVar("calcPercentage", calcPercentage);
-      convo.gotoThread("t_NODE_999");
+      convo.setVar("rentZakat", rentZakat);
+      convo.gotoThread("t_NODE_226");
     },
     NODE_ID,
     {

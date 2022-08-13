@@ -24,7 +24,7 @@ export function NODE_104_1(convo: BotkitConversation): string {
         vars.singleCompanyWithMaterials / 40
       );
       return translate(NODE_ID + ".title", {
-        singleCompanyWithMaterials,
+        singleCompanyWithMaterials: singleCompanyWithMaterials,
         currency: convertVarToCurrency(vars.NODE_004),
       });
     }

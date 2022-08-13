@@ -2,6 +2,7 @@ import { translate } from "i18n-js";
 import { BotkitConversation } from "botkit";
 import bkQRAsk from "../../bot_nodes/ask_qr";
 import { convertVarToCurrency } from "../../helpers";
+import { safeParseFloat } from "../../helpers/variables";
 
 const NODE_ID = "NODE_998";
 export function NODE_998(convo: BotkitConversation): string {
@@ -19,9 +20,11 @@ export function NODE_998(convo: BotkitConversation): string {
 
     {},
     (_tmp, vars) => {
-      const calcPercentage = vars.calcPercentage;
+      const calcPercentage = safeParseFloat(vars.calcPercentage);
+      const zakatRent = safeParseFloat(vars.zakatRent);
+      console.log(zakatRent, " hello from zakat rent 998");
       return translate(NODE_ID + ".title", {
-        zakatRent: (vars.zakatRent * calcPercentage) / 40,
+        zakatRent: (zakatRent * calcPercentage) / 40,
         currency: convertVarToCurrency(vars.NODE_004),
         fromYear: vars.NO_OF_YEARS_ZAKATRENT_LEFT,
         fromDay: vars.LAST_RENT_DAY,

@@ -33,6 +33,7 @@ import { NODE_462 } from "../../nodes/N_462/index";
 import { NODE_406 } from "../../nodes/N_406/index";
 import { NODE_435 } from "../../nodes/N_435/index";
 import { NODE_040_2 } from "../../nodes/N_040_2";
+import { NODE_463 } from "../../nodes";
 
 export function D_393_406(botCtrl: Botkit) {
   // init dialogue
@@ -76,6 +77,7 @@ export function D_393_406(botCtrl: Botkit) {
   NODE_461(thisDialogue);
   NODE_462(thisDialogue);
   NODE_435(thisDialogue);
+  NODE_463(thisDialogue);
   //back to the main menu
   NODE_040_2(thisDialogue);
 

@@ -20,9 +20,10 @@ export function NODE_104(convo: BotkitConversation): string {
     NODE_ID,
     {},
     (_tmp, vars) => {
-      const singleCompany = safeParseFloat(vars.singleCompany / 40);
+      const singleCompany = safeParseFloat(vars.singleCompany);
+
       return translate(NODE_ID + ".title", {
-        singleCompany,
+        singleCompany: singleCompany / 40,
         currency: convertVarToCurrency(vars.NODE_004),
       });
     }

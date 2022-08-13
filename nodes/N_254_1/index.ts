@@ -2,8 +2,8 @@ import { BotkitConversation } from "botkit";
 import bkStrAsk from "../../bot_nodes/ask_str";
 import { safeParseFloat } from "../../helpers/variables";
 
-const NODE_ID = "NODE_254";
-export function NODE_254(convo: BotkitConversation): string {
+const NODE_ID = "NODE_254_1";
+export function NODE_254_1(convo: BotkitConversation): string {
   bkStrAsk(
     convo,
     NODE_ID + ".hello",
@@ -31,14 +31,22 @@ export function NODE_254(convo: BotkitConversation): string {
 
       const spreadZakatLogic = calcRentZakat + calcRentZakat2;
 
-      const zakatRent = spreadZakatLogic;
-
+      const zakatRent = (spreadZakatLogic * earthMeter) / NODE_250;
       if (nodeIntValue && nodeIntValue > 0) {
         if (zakatRent && zakatRent >= convo.vars.gold_prices.gThreshold) {
+          console.log(netStocked, "netStocked");
+          console.log(earthMeter, "earthMeter");
+          console.log(zakatRent, "zakatRent");
+          console.log(calcPercentage, "calcPercentage");
           convo.setVar("zakatRent", zakatRent);
           convo.setVar("calcPercentage", calcPercentage);
           convo.gotoThread("t_NODE_998");
         } else {
+          console.log(netStocked, "netStocked");
+          console.log(spreadZakatLogic, "spreadZakatLogic");
+          console.log(earthMeter, "earthMeter");
+          console.log(zakatRent, "zakatRent");
+          console.log(calcPercentage, "calcPercentage");
           convo.gotoThread("t_NODE_209");
         }
       } else {

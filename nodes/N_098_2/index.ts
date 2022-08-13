@@ -11,8 +11,10 @@ export function NODE_098_2(convo: BotkitConversation): string {
       const singleCompany = safeParseFloat(convo.vars.NODE_098_2);
 
       if (singleCompany >= convo.vars.gold_prices.gThreshold) {
-        convo.setVar(singleCompany, "singleCompany");
-        console.log(singleCompany, "singleCompany");
+        console.log("singleCompany", singleCompany);
+
+        convo.setVar("singleCompany", singleCompany);
+
         convo.gotoThread("t_NODE_104");
       } else {
         convo.gotoThread("t_NODE_101");

@@ -21,7 +21,7 @@ export default function NODE_213(convo: BotkitConversation): string {
           convo.setVar("NO_OF_YEARS_ZAKATRENT_LEFT", NoOfYears);
           convo.gotoThread("t_NODE_217");
         } else {
-          convo.gotoThread("t_NODE_213");
+          convo.gotoThread("t_NODE_222");
         }
       } else {
         convo.gotoThread(`t_${NODE_ID}`);
