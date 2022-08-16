@@ -20,6 +20,10 @@ function zakatZoro3Calc(vars) {
     rayZakatAmount = safeParseFloat(vars.NODE_374);
     zakatCurrency = 2;
   }
+  if (safeParseFloat(vars.NODE_374_2)) {
+    rayZakatAmount = safeParseFloat(vars.NODE_374_2);
+    zakatCurrency = 2;
+  }
 
   if (safeParseFloat(vars.NODE_381) > 0) {
     rayZakatAmount = safeParseFloat(vars.NODE_381);
@@ -47,7 +51,6 @@ export function NODE_382(convo: BotkitConversation): string {
               safeParseFloat(vars.totalZoro3Zakat) + rayZakatAmount
             );
             convo.gotoThread("t_NODE_374");
-            console.log(zakatCurrency, "hey from the zakatCurrency");
           },
         },
         {
@@ -95,7 +98,6 @@ export function NODE_382(convo: BotkitConversation): string {
     {},
     (_tmp, vars) => {
       const { rayZakatAmount, zakatCurrency } = zakatZoro3Calc(vars);
-      console.log(zakatCurrency, "hey from the ammount of zakat");
 
       return translate(NODE_ID + ".title", {
         amount: rayZakatAmount,
