@@ -33,6 +33,7 @@ export const BlackListedBack = [
   "NODE_386",
   "NODE_072",
   "NODE_154",
+  "NODE_362",
 ];
 
 export default function bkQRAsk(
