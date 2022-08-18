@@ -21,8 +21,10 @@ import { NODE_385 } from "../../nodes/N_385/index";
 import {
   NODE_369,
   NODE_372,
+  NODE_372_1,
   NODE_374_1,
   NODE_374_2,
+  NODE_378_1,
   NODE_382,
 } from "../../nodes";
 
@@ -56,6 +58,8 @@ export function D_362_385(botCtrl: Botkit) {
   NODE_369(thisDialogue);
   NODE_374_1(thisDialogue);
   NODE_374_2(thisDialogue);
+  NODE_378_1(thisDialogue);
+  NODE_372_1(thisDialogue);
   NODE_382(thisDialogue);
   NODE_377(thisDialogue);
   thisDialogue.addChildDialog("d_014_023", "d_014_023", "t_d_014_023");

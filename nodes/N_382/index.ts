@@ -17,6 +17,10 @@ function zakatZoro3Calc(vars) {
   let rayZakatAmount = 0;
   let zakatCurrency = 2;
   if (safeParseFloat(vars.NODE_374_2)) {
+    rayZakatAmount = safeParseFloat(vars.NODE_374_2);
+    zakatCurrency = 2;
+  }
+  if (safeParseFloat(vars.NODE_374)) {
     rayZakatAmount = safeParseFloat(vars.NODE_374);
     zakatCurrency = 2;
   }
@@ -27,7 +31,7 @@ function zakatZoro3Calc(vars) {
   }
 
   rayZakatAmount = safeParseFloat((rayZakatAmount * rayZakatPercnet) / 100);
-  return { zakatCurrency, rayZakatAmount };
+  return { zakatCurrency, rayZakatAmount, rayZakatPercnet: 0 };
 }
 
 const NODE_ID = "NODE_382";
