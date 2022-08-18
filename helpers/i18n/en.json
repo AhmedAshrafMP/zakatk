@@ -980,7 +980,10 @@
 		"hello": "Hello from node 217"
 	},
 	"NODE_999": {
-		"hello": "Hello from node 999"
+		"title": "Hello from node 999",
+		"opt1": "Choice 1 ",
+		"opt2": "Choice 2",
+		"opt3": "Choice 3"
 	},
 	"NODE_219": {
 		"hello": "Hello from node 219"

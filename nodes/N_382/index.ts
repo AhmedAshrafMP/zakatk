@@ -16,12 +16,8 @@ function zakatZoro3Calc(vars) {
   }
   let rayZakatAmount = 0;
   let zakatCurrency = 2;
-  if (safeParseFloat(vars.NODE_374)) {
-    rayZakatAmount = safeParseFloat(vars.NODE_374);
-    zakatCurrency = 2;
-  }
   if (safeParseFloat(vars.NODE_374_2)) {
-    rayZakatAmount = safeParseFloat(vars.NODE_374_2);
+    rayZakatAmount = safeParseFloat(vars.NODE_374);
     zakatCurrency = 2;
   }
 
@@ -102,9 +98,9 @@ export function NODE_382(convo: BotkitConversation): string {
       return translate(NODE_ID + ".title", {
         amount: rayZakatAmount,
         currency:
-          zakatCurrency != 2
-            ? convertVarToCurrency(vars.NODE_004)
-            : translate(NODE_ID + ".kg"),
+          zakatCurrency == 2
+            ? translate(NODE_ID + ".kg")
+            : convertVarToCurrency(vars.NODE_004),
       });
     }
   );
