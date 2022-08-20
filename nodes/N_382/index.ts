@@ -55,31 +55,14 @@ export function NODE_382(convo: BotkitConversation): string {
         },
       ];
 
-      if (safeParseFloat(vars.totalZoro3Zakat) > 0) {
-        answers.push({
-          title: translate(NODE_ID + ".opt3"),
-          payload: NODE_ID + ".choice2",
-          onChoose: async (answer, convo, bot, msg) => {
-            // go to total zro3o zakat only
-            const { rayZakatAmount, zakatCurrency } = zakatZoro3Calc(vars);
-            convo.setVar(
-              "totalZoro3Zakat",
-              safeParseFloat(vars.totalZoro3Zakat) + rayZakatAmount
-            );
-            convo.gotoThread("t_NODE_385");
-          },
-        });
-      } else {
-        answers.push({
-          title: translate(NODE_ID + ".opt4"),
-          payload: NODE_ID + ".choice3",
-          onChoose: async (answer, convo, bot, msg) => {
-            // go to total zro3o zakat only
-            convo.stop();
-          },
-        });
-      }
-
+      answers.push({
+        title: translate(NODE_ID + ".opt4"),
+        payload: NODE_ID + ".choice3",
+        onChoose: async (answer, convo, bot, msg) => {
+          // go to total zro3o zakat only
+          convo.stop();
+        },
+      });
       return answers;
     },
     NODE_ID,
