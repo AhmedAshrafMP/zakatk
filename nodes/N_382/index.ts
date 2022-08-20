@@ -39,32 +39,15 @@ export function NODE_382(convo: BotkitConversation): string {
   bkQRAsk(
     convo,
     NODE_ID + ".title",
-    (_temp, vars) => {
-      const answers = [
-        {
-          title: translate(NODE_ID + ".opt2"),
-          payload: NODE_ID + ".choice1",
-          onChoose: async (answer, convo, bot, msg) => {
-            const { rayZakatAmount, zakatCurrency } = zakatZoro3Calc(vars);
-            convo.setVar(
-              "totalZoro3Zakat",
-              safeParseFloat(vars.totalZoro3Zakat) + rayZakatAmount
-            );
-            convo.gotoThread("t_NODE_362");
-          },
-        },
-      ];
-
-      answers.push({
-        title: translate(NODE_ID + ".opt4"),
-        payload: NODE_ID + ".choice3",
+    [
+      {
+        title: NODE_ID + ".opt1",
+        payload: NODE_ID + ".choice0",
         onChoose: async (answer, convo, bot, msg) => {
-          // go to total zro3o zakat only
           convo.stop();
         },
-      });
-      return answers;
-    },
+      },
+    ],
     NODE_ID,
     {},
     (_tmp, vars) => {
