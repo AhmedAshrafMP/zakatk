@@ -16,7 +16,7 @@ export function NODE_227(convo: BotkitConversation): string {
 
       const calcPercentage = safeParseFloat(answer) / 100;
 
-      if (nodeIntValue && nodeIntValue > 0) {
+      if (nodeIntValue && nodeIntValue <= 100) {
         if (rentZakat && rentZakat >= convo.vars.gold_prices.gThreshold) {
           convo.setVar("rentZakat", rentZakat);
           convo.setVar("calcPercentage", calcPercentage);

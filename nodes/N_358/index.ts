@@ -9,8 +9,14 @@ export function NODE_358(convo: BotkitConversation): string {
     NODE_ID + ".hello",
     async (answer, convo, bot, message) => {
       const calcPercentage = safeParseFloat(answer) / 100;
-      convo.setVar("calcPercentage", calcPercentage);
-      convo.gotoThread("t_NODE_357");
+
+      const nodeIntValue = safeParseFloat(answer);
+      if (nodeIntValue <= 100) {
+        convo.setVar("calcPercentage", calcPercentage);
+        convo.gotoThread("t_NODE_357");
+      } else {
+        convo.repeat();
+      }
     },
     NODE_ID,
     {

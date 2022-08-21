@@ -33,7 +33,7 @@ export function NODE_254(convo: BotkitConversation): string {
 
       const zakatRent = spreadZakatLogic;
 
-      if (nodeIntValue && nodeIntValue > 0) {
+      if (nodeIntValue && nodeIntValue <= 100) {
         if (zakatRent && zakatRent >= convo.vars.gold_prices.gThreshold) {
           convo.setVar("zakatRent", zakatRent);
           convo.setVar("calcPercentage", calcPercentage);

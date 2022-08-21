@@ -11,13 +11,15 @@ export function NODE_144(convo: BotkitConversation): string {
     async (answer, convo, bot, message) => {
       const NODE_138 = safeParseFloat(convo.vars.NODE_138);
       const NODE_138_1 = safeParseFloat(convo.vars.NODE_138_1);
-      const NODE_142 = NODE_138 - NODE_138_1;
+      const NODE_142 = safeParseFloat(convo.vars.NODE_142);
       const NODE_143 = safeParseFloat(convo.vars.NODE_143);
       const NODE_141 = safeParseFloat(convo.vars.NODE_141);
       const NODE_144 = safeParseFloat(convo.vars.NODE_144);
+      const netZakat = NODE_138 - NODE_138_1;
       //iacCalc the values
-      const zakatWithMaterials = NODE_141 + NODE_142 - NODE_143 + NODE_144;
-      const zakatWithOutMaterials = NODE_142 - NODE_143 + NODE_144;
+      const zakatWithMaterials =
+        NODE_141 + netZakat + NODE_142 + NODE_144 - NODE_143;
+      const zakatWithOutMaterials = netZakat + NODE_142 + NODE_144 - NODE_143;
 
       if (NODE_144 && NODE_144 > 0) {
         if (

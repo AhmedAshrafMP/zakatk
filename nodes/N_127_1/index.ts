@@ -1,5 +1,6 @@
 import { BotkitConversation } from "botkit";
 import bkStrAsk from "../../bot_nodes/ask_str";
+import { safeParseFloat } from "../../helpers/variables";
 
 const NODE_ID = "NODE_127_1";
 export function NODE_127_1(convo: BotkitConversation): string {
@@ -7,7 +8,13 @@ export function NODE_127_1(convo: BotkitConversation): string {
     convo,
     NODE_ID + ".hello",
     async (answer, convo, bot, message) => {
-      convo.gotoThread("t_NODE_127");
+      const nodeIntValue = safeParseFloat(answer);
+
+      if (nodeIntValue && nodeIntValue <= 100) {
+        convo.gotoThread("t_NODE_127");
+      } else {
+        convo.repeat();
+      }
     },
     NODE_ID,
     {

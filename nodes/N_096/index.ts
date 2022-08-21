@@ -21,7 +21,7 @@ export default function NODE_096(convo: BotkitConversation): string {
           convo.setVar("NO_OF_SHARESYEARS_LEFT", NoOfYears);
           convo.gotoThread("t_NODE_098");
         } else {
-          convo.repeat();
+          convo.gotoThread("t_NODE_114");
         }
       } else {
         convo.gotoThread(`t_${NODE_ID}`);

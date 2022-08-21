@@ -10,7 +10,7 @@ export default function NODE_221(convo: BotkitConversation): string {
     async (answer, convo, bot, message) => {
       if (moment(answer).isValid()) {
         convo.setVar(
-          "LAST_RENTNO_DAY",
+          "LAST_ZAKAT_DAY",
           moment(answer).add(1, "days").toISOString()
         );
         const NoOfDays = moment()
@@ -18,7 +18,7 @@ export default function NODE_221(convo: BotkitConversation): string {
           .diff(moment(moment(answer)), "days");
         const NoOfYears = Math.floor(NoOfDays / 365);
         if (NoOfYears > 0) {
-          convo.setVar("NO_OF_RENTNOYEARS_LEFT", NoOfYears);
+          convo.setVar("NO_OF_YEARS_LEFT", NoOfYears);
           convo.gotoThread("t_NODE_225");
         } else {
           convo.gotoThread("t_NODE_222");

@@ -8,11 +8,11 @@ export function NODE_171(convo: BotkitConversation): string {
     convo,
     NODE_ID + ".hello",
     async (answer, convo, bot, message) => {
+      const NODE_171 = safeParseFloat(answer);
       const NODE_169 = safeParseFloat(convo.vars.NODE_169);
-      const nodeIntValue = safeParseFloat(convo.vars.NODE_171);
-      const buildingsZakat = NODE_169 - nodeIntValue;
+      const buildingsZakat = NODE_169 - NODE_171;
 
-      if (nodeIntValue && nodeIntValue > 0) {
+      if (NODE_171 && NODE_171 > 0) {
         if (
           buildingsZakat &&
           buildingsZakat >= convo.vars.gold_prices.gThreshold

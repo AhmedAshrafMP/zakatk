@@ -13,9 +13,12 @@ export function NODE_261(convo: BotkitConversation): string {
       const NODE_261 = safeParseFloat(answer);
       const zakatPercentage = NODE_261 / 100;
       const zakatOnSale = (NODE_257 + NODE_258) * zakatPercentage;
-      console.log(NODE_261, " NODE_261");
-      convo.setVar("zakatOnSale", zakatOnSale);
-      convo.gotoThread("t_NODE_262");
+      if (NODE_261 && NODE_261 <= 100) {
+        convo.setVar("zakatOnSale", zakatOnSale);
+        convo.gotoThread("t_NODE_262");
+      } else {
+        convo.repeat();
+      }
     },
     NODE_ID,
 

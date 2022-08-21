@@ -10,15 +10,15 @@ export default function NODE_113(convo: BotkitConversation): string {
     async (answer, convo, bot, message) => {
       if (moment(answer).isValid()) {
         convo.setVar(
-          "LAST_IAC_DAY",
+          "LAST_ZAKAT_DAY",
           moment(answer).add(1, "days").toISOString()
         );
         const NoOfDays = moment()
           .startOf("D")
           .diff(moment(moment(answer)), "days");
         const NoOfYears = Math.floor(NoOfDays / 365);
-        if (NoOfYears > 1) {
-          convo.setVar("NO_OF_IAC_LEFT", NoOfYears);
+        if (NoOfYears > 0) {
+          convo.setVar("NO_OF_YEARS_LEFT", NoOfYears);
           convo.gotoThread("t_NODE_116");
         } else {
           convo.gotoThread("t_NODE_114");

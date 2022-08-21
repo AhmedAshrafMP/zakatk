@@ -32,7 +32,7 @@ export function NODE_254_1(convo: BotkitConversation): string {
       const spreadZakatLogic = calcRentZakat + calcRentZakat2;
 
       const zakatRent = (spreadZakatLogic * earthMeter) / NODE_250;
-      if (nodeIntValue && nodeIntValue > 0) {
+      if (nodeIntValue && nodeIntValue <= 100) {
         if (zakatRent && zakatRent >= convo.vars.gold_prices.gThreshold) {
           console.log(netStocked, "netStocked");
           console.log(earthMeter, "earthMeter");
