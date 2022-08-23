@@ -14,7 +14,7 @@ export function NODE_336(convo: BotkitConversation): string {
         title: NODE_ID + ".opt1",
         payload: NODE_ID + ".choice0",
         onChoose: async (answer, convo, bot, msg) => {
-          convo.gotoThread("329");
+          convo.gotoThread("t_NODE_329");
         },
       },
     ],
