@@ -17,17 +17,13 @@ export function NODE_296(convo: BotkitConversation): string {
       const zakatContracting =
         calcContracting + NODE_294 + nodeIntValue - NODE_295;
 
-      if (nodeIntValue && nodeIntValue >= 0) {
-        if (
-          zakatContracting >= safeParseFloat(convo.vars.gold_prices.gThreshold)
-        ) {
-          convo.setVar("zakatContracting", zakatContracting);
-          convo.gotoThread("t_NODE_302");
-        } else {
-          convo.gotoThread("t_NODE_298");
-        }
+      if (
+        zakatContracting >= safeParseFloat(convo.vars.gold_prices.gThreshold)
+      ) {
+        convo.setVar("zakatContracting", zakatContracting);
+        convo.gotoThread("t_NODE_302");
       } else {
-        convo.gotoThread("t_NODE_209");
+        convo.gotoThread("t_NODE_298");
       }
     },
     NODE_ID,

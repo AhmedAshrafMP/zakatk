@@ -8,9 +8,8 @@ export function NODE_302(convo: BotkitConversation): string {
     convo,
     NODE_ID + ".hello",
     async (answer, convo, bot, message) => {
-      const calcPercentage = safeParseFloat(answer) / 100;
-
       const nodeIntValue = safeParseFloat(answer);
+      const calcPercentage = nodeIntValue / 100;
       if (nodeIntValue <= 100) {
         convo.setVar("calcPercentage", calcPercentage);
         convo.gotoThread("t_NODE_301");
