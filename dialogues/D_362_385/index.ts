@@ -19,6 +19,8 @@ import { NODE_384 } from "../../nodes/N_384/index";
 import { NODE_381 } from "../../nodes/N_381/index";
 import { NODE_385 } from "../../nodes/N_385/index";
 import {
+  NODE_363_1,
+  NODE_368_1,
   NODE_369,
   NODE_372,
   NODE_372_1,
@@ -38,6 +40,7 @@ export function D_362_385(botCtrl: Botkit) {
   thisDialogue.before("t_NODE_362", async (convo, bot) => {});
   NODE_362(thisDialogue);
   NODE_363(thisDialogue);
+  NODE_363_1(thisDialogue);
   NODE_364(thisDialogue);
   NODE_366(thisDialogue);
   NODE_368(thisDialogue);
@@ -62,6 +65,7 @@ export function D_362_385(botCtrl: Botkit) {
   NODE_372_1(thisDialogue);
   NODE_382(thisDialogue);
   NODE_377(thisDialogue);
+  NODE_368_1(thisDialogue);
   thisDialogue.addChildDialog("d_014_023", "d_014_023", "t_d_014_023");
   thisDialogue.addChildDialog("d_393_406", "d_393_406", "t_d_393_406");
   thisDialogue.addChildDialog("d_000_009", "d_000_009", "t_d_000_009");

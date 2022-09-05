@@ -542,7 +542,10 @@
 		"hello": "Hello from node 076"
 	},
 	"NODE_NaN": {
-		"hello": "Hello from node NaN"
+		"title": "Hello from node NaN",
+		"opt1": "Choice 1 ",
+		"opt2": "Choice 2",
+		"opt3": "Choice 3"
 	},
 	"NODE_075": {
 		"title": "Hello from node 075",
@@ -980,10 +983,7 @@
 		"hello": "Hello from node 217"
 	},
 	"NODE_999": {
-		"title": "Hello from node 999",
-		"opt1": "Choice 1 ",
-		"opt2": "Choice 2",
-		"opt3": "Choice 3"
+		"hello": "Hello from node 999"
 	},
 	"NODE_219": {
 		"hello": "Hello from node 219"
