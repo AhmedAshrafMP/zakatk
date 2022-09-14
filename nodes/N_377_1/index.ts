@@ -2,8 +2,8 @@ import { BotkitConversation } from "botkit";
 import bkQRAsk from "../../bot_nodes/ask_qr";
 import { translate } from "../../helpers";
 
-const NODE_ID = "NODE_377";
-export function NODE_377(convo: BotkitConversation): string {
+const NODE_ID = "NODE_377_1";
+export function NODE_377_1(convo: BotkitConversation): string {
   bkQRAsk(
     convo,
     NODE_ID + ".title",
@@ -19,6 +19,7 @@ export function NODE_377(convo: BotkitConversation): string {
               vars.NODE_368 &&
               vars.NODE_368 === "NODE_368.choice0"
             ) {
+              console.log("HELLO THERE");
               convo.gotoThread("t_NODE_374_2");
             } else {
               convo.gotoThread("t_NODE_382");

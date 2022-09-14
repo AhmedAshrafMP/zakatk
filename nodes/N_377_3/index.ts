@@ -2,8 +2,8 @@ import { BotkitConversation } from "botkit";
 import bkQRAsk from "../../bot_nodes/ask_qr";
 import { translate } from "../../helpers";
 
-const NODE_ID = "NODE_377";
-export function NODE_377(convo: BotkitConversation): string {
+const NODE_ID = "NODE_377_3";
+export function NODE_377_3(convo: BotkitConversation): string {
   bkQRAsk(
     convo,
     NODE_ID + ".title",
