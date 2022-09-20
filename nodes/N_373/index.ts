@@ -25,6 +25,9 @@ export function NODE_373(convo: BotkitConversation): string {
             if (vars.NODE_363_1 && vars.NODE_363_1 === "NODE_363_1.choice3") {
               convo.gotoThread("t_NODE_374_1_3");
             }
+            if (vars.NODE_364 && vars.NODE_364 === "NODE_364.choice0") {
+              convo.gotoThread("t_NODE_374_1_4");
+            }
           },
         },
         {
@@ -42,6 +45,9 @@ export function NODE_373(convo: BotkitConversation): string {
             }
             if (vars.NODE_363_1 && vars.NODE_363_1 === "NODE_363_1.choice3") {
               convo.gotoThread("t_NODE_374_2_4");
+            }
+            if (vars.NODE_364 && vars.NODE_364 === "NODE_364.choice0") {
+              convo.gotoThread("t_NODE_374_2_5");
             }
           },
         },
