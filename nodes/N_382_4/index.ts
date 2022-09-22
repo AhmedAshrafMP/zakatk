@@ -13,6 +13,13 @@ export function NODE_382_4(convo: BotkitConversation): string {
         title: NODE_ID + ".opt1",
         payload: NODE_ID + ".choice0",
         onChoose: async (answer, convo, bot, msg) => {
+          convo.gotoThread("t_NODE_382_5");
+        },
+      },
+      {
+        title: NODE_ID + ".opt2",
+        payload: NODE_ID + ".choice1",
+        onChoose: async (answer, convo, bot, msg) => {
           convo.stop();
         },
       },
@@ -21,12 +28,11 @@ export function NODE_382_4(convo: BotkitConversation): string {
     {},
     (_tmp, vars) => {
       const gafOldAnswers = vars.gafOldAnswers || "{}";
-      console.log("[gafOldAnswers]", vars.gafOldAnswers);
       let answerIs = "";
       let oldAnswersObj = JSON.parse(gafOldAnswers);
       if (oldAnswersObj) {
         Object.keys(oldAnswersObj).forEach((key) => {
-          answerIs += `${key}: ${numberWithCommas(
+          answerIs += `${key} : ${numberWithCommas(
             safeParseFloat(oldAnswersObj[key])
           )} كجم \n `;
         });
@@ -40,3 +46,5 @@ export function NODE_382_4(convo: BotkitConversation): string {
 
   return `t_${NODE_ID}`;
 }
+
+// كل ما جف وادخر زكاة

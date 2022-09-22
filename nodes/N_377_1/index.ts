@@ -13,33 +13,14 @@ export function NODE_377_1(convo: BotkitConversation): string {
           title: translate(NODE_ID + ".opt1"),
           payload: NODE_ID + ".choice0",
           onChoose: async (answer, convo, bot, msg) => {
-            if (
-              vars.NODE_373 &&
-              vars.NODE_373 === "NODE_373.choice1" &&
-              vars.NODE_368 &&
-              vars.NODE_368 === "NODE_368.choice0"
-            ) {
-              console.log("HELLO THERE");
-              convo.gotoThread("t_NODE_374_2");
-            } else {
-              convo.gotoThread("t_NODE_382");
-            }
+            convo.gotoThread("t_NODE_373");
           },
         },
         {
           title: translate(NODE_ID + ".opt2"),
           payload: NODE_ID + ".choice1",
           onChoose: async (answer, convo, bot, msg) => {
-            if (
-              vars.NODE_373 &&
-              vars.NODE_373 === "NODE_373.choice1" &&
-              vars.NODE_368 &&
-              vars.NODE_368 === "NODE_368.choice0"
-            ) {
-              convo.gotoThread("t_NODE_374_2");
-            } else {
-              convo.gotoThread("t_NODE_382");
-            }
+            convo.gotoThread("t_NODE_373");
           },
         },
       ];

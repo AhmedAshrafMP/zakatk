@@ -11,7 +11,7 @@ export function NODE_374_1_1(convo: BotkitConversation): string {
       const inputValue = safeParseFloat(answer);
       if (inputValue >= 0) {
         if (inputValue >= 612.5) {
-          convo.gotoThread("t_NODE_377_1");
+          convo.gotoThread("t_NODE_382");
         } else {
           convo.gotoThread("t_NODE_376");
         }

@@ -23,7 +23,7 @@ export function NODE_368_2(convo: BotkitConversation): string {
 
       const o5raZakatAnswer = (safeParseFloat(answer) * zakatRayah) / 100;
 
-      oldAnswers[convo.vars.NODE_368_1] = o5raZakatAnswer / 40;
+      oldAnswers[convo.vars.NODE_368_1] = o5raZakatAnswer;
       convo.setVar("oldAnswers", JSON.stringify(oldAnswers));
 
       convo.gotoThread("t_NODE_382_2");

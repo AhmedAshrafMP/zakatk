@@ -18,11 +18,6 @@ export function NODE_374_2_3(convo: BotkitConversation): string {
         validation: "*",
         type: "money",
       },
-    },
-    (_tmp, vars) => {
-      return translate(NODE_ID + ".hello", {
-        currency: convertVarToCurrency(vars.NODE_004),
-      });
     }
   );
   return `t_${NODE_ID}`;

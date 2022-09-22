@@ -9,7 +9,7 @@ export function NODE_374_2_1(convo: BotkitConversation): string {
     convo,
     NODE_ID + ".hello",
     async (answer, convo, bot, message) => {
-      convo.gotoThread("t_NODE_377");
+      convo.gotoThread("t_NODE_382");
     },
     NODE_ID,
     {

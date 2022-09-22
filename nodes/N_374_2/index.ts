@@ -9,7 +9,7 @@ export function NODE_374_2(convo: BotkitConversation): string {
     convo,
     NODE_ID + ".hello",
     async (answer, convo, bot, message) => {
-      convo.gotoThread("t_NODE_382");
+      convo.gotoThread("t_NODE_381");
     },
     NODE_ID,
     {
@@ -18,11 +18,6 @@ export function NODE_374_2(convo: BotkitConversation): string {
         validation: "*",
         type: "money",
       },
-    },
-    (_tmp, vars) => {
-      return translate(NODE_ID + ".hello", {
-        currency: convertVarToCurrency(vars.NODE_004),
-      });
     }
   );
   return `t_${NODE_ID}`;

@@ -1,4 +1,4 @@
-import { toPercentage, translate } from "i18n-js";
+import { translate } from "i18n-js";
 import { BotkitConversation } from "botkit";
 import bkQRAsk from "../../bot_nodes/ask_qr";
 import { numberWithCommas, safeParseFloat } from "../../helpers/variables";
@@ -13,8 +13,7 @@ export function NODE_382_3(convo: BotkitConversation): string {
         title: NODE_ID + ".opt1",
         payload: NODE_ID + ".choice0",
         onChoose: async (answer, convo, bot, msg) => {
-          console.log(convo.vars.oldAnswers, "[convo.vars.oldAnswers]");
-          convo.gotoThread("t_NODE_362");
+          convo.gotoThread("t_NODE_382_5");
         },
       },
       {
@@ -32,10 +31,9 @@ export function NODE_382_3(convo: BotkitConversation): string {
       const oldAnswers = vars.oldAnswers || "{}";
       let answerIs = "";
       let oldAnswersObj = JSON.parse(oldAnswers);
-      console.log(oldAnswersObj, "[oldAnswersObj]");
       if (oldAnswersObj) {
         Object.keys(oldAnswersObj).forEach((key) => {
-          answerIs += `${key}: ${numberWithCommas(
+          answerIs += `${key} : ${numberWithCommas(
             safeParseFloat(oldAnswersObj[key])
           )} كجم \n `;
         });

@@ -1,52 +1,47 @@
+import { translate } from "i18n-js";
 import { BotkitConversation } from "botkit";
 import bkQRAsk from "../../bot_nodes/ask_qr";
-import { translate } from "../../helpers";
+import { numberWithCommas, safeParseFloat } from "../../helpers/variables";
 
 const NODE_ID = "NODE_377_3";
 export function NODE_377_3(convo: BotkitConversation): string {
   bkQRAsk(
     convo,
     NODE_ID + ".title",
-    (_temp, vars) => {
-      const answers = [
-        {
-          title: translate(NODE_ID + ".opt1"),
-          payload: NODE_ID + ".choice0",
-          onChoose: async (answer, convo, bot, msg) => {
-            if (
-              vars.NODE_373 &&
-              vars.NODE_373 === "NODE_373.choice1" &&
-              vars.NODE_368 &&
-              vars.NODE_368 === "NODE_368.choice0"
-            ) {
-              convo.gotoThread("t_NODE_374_2");
-            } else {
-              convo.gotoThread("t_NODE_382");
-            }
-          },
+    [
+      {
+        title: NODE_ID + ".opt1",
+        payload: NODE_ID + ".choice0",
+        onChoose: async (answer, convo, bot, msg) => {
+          convo.gotoThread("t_NODE_382_5");
         },
-        {
-          title: translate(NODE_ID + ".opt2"),
-          payload: NODE_ID + ".choice1",
-          onChoose: async (answer, convo, bot, msg) => {
-            if (
-              vars.NODE_373 &&
-              vars.NODE_373 === "NODE_373.choice1" &&
-              vars.NODE_368 &&
-              vars.NODE_368 === "NODE_368.choice0"
-            ) {
-              convo.gotoThread("t_NODE_374_2");
-            } else {
-              convo.gotoThread("t_NODE_382");
-            }
-          },
+      },
+      {
+        title: NODE_ID + ".opt2",
+        payload: NODE_ID + ".choice1",
+        onChoose: async (answer, convo, bot, msg) => {
+          convo.stop();
         },
-      ];
-
-      return answers;
-    },
+      },
+    ],
     NODE_ID,
-    {}
+    {},
+    (_tmp, vars) => {
+      const assalOldAnswers = vars.assalOldAnswers || "{}";
+      let answerIs4 = "";
+      let oldAnswersObj4 = JSON.parse(assalOldAnswers);
+      if (oldAnswersObj4) {
+        Object.keys(oldAnswersObj4).forEach((key) => {
+          answerIs4 += `${key} : ${numberWithCommas(
+            safeParseFloat(oldAnswersObj4[key])
+          )} كجم \n `;
+        });
+      }
+
+      return translate(NODE_ID + ".title", {
+        assalNumbers: answerIs4,
+      });
+    }
   );
 
   return `t_${NODE_ID}`;
