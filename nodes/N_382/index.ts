@@ -12,37 +12,7 @@ export function NODE_382(convo: BotkitConversation): string {
     [
       {
         title: NODE_ID + ".opt1",
-        payload: NODE_ID + ".choice0",
-        onChoose: async (answer, convo, bot, msg) => {
-          let zakatRayah;
-          if (
-            convo.vars.NODE_377_1 &&
-            convo.vars.NODE_377_1 === "NODE_377_1.choice0"
-          ) {
-            zakatRayah = 5;
-          } else zakatRayah = 10;
-
-          let inputValue;
-          if (
-            convo.vars.NODE_373 &&
-            convo.vars.NODE_373 === "NODE_373.choice0"
-          ) {
-            inputValue = safeParseFloat(convo.vars.NODE_374_1_1);
-            qsztOldAnswers[convo.vars.NODE_363_1] =
-              (inputValue * zakatRayah) / 100;
-            convo.setVar("qsztOldAnswers", JSON.stringify(qsztOldAnswers));
-          } else {
-            inputValue = safeParseFloat(convo.vars.NODE_374_2_1);
-            qsztOldAnswers[convo.vars.NODE_363_1] =
-              (inputValue * zakatRayah) / 100;
-            convo.setVar("qsztOldAnswers", JSON.stringify(qsztOldAnswers));
-          }
-          convo.gotoThread("t_NODE_363_1");
-        },
-      },
-      {
-        title: NODE_ID + ".opt2",
-        payload: NODE_ID + ".choice1",
+        payload: NODE_ID + ".choice2",
         onChoose: async (answer, convo, bot, msg) => {
           let zakatRayah;
           if (
@@ -71,8 +41,8 @@ export function NODE_382(convo: BotkitConversation): string {
         },
       },
       {
-        title: NODE_ID + ".opt3",
-        payload: NODE_ID + ".choice2",
+        title: NODE_ID + ".opt2",
+        payload: NODE_ID + ".choice3",
         onChoose: async (answer, convo, bot, msg) => {
           let zakatRayah;
           if (

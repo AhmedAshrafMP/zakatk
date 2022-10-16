@@ -1,22 +1,22 @@
-import { BotkitConversation } from 'botkit';
-import bkQRAsk from '../../bot_nodes/ask_qr';
+import { BotkitConversation } from "botkit";
+import bkQRAsk from "../../bot_nodes/ask_qr";
 
-const NODE_ID = 'NODE_423';
+const NODE_ID = "NODE_423";
 export function NODE_423(convo: BotkitConversation): string {
-	bkQRAsk(
-		convo,
-		NODE_ID + '.title',
-		[
-			{
-				title: NODE_ID + '.opt1',
-				payload: NODE_ID + '.choice0',
-				onChoose: async (answer, convo, bot, msg) => {
-					convo.gotoThread('t_NODE_422');
-				}
-			}
-		],
-		NODE_ID
-	);
+  bkQRAsk(
+    convo,
+    NODE_ID + ".title",
+    [
+      {
+        title: NODE_ID + ".opt1",
+        payload: NODE_ID + ".choice0",
+        onChoose: async (answer, convo, bot, msg) => {
+          convo.gotoThread("t_NODE_009");
+        },
+      },
+    ],
+    NODE_ID
+  );
 
-	return `t_${NODE_ID}`;
+  return `t_${NODE_ID}`;
 }

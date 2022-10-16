@@ -85,7 +85,6 @@ export function NODE_397(convo: BotkitConversation): string {
     {},
     (tmp, vars) => {
       const diff = getYearsDiff(vars.LAST_ZAKAT_DAY, vars.NO_OF_YEARS_LEFT);
-
       return translate(NODE_ID + ".title", {
         from: diff.from,
         to: diff.to,

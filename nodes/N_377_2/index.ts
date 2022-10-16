@@ -19,11 +19,11 @@ export function NODE_377_2(convo: BotkitConversation): string {
             convo.vars.NODE_370 === "NODE_370.choice0"
           ) {
             inputValue = safeParseFloat(convo.vars.NODE_374_2_3);
-            assalOldAnswers[`العسل الجبلي `] = inputValue * 0.1;
+            assalOldAnswers["العسل الجبلي"] = inputValue * 0.1;
             convo.setVar("assalOldAnswers", JSON.stringify(assalOldAnswers));
           } else {
             inputValue = safeParseFloat(convo.vars.NODE_374_2_2);
-            assalOldAnswers[`عسل المزارع`] = inputValue * 0.1;
+            assalOldAnswers["عسل المزارع"] = inputValue * 0.1;
             convo.setVar("assalOldAnswers", JSON.stringify(assalOldAnswers));
           }
           convo.gotoThread("t_NODE_362");
@@ -39,11 +39,11 @@ export function NODE_377_2(convo: BotkitConversation): string {
             convo.vars.NODE_370 === "NODE_370.choice0"
           ) {
             inputValue = safeParseFloat(convo.vars.NODE_374_2_3);
-            assalOldAnswers[`العسل الجبلي `] = inputValue * 0.1;
+            assalOldAnswers["العسل الجبلي"] = inputValue * 0.1;
             convo.setVar("assalOldAnswers", JSON.stringify(assalOldAnswers));
           } else {
             inputValue = safeParseFloat(convo.vars.NODE_374_2_2);
-            assalOldAnswers[`عسل المزارع`] = inputValue * 0.1;
+            assalOldAnswers["عسل المزارع"] = inputValue * 0.1;
             convo.setVar("assalOldAnswers", JSON.stringify(assalOldAnswers));
           }
           convo.gotoThread("t_NODE_377_3");

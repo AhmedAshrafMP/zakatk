@@ -32,7 +32,7 @@ export function NODE_362(convo: BotkitConversation): string {
         title: NODE_ID + ".opt4",
         payload: NODE_ID + ".choice3",
         onChoose: async (answer, convo, bot, msg) => {
-          convo.gotoThread("t_NODE_368_1");
+          convo.gotoThread("t_NODE_368");
         },
       },
       {

@@ -95,7 +95,6 @@ export function NODE_041(convo: BotkitConversation): string {
               /// set period current value
               const zakat_per_years = setZakatPerYear(convo.vars, leftYears);
               convo.setVar("zakat_per_years", zakat_per_years);
-
               console.log(zakat_per_years, "_____________");
               await bot.say("TODO: TOTAL ZAKAT CARD");
               return bot.cancelAllDialogs();

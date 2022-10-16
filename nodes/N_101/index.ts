@@ -1,6 +1,7 @@
 import { BotkitConversation } from "botkit";
 import bkQRAsk from "../../bot_nodes/ask_qr";
 import { safeParseFloat } from "../../helpers/variables";
+import { singleCompanyNames } from "../N_098_1_1";
 
 const NODE_ID = "NODE_101";
 export function NODE_101(convo: BotkitConversation): string {
@@ -19,11 +20,11 @@ export function NODE_101(convo: BotkitConversation): string {
         title: NODE_ID + ".opt2",
         payload: NODE_ID + ".choice1",
         onChoose: async (answer, convo, bot, msg) => {
-          const NODE_098_2 = safeParseFloat(convo.vars.NODE_098_2);
-
-          if (NODE_098_2 >= safeParseFloat(convo.vars.gold_prices.sThreshold)) {
-            convo.setVar("singleCompany", NODE_098_2);
-            console.log(NODE_098_2, "hello from NODE_098");
+          const singleCompany = safeParseFloat(convo.vars.singleCompany);
+          if (
+            singleCompany >= safeParseFloat(convo.vars.gold_prices.sThreshold)
+          ) {
+            convo.setVar("singleCompanyNames", singleCompanyNames);
             convo.gotoThread("t_NODE_104");
           } else {
             convo.gotoThread("t_NODE_103");

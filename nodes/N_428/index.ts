@@ -10,12 +10,19 @@ export function NODE_428(convo: BotkitConversation): string {
     async (answer, convo, bot, message) => {
       const inputValue = safeParseFloat(answer);
       if (inputValue >= 0) {
-        if (inputValue >= convo.vars.gold_prices.gThreshold) {
-          convo.gotoThread("t_NODE_439");
-        } else if (inputValue >= convo.vars.gold_prices.sThreshold) {
-          convo.gotoThread("t_NODE_439");
-        } else {
-          convo.gotoThread("t_NODE_435");
+        if (convo.vars.NODE_413 && convo.vars.NODE_413 === "NODE_413.choice0") {
+          if (inputValue >= convo.vars.gold_prices.gThreshold) {
+            convo.gotoThread("t_NODE_439");
+          } else {
+            convo.gotoThread("t_NODE_435");
+          }
+        }
+        if (convo.vars.NODE_413 && convo.vars.NODE_413 === "NODE_413.choice1") {
+          if (inputValue >= convo.vars.gold_prices.sThreshold) {
+            convo.gotoThread("t_NODE_439");
+          } else {
+            convo.gotoThread("t_NODE_435");
+          }
         }
       } else {
         convo.repeat();

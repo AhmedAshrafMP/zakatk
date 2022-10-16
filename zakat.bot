@@ -1,0 +1,18 @@
+{
+    "name": "zakat",
+    "description": "",
+    "services": [
+        {
+            "type": "endpoint",
+            "name": "http://localhost:3000/api/messages",
+            "id": "ceb08e40-4244-11ed-a512-97bae07e9d0b",
+            "appId": "",
+            "appPassword": "",
+            "endpoint": "http://localhost:3000/api/messages"
+        }
+    ],
+    "padlock": "",
+    "version": "2.0",
+    "path": "/Users/cloudx9/Desktop/zakat/zakat/botkit/zakat.bot",
+    "overrides": null
+}

@@ -37,12 +37,13 @@ if (process.env.MONGO_URI) {
   });
 } else {
   const adapter = new WebAdapter({});
-  //
+
+  // unComment adapter and storage before uploading
 
   botCtrl = new Botkit({
     webhook_uri: "/api/messages",
-    adapter: adapter,
-    // storage: mongoDbStorage,
+    adapter,
+    storage: mongoDbStorage,
   });
 }
 

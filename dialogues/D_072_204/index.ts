@@ -211,7 +211,6 @@ export function D_072_204(botCtrl: Botkit) {
         const prices = await getGoldPrices(
           convertVarToCurrencySym(convo.vars.NODE_004)
         );
-        console.log("gold_prices", prices);
         convo.setVar("gold_prices", prices);
       }
     } catch (err) {

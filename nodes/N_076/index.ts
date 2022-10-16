@@ -1,7 +1,9 @@
 import { BotkitConversation } from "botkit";
 import bkStrAsk from "../../bot_nodes/ask_str";
+import { safeParseFloat } from "../../helpers/variables";
 
 const NODE_ID = "NODE_076";
+
 export function NODE_076(convo: BotkitConversation): string {
   bkStrAsk(
     convo,

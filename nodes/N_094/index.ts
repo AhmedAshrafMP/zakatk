@@ -1,5 +1,6 @@
 import { BotkitConversation } from "botkit";
 import bkStrAsk from "../../bot_nodes/ask_str";
+import { safeParseFloat } from "../../helpers/variables";
 
 const NODE_ID = "NODE_094";
 export function NODE_094(convo: BotkitConversation): string {
@@ -7,6 +8,7 @@ export function NODE_094(convo: BotkitConversation): string {
     convo,
     NODE_ID + ".hello",
     async (answer, convo, bot, message) => {
+      convo.setVar("numberOfSingleCompany", safeParseFloat(answer));
       convo.gotoThread("t_NODE_095");
     },
     NODE_ID,

@@ -1,7 +1,6 @@
 import { BotkitConversation } from "botkit";
 import bkQRAsk from "../../bot_nodes/ask_qr";
 import { convertVarToCurrency, translate } from "../../helpers";
-import { safeParseFloat } from "../../helpers/variables";
 
 const NODE_ID = "NODE_104_1";
 export function NODE_104_1(convo: BotkitConversation): string {
@@ -20,12 +19,19 @@ export function NODE_104_1(convo: BotkitConversation): string {
     NODE_ID,
     {},
     (_tmp, vars) => {
-      const singleCompanyWithMaterials = safeParseFloat(
-        vars.singleCompanyWithMaterials / 40
-      );
+      let allZakatIacYears = vars.allZakatIacYears;
+      const currency = convertVarToCurrency(vars.NODE_004);
+      let answerIs = "";
+      allZakatIacYears.forEach((key, value) => {
+        answerIs += `${value.from} الى ${value.to} ${key} ${currency} \n`;
+      });
+
+      console.log(allZakatIacYears, "allZakatIacYears");
+
       return translate(NODE_ID + ".title", {
-        singleCompanyWithMaterials: singleCompanyWithMaterials,
-        currency: convertVarToCurrency(vars.NODE_004),
+        iacZakatYears: answerIs,
+        // answerDate: answerDate.replace(/undefined/g, " "),
+        // answerNumber: answerNumber.replace(/undefined/g, " "),
       });
     }
   );

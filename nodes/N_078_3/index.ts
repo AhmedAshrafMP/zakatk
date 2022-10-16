@@ -3,6 +3,7 @@ import bkStrAsk from "../../bot_nodes/ask_str";
 import { convertVarToCurrencySym } from "../../helpers";
 import { safeParseFloat } from "../../helpers/variables";
 
+let namesShare = new Map();
 const NODE_ID = "NODE_078_3";
 export function NODE_078_3(convo: BotkitConversation): string {
   bkStrAsk(
@@ -10,6 +11,7 @@ export function NODE_078_3(convo: BotkitConversation): string {
     NODE_ID + ".hello",
 
     async (answer, convo, bot, message) => {
+      const NODE_076 = convo.vars.NODE_076;
       const NODE_078 = safeParseFloat(convo.vars.NODE_078);
       const NODE_078_1 = safeParseFloat(convo.vars.NODE_078_1);
       const NODE_078_2 = safeParseFloat(convo.vars.NODE_078_2);
@@ -19,12 +21,14 @@ export function NODE_078_3(convo: BotkitConversation): string {
 
       const companyShares = (companySharesDividing / NODE_078_2) * nodeIntValue;
 
+      namesShare.set(NODE_076, companyShares);
+
       if (nodeIntValue && nodeIntValue > 0) {
         if (
           companyShares &&
           companyShares >= convo.vars.gold_prices.gThreshold
         ) {
-          convo.setVar("companyShares", companyShares);
+          convo.setVar("companyShares", namesShare);
           convo.gotoThread("t_NODE_083");
         } else {
           convo.gotoThread("t_NODE_080");

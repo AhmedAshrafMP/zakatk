@@ -1,0 +1,1912 @@
+[
+  {
+    "type": "conversationUpdate",
+    "membersAdded": [
+      {
+        "id": "31393690-47b1-11ed-935f-69879856d20f",
+        "name": "Bot"
+      },
+      {
+        "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+        "name": "User"
+      }
+    ],
+    "membersRemoved": [],
+    "channelId": "emulator",
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "id": "d19e6ab0-47bb-11ed-8be4-8db49c4cd3f1",
+    "localTimestamp": "2022-10-09T12:19:11+02:00",
+    "recipient": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "timestamp": "2022-10-09T10:19:11.963Z",
+    "from": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "serviceUrl": "http://localhost:49508"
+  },
+  {
+    "channelData": {
+      "clientActivityID": "1665310754327up7g12kg2qc",
+      "clientTimestamp": "2022-10-09T10:19:14.327Z"
+    },
+    "text": "hello",
+    "textFormat": "plain",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "localTimestamp": "2022-10-09T12:19:14+02:00",
+    "localTimezone": "Africa/Cairo",
+    "timestamp": "2022-10-09T10:19:14.342Z",
+    "entities": [
+      {
+        "requiresBotState": true,
+        "supportsListening": true,
+        "supportsTts": true,
+        "type": "ClientCapabilities"
+      }
+    ],
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "id": "d3096c60-47bb-11ed-8be4-8db49c4cd3f1",
+    "recipient": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:49508"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:49508",
+    "channelId": "emulator",
+    "from": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "recipient": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "text": "اهلا بكم في تطبيق زكاتك",
+    "inputHint": "acceptingInput",
+    "suggestedActions": {
+      "actions": [
+        {
+          "type": "postBack",
+          "title": "بدا حساب الزكاة",
+          "text": "NODE_001.choice0",
+          "displayText": "بدا حساب الزكاة",
+          "value": "NODE_001.choice0"
+        }
+      ]
+    },
+    "attachments": [
+      {}
+    ],
+    "channelData": {
+      "quick_replies": [
+        {
+          "title": "بدا حساب الزكاة",
+          "payload": "NODE_001.choice0"
+        }
+      ]
+    },
+    "replyToId": "d3096c60-47bb-11ed-8be4-8db49c4cd3f1",
+    "id": "d30ffc10-47bb-11ed-8be4-8db49c4cd3f1",
+    "localTimestamp": "2022-10-09T12:19:14+02:00",
+    "timestamp": "2022-10-09T10:19:14.385Z"
+  },
+  {
+    "channelData": {
+      "postBack": true,
+      "clientActivityID": "1665310755351mc6yes099",
+      "clientTimestamp": "2022-10-09T10:19:15.351Z"
+    },
+    "text": "NODE_001.choice0",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "localTimestamp": "2022-10-09T12:19:15+02:00",
+    "localTimezone": "Africa/Cairo",
+    "timestamp": "2022-10-09T10:19:15.369Z",
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "id": "d3a62190-47bb-11ed-8be4-8db49c4cd3f1",
+    "recipient": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:49508"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:49508",
+    "channelId": "emulator",
+    "from": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "recipient": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "text": "اختيار بين الايسر والتفاصيل \nالأيسر هو اختيار البرنامج الذى يأخذك لاختيارات فقهية تراعى فيها المصلحة المادية لدافع الزكاة ولا يحتاج مع الأيسر للاختيار , أما التفصيل فللمزكى ان يختار من الاراءالمتاحة ما يراه مناسبا له .",
+    "inputHint": "acceptingInput",
+    "suggestedActions": {
+      "actions": [
+        {
+          "type": "postBack",
+          "title": "التفاصيل",
+          "text": "NODE_002.choice1",
+          "displayText": "التفاصيل",
+          "value": "NODE_002.choice1"
+        },
+        {
+          "type": "postBack",
+          "title": "الايسر",
+          "text": "NODE_002.choice0",
+          "displayText": "الايسر",
+          "value": "NODE_002.choice0"
+        },
+        {
+          "type": "postBack",
+          "title": "on_go_back",
+          "text": "on_go_back",
+          "displayText": "on_go_back",
+          "value": "on_go_back"
+        }
+      ]
+    },
+    "attachments": [
+      {}
+    ],
+    "channelData": {
+      "quick_replies": [
+        {
+          "title": "التفاصيل",
+          "payload": "NODE_002.choice1"
+        },
+        {
+          "title": "الايسر",
+          "payload": "NODE_002.choice0"
+        },
+        {
+          "title": "on_go_back",
+          "payload": "on_go_back"
+        }
+      ]
+    },
+    "replyToId": "d3a62190-47bb-11ed-8be4-8db49c4cd3f1",
+    "id": "d3a84470-47bb-11ed-8be4-8db49c4cd3f1",
+    "localTimestamp": "2022-10-09T12:19:15+02:00",
+    "timestamp": "2022-10-09T10:19:15.383Z"
+  },
+  {
+    "channelData": {
+      "postBack": true,
+      "clientActivityID": "1665310755895rwdkloezcu",
+      "clientTimestamp": "2022-10-09T10:19:15.895Z"
+    },
+    "text": "NODE_002.choice1",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "localTimestamp": "2022-10-09T12:19:15+02:00",
+    "localTimezone": "Africa/Cairo",
+    "timestamp": "2022-10-09T10:19:15.920Z",
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "id": "d3fa3500-47bb-11ed-8be4-8db49c4cd3f1",
+    "recipient": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:49508"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:49508",
+    "channelId": "emulator",
+    "from": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "recipient": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "text": "اختيار العملة",
+    "inputHint": "acceptingInput",
+    "suggestedActions": {
+      "actions": [
+        {
+          "type": "postBack",
+          "title": "جنيه مصري",
+          "text": "NODE_004.EGP",
+          "displayText": "جنيه مصري",
+          "value": "NODE_004.EGP"
+        },
+        {
+          "type": "postBack",
+          "title": "دولار امريكي",
+          "text": "NODE_004.USD",
+          "displayText": "دولار امريكي",
+          "value": "NODE_004.USD"
+        },
+        {
+          "type": "postBack",
+          "title": "يورو",
+          "text": "NODE_004.EUR",
+          "displayText": "يورو",
+          "value": "NODE_004.EUR"
+        },
+        {
+          "type": "postBack",
+          "title": "ريال سعودي",
+          "text": "NODE_004.SAR",
+          "displayText": "ريال سعودي",
+          "value": "NODE_004.SAR"
+        },
+        {
+          "type": "postBack",
+          "title": "درهم امراتي",
+          "text": "NODE_004.AED",
+          "displayText": "درهم امراتي",
+          "value": "NODE_004.AED"
+        },
+        {
+          "type": "postBack",
+          "title": "دينار كويتي",
+          "text": "NODE_004.KWD",
+          "displayText": "دينار كويتي",
+          "value": "NODE_004.KWD"
+        },
+        {
+          "type": "postBack",
+          "title": "ريال عماني",
+          "text": "NODE_004.OMR",
+          "displayText": "ريال عماني",
+          "value": "NODE_004.OMR"
+        },
+        {
+          "type": "postBack",
+          "title": "دينار عراقي",
+          "text": "NODE_004.IQD",
+          "displayText": "دينار عراقي",
+          "value": "NODE_004.IQD"
+        },
+        {
+          "type": "postBack",
+          "title": "دينار أردني",
+          "text": "NODE_004.JOD",
+          "displayText": "دينار أردني",
+          "value": "NODE_004.JOD"
+        },
+        {
+          "type": "postBack",
+          "title": "دينار بحريني",
+          "text": "NODE_004.BHD",
+          "displayText": "دينار بحريني",
+          "value": "NODE_004.BHD"
+        },
+        {
+          "type": "postBack",
+          "title": "ريال قطري",
+          "text": "NODE_004.QAR",
+          "displayText": "ريال قطري",
+          "value": "NODE_004.QAR"
+        },
+        {
+          "type": "postBack",
+          "title": "دينار تونسي",
+          "text": "NODE_004.TND",
+          "displayText": "دينار تونسي",
+          "value": "NODE_004.TND"
+        },
+        {
+          "type": "postBack",
+          "title": "on_go_back",
+          "text": "on_go_back",
+          "displayText": "on_go_back",
+          "value": "on_go_back"
+        }
+      ]
+    },
+    "attachments": [
+      {}
+    ],
+    "channelData": {
+      "quick_replies": [
+        {
+          "title": "جنيه مصري",
+          "payload": "NODE_004.EGP"
+        },
+        {
+          "title": "دولار امريكي",
+          "payload": "NODE_004.USD"
+        },
+        {
+          "title": "يورو",
+          "payload": "NODE_004.EUR"
+        },
+        {
+          "title": "ريال سعودي",
+          "payload": "NODE_004.SAR"
+        },
+        {
+          "title": "درهم امراتي",
+          "payload": "NODE_004.AED"
+        },
+        {
+          "title": "دينار كويتي",
+          "payload": "NODE_004.KWD"
+        },
+        {
+          "title": "ريال عماني",
+          "payload": "NODE_004.OMR"
+        },
+        {
+          "title": "دينار عراقي",
+          "payload": "NODE_004.IQD"
+        },
+        {
+          "title": "دينار أردني",
+          "payload": "NODE_004.JOD"
+        },
+        {
+          "title": "دينار بحريني",
+          "payload": "NODE_004.BHD"
+        },
+        {
+          "title": "ريال قطري",
+          "payload": "NODE_004.QAR"
+        },
+        {
+          "title": "دينار تونسي",
+          "payload": "NODE_004.TND"
+        },
+        {
+          "title": "on_go_back",
+          "payload": "on_go_back"
+        }
+      ]
+    },
+    "replyToId": "d3fa3500-47bb-11ed-8be4-8db49c4cd3f1",
+    "id": "d3fc09c0-47bb-11ed-8be4-8db49c4cd3f1",
+    "localTimestamp": "2022-10-09T12:19:15+02:00",
+    "timestamp": "2022-10-09T10:19:15.932Z"
+  },
+  {
+    "channelData": {
+      "postBack": true,
+      "clientActivityID": "1665310756959vhchq5vmdc",
+      "clientTimestamp": "2022-10-09T10:19:16.959Z"
+    },
+    "text": "NODE_004.EGP",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "localTimestamp": "2022-10-09T12:19:16+02:00",
+    "localTimezone": "Africa/Cairo",
+    "timestamp": "2022-10-09T10:19:16.982Z",
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "id": "d49c4160-47bb-11ed-8be4-8db49c4cd3f1",
+    "recipient": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:49508"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:49508",
+    "channelId": "emulator",
+    "from": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "recipient": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "text": "هل بلغت؟ \nالبلوغ هو السن الذى يحتلم فيه الصبى ( تخرج منه الحيوانات المنوية ) وتحيض فيه الصبية ( تحدث لها العادة الشهرية ) وهو غير مرتبط بسن محدد فقد يكون فى الثانية عشرة اوقبلها أوبعدها",
+    "inputHint": "acceptingInput",
+    "suggestedActions": {
+      "actions": [
+        {
+          "type": "postBack",
+          "title": "نعم",
+          "text": "NODE_006.choice0",
+          "displayText": "نعم",
+          "value": "NODE_006.choice0"
+        },
+        {
+          "type": "postBack",
+          "title": "لا",
+          "text": "NODE_006.choice1",
+          "displayText": "لا",
+          "value": "NODE_006.choice1"
+        },
+        {
+          "type": "postBack",
+          "title": "on_go_back",
+          "text": "on_go_back",
+          "displayText": "on_go_back",
+          "value": "on_go_back"
+        }
+      ]
+    },
+    "attachments": [
+      {}
+    ],
+    "channelData": {
+      "quick_replies": [
+        {
+          "title": "نعم",
+          "payload": "NODE_006.choice0"
+        },
+        {
+          "title": "لا",
+          "payload": "NODE_006.choice1"
+        },
+        {
+          "title": "on_go_back",
+          "payload": "on_go_back"
+        }
+      ]
+    },
+    "replyToId": "d49c4160-47bb-11ed-8be4-8db49c4cd3f1",
+    "id": "d49da0f0-47bb-11ed-8be4-8db49c4cd3f1",
+    "localTimestamp": "2022-10-09T12:19:16+02:00",
+    "timestamp": "2022-10-09T10:19:16.991Z"
+  },
+  {
+    "channelData": {
+      "postBack": true,
+      "clientActivityID": "1665310757687g6ami5z2fkj",
+      "clientTimestamp": "2022-10-09T10:19:17.687Z"
+    },
+    "text": "NODE_006.choice0",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "localTimestamp": "2022-10-09T12:19:17+02:00",
+    "localTimezone": "Africa/Cairo",
+    "timestamp": "2022-10-09T10:19:17.717Z",
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "id": "d50c6850-47bb-11ed-8be4-8db49c4cd3f1",
+    "recipient": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:49508"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:49508",
+    "channelId": "emulator",
+    "from": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "recipient": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "text": "التقويم \n يمكن اختيار التقويم الهجرى أو الميلادى  والأصل أن  يتم حساب الحول وموعد استحقاق الزكاة باعتبار التقويم القمرى ( الهجرى ) وحيث تجرى عادات الناس على التعامل بالتقويم الشمسى ( الميلادى ) فإن البرنامج يتعامل مع ذلك ويحسب الزكاة باعتبار التقويم الهجرى حتى وان تعامل المزكى بالتقويم الميلادى .",
+    "inputHint": "acceptingInput",
+    "suggestedActions": {
+      "actions": [
+        {
+          "type": "postBack",
+          "title": "الميلادي",
+          "text": "NODE_008.choice0",
+          "displayText": "الميلادي",
+          "value": "NODE_008.choice0"
+        },
+        {
+          "type": "postBack",
+          "title": "الهجري",
+          "text": "NODE_008.choice1",
+          "displayText": "الهجري",
+          "value": "NODE_008.choice1"
+        },
+        {
+          "type": "postBack",
+          "title": "on_go_back",
+          "text": "on_go_back",
+          "displayText": "on_go_back",
+          "value": "on_go_back"
+        }
+      ]
+    },
+    "attachments": [
+      {}
+    ],
+    "channelData": {
+      "quick_replies": [
+        {
+          "title": "الميلادي",
+          "payload": "NODE_008.choice0"
+        },
+        {
+          "title": "الهجري",
+          "payload": "NODE_008.choice1"
+        },
+        {
+          "title": "on_go_back",
+          "payload": "on_go_back"
+        }
+      ]
+    },
+    "replyToId": "d50c6850-47bb-11ed-8be4-8db49c4cd3f1",
+    "id": "d50dc7e0-47bb-11ed-8be4-8db49c4cd3f1",
+    "localTimestamp": "2022-10-09T12:19:17+02:00",
+    "timestamp": "2022-10-09T10:19:17.726Z"
+  },
+  {
+    "channelData": {
+      "postBack": true,
+      "clientActivityID": "1665310758359ffs2lxljz8o",
+      "clientTimestamp": "2022-10-09T10:19:18.359Z"
+    },
+    "text": "NODE_008.choice0",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "localTimestamp": "2022-10-09T12:19:18+02:00",
+    "localTimezone": "Africa/Cairo",
+    "timestamp": "2022-10-09T10:19:18.410Z",
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "id": "d57626a0-47bb-11ed-8be4-8db49c4cd3f1",
+    "recipient": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:49508"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:49508",
+    "channelId": "emulator",
+    "from": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "recipient": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "text": "نوع زكاة الأموال المتاحة المطلوب تزكيتها",
+    "inputHint": "acceptingInput",
+    "suggestedActions": {
+      "actions": [
+        {
+          "type": "postBack",
+          "title": "النقود المختلفة",
+          "text": "NODE_009.choice1",
+          "displayText": "النقود المختلفة",
+          "value": "NODE_009.choice1"
+        },
+        {
+          "type": "postBack",
+          "title": "عروض التجارة ",
+          "text": "NODE_009.choice0",
+          "displayText": "عروض التجارة ",
+          "value": "NODE_009.choice0"
+        },
+        {
+          "type": "postBack",
+          "title": "الزروع",
+          "text": "NODE_009.choice2",
+          "displayText": "الزروع",
+          "value": "NODE_009.choice2"
+        },
+        {
+          "type": "postBack",
+          "title": "الانعام",
+          "text": "NODE_009.choice3",
+          "displayText": "الانعام",
+          "value": "NODE_009.choice3"
+        },
+        {
+          "type": "postBack",
+          "title": "الركاز",
+          "text": "NODE_009.choice4",
+          "displayText": "الركاز",
+          "value": "NODE_009.choice4"
+        }
+      ]
+    },
+    "attachments": [
+      {}
+    ],
+    "channelData": {
+      "quick_replies": [
+        {
+          "title": "النقود المختلفة",
+          "payload": "NODE_009.choice1"
+        },
+        {
+          "title": "عروض التجارة ",
+          "payload": "NODE_009.choice0"
+        },
+        {
+          "title": "الزروع",
+          "payload": "NODE_009.choice2"
+        },
+        {
+          "title": "الانعام",
+          "payload": "NODE_009.choice3"
+        },
+        {
+          "title": "الركاز",
+          "payload": "NODE_009.choice4"
+        }
+      ]
+    },
+    "replyToId": "d57626a0-47bb-11ed-8be4-8db49c4cd3f1",
+    "id": "d579d020-47bb-11ed-8be4-8db49c4cd3f1",
+    "localTimestamp": "2022-10-09T12:19:18+02:00",
+    "timestamp": "2022-10-09T10:19:18.434Z"
+  },
+  {
+    "channelData": {
+      "postBack": true,
+      "clientActivityID": "1665310759440bwrzs0nbywm",
+      "clientTimestamp": "2022-10-09T10:19:19.440Z"
+    },
+    "text": "NODE_009.choice0",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "localTimestamp": "2022-10-09T12:19:19+02:00",
+    "localTimezone": "Africa/Cairo",
+    "timestamp": "2022-10-09T10:19:19.484Z",
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "id": "d61a07c0-47bb-11ed-8be4-8db49c4cd3f1",
+    "recipient": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:49508"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:49508",
+    "channelId": "emulator",
+    "from": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "recipient": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "text": "اختيار نوع التجارة المطلوب تزكيته",
+    "inputHint": "acceptingInput",
+    "suggestedActions": {
+      "actions": [
+        {
+          "type": "postBack",
+          "title": "الأسهم ",
+          "text": "NODE_072.choice0",
+          "displayText": "الأسهم ",
+          "value": "NODE_072.choice0"
+        },
+        {
+          "type": "postBack",
+          "title": "التجارة و الصناعة",
+          "text": "NODE_072.choice1",
+          "displayText": "التجارة و الصناعة",
+          "value": "NODE_072.choice1"
+        },
+        {
+          "type": "postBack",
+          "title": "عقارات",
+          "text": "NODE_072.choice2",
+          "displayText": "عقارات",
+          "value": "NODE_072.choice2"
+        },
+        {
+          "type": "postBack",
+          "title": "مقاولات",
+          "text": "NODE_072.choice3",
+          "displayText": "مقاولات",
+          "value": "NODE_072.choice3"
+        }
+      ]
+    },
+    "attachments": [
+      {}
+    ],
+    "channelData": {
+      "quick_replies": [
+        {
+          "title": "الأسهم ",
+          "payload": "NODE_072.choice0"
+        },
+        {
+          "title": "التجارة و الصناعة",
+          "payload": "NODE_072.choice1"
+        },
+        {
+          "title": "عقارات",
+          "payload": "NODE_072.choice2"
+        },
+        {
+          "title": "مقاولات",
+          "payload": "NODE_072.choice3"
+        }
+      ]
+    },
+    "replyToId": "d61a07c0-47bb-11ed-8be4-8db49c4cd3f1",
+    "id": "d6f3ed00-47bb-11ed-8be4-8db49c4cd3f1",
+    "localTimestamp": "2022-10-09T12:19:20+02:00",
+    "timestamp": "2022-10-09T10:19:20.911Z"
+  },
+  {
+    "channelData": {
+      "postBack": true,
+      "clientActivityID": "1665310761855a5yefmcqt49",
+      "clientTimestamp": "2022-10-09T10:19:21.855Z"
+    },
+    "text": "NODE_072.choice1",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "localTimestamp": "2022-10-09T12:19:21+02:00",
+    "localTimezone": "Africa/Cairo",
+    "timestamp": "2022-10-09T10:19:21.897Z",
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "id": "d78a3990-47bb-11ed-8be4-8db49c4cd3f1",
+    "recipient": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:49508"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:49508",
+    "channelId": "emulator",
+    "from": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "recipient": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "text": "هل يتم امساك الحسابات",
+    "inputHint": "acceptingInput",
+    "suggestedActions": {
+      "actions": [
+        {
+          "type": "postBack",
+          "title": "نعم",
+          "text": "NODE_090.choice0",
+          "displayText": "نعم",
+          "value": "NODE_090.choice0"
+        },
+        {
+          "type": "postBack",
+          "title": "لا",
+          "text": "NODE_090.choice1",
+          "displayText": "لا",
+          "value": "NODE_090.choice1"
+        },
+        {
+          "type": "postBack",
+          "title": "on_go_back",
+          "text": "on_go_back",
+          "displayText": "on_go_back",
+          "value": "on_go_back"
+        }
+      ]
+    },
+    "attachments": [
+      {}
+    ],
+    "channelData": {
+      "quick_replies": [
+        {
+          "title": "نعم",
+          "payload": "NODE_090.choice0"
+        },
+        {
+          "title": "لا",
+          "payload": "NODE_090.choice1"
+        },
+        {
+          "title": "on_go_back",
+          "payload": "on_go_back"
+        }
+      ]
+    },
+    "replyToId": "d78a3990-47bb-11ed-8be4-8db49c4cd3f1",
+    "id": "d78be740-47bb-11ed-8be4-8db49c4cd3f1",
+    "localTimestamp": "2022-10-09T12:19:21+02:00",
+    "timestamp": "2022-10-09T10:19:21.908Z"
+  },
+  {
+    "channelData": {
+      "postBack": true,
+      "clientActivityID": "1665310763087zji7g47m40o",
+      "clientTimestamp": "2022-10-09T10:19:23.087Z"
+    },
+    "text": "NODE_090.choice0",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "localTimestamp": "2022-10-09T12:19:23+02:00",
+    "localTimezone": "Africa/Cairo",
+    "timestamp": "2022-10-09T10:19:23.133Z",
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "id": "d846d2d0-47bb-11ed-8be4-8db49c4cd3f1",
+    "recipient": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:49508"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:49508",
+    "channelId": "emulator",
+    "from": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "recipient": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "text": "هل لديك ميزانية",
+    "inputHint": "acceptingInput",
+    "suggestedActions": {
+      "actions": [
+        {
+          "type": "postBack",
+          "title": "نعم",
+          "text": "NODE_092.choice0",
+          "displayText": "نعم",
+          "value": "NODE_092.choice0"
+        },
+        {
+          "type": "postBack",
+          "title": "لا",
+          "text": "NODE_092.choice1",
+          "displayText": "لا",
+          "value": "NODE_092.choice1"
+        },
+        {
+          "type": "postBack",
+          "title": "on_go_back",
+          "text": "on_go_back",
+          "displayText": "on_go_back",
+          "value": "on_go_back"
+        }
+      ]
+    },
+    "attachments": [
+      {}
+    ],
+    "channelData": {
+      "quick_replies": [
+        {
+          "title": "نعم",
+          "payload": "NODE_092.choice0"
+        },
+        {
+          "title": "لا",
+          "payload": "NODE_092.choice1"
+        },
+        {
+          "title": "on_go_back",
+          "payload": "on_go_back"
+        }
+      ]
+    },
+    "replyToId": "d846d2d0-47bb-11ed-8be4-8db49c4cd3f1",
+    "id": "d848f5b0-47bb-11ed-8be4-8db49c4cd3f1",
+    "localTimestamp": "2022-10-09T12:19:23+02:00",
+    "timestamp": "2022-10-09T10:19:23.146Z"
+  },
+  {
+    "channelData": {
+      "postBack": true,
+      "clientActivityID": "1665310763792sfrhc1rpr5",
+      "clientTimestamp": "2022-10-09T10:19:23.792Z"
+    },
+    "text": "NODE_092.choice0",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "localTimestamp": "2022-10-09T12:19:23+02:00",
+    "localTimezone": "Africa/Cairo",
+    "timestamp": "2022-10-09T10:19:23.840Z",
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "id": "d8b2b400-47bb-11ed-8be4-8db49c4cd3f1",
+    "recipient": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:49508"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:49508",
+    "channelId": "emulator",
+    "from": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "recipient": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "text": "شركة فردية",
+    "inputHint": "acceptingInput",
+    "suggestedActions": {
+      "actions": [
+        {
+          "type": "postBack",
+          "title": "نعم",
+          "text": "NODE_093.choice0",
+          "displayText": "نعم",
+          "value": "NODE_093.choice0"
+        },
+        {
+          "type": "postBack",
+          "title": "لا",
+          "text": "NODE_093.choice1",
+          "displayText": "لا",
+          "value": "NODE_093.choice1"
+        },
+        {
+          "type": "postBack",
+          "title": "on_go_back",
+          "text": "on_go_back",
+          "displayText": "on_go_back",
+          "value": "on_go_back"
+        }
+      ]
+    },
+    "attachments": [
+      {}
+    ],
+    "channelData": {
+      "quick_replies": [
+        {
+          "title": "نعم",
+          "payload": "NODE_093.choice0"
+        },
+        {
+          "title": "لا",
+          "payload": "NODE_093.choice1"
+        },
+        {
+          "title": "on_go_back",
+          "payload": "on_go_back"
+        }
+      ]
+    },
+    "replyToId": "d8b2b400-47bb-11ed-8be4-8db49c4cd3f1",
+    "id": "d8b4d6e0-47bb-11ed-8be4-8db49c4cd3f1",
+    "localTimestamp": "2022-10-09T12:19:23+02:00",
+    "timestamp": "2022-10-09T10:19:23.854Z"
+  },
+  {
+    "channelData": {
+      "postBack": true,
+      "clientActivityID": "1665310765407n4rt37yi3l8",
+      "clientTimestamp": "2022-10-09T10:19:25.407Z"
+    },
+    "text": "NODE_093.choice1",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "localTimestamp": "2022-10-09T12:19:25+02:00",
+    "localTimezone": "Africa/Cairo",
+    "timestamp": "2022-10-09T10:19:25.462Z",
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "id": "d9aa3360-47bb-11ed-8be4-8db49c4cd3f1",
+    "recipient": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:49508"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:49508",
+    "channelId": "emulator",
+    "from": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "recipient": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "text": "تسمية الشركة",
+    "inputHint": "acceptingInput",
+    "channelData": {
+      "attachment": [
+        {
+          "title": "NODE_095",
+          "contentType": "application/vnd.microsoft.input",
+          "content": {
+            "validation": "*",
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "replyToId": "d9aa3360-47bb-11ed-8be4-8db49c4cd3f1",
+    "id": "d9ac5640-47bb-11ed-8be4-8db49c4cd3f1",
+    "localTimestamp": "2022-10-09T12:19:25+02:00",
+    "timestamp": "2022-10-09T10:19:25.476Z"
+  },
+  {
+    "channelData": {
+      "clientActivityID": "1665310767407yr45ky7cxx",
+      "clientTimestamp": "2022-10-09T10:19:27.407Z"
+    },
+    "text": "yusuf",
+    "textFormat": "plain",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "localTimestamp": "2022-10-09T12:19:27+02:00",
+    "localTimezone": "Africa/Cairo",
+    "timestamp": "2022-10-09T10:19:27.447Z",
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "id": "dad91670-47bb-11ed-8be4-8db49c4cd3f1",
+    "recipient": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:49508"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:49508",
+    "channelId": "emulator",
+    "from": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "recipient": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "text": "تاريخ اخر ميزانية معلنة ",
+    "inputHint": "acceptingInput",
+    "channelData": {
+      "attachment": [
+        {
+          "title": "NODE_096",
+          "contentType": "application/vnd.microsoft.card.calendar",
+          "content": {
+            "type": "calendar",
+            "calendar_type": "GEORGIAN"
+          }
+        }
+      ]
+    },
+    "replyToId": "dad91670-47bb-11ed-8be4-8db49c4cd3f1",
+    "id": "dada7600-47bb-11ed-8be4-8db49c4cd3f1",
+    "localTimestamp": "2022-10-09T12:19:27+02:00",
+    "timestamp": "2022-10-09T10:19:27.456Z"
+  },
+  {
+    "channelData": {
+      "clientActivityID": "1665310770766kdf42zcvfe7",
+      "clientTimestamp": "2022-10-09T10:19:30.766Z"
+    },
+    "text": "11/11/2019",
+    "textFormat": "plain",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "localTimestamp": "2022-10-09T12:19:30+02:00",
+    "localTimezone": "Africa/Cairo",
+    "timestamp": "2022-10-09T10:19:30.820Z",
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "id": "dcdbc440-47bb-11ed-8be4-8db49c4cd3f1",
+    "recipient": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:49508"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:49508",
+    "channelId": "emulator",
+    "from": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "recipient": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "text": "لك ان :\nتزكية التجارة شاملة خامات التصنيع .. وذلك على الأصل باعتبار أن كل المال المستثمرفى التجارة ينمو ويساعد فى النماء – على اعتبار فكرة القيمة المضافة فى الصناعة والمحاسبة حيث ان تحديد سعر بيع المنتج  ومن ثم الربح العائد كدالة للتكلفة التى تدخل فيها الخامات وبالتالى تساهم الخامات فى الربح فيتم تزكيتها\n تزكية التجارة غير شاملة خامات التصنيع .. باعتبار ان الربح لا يتحقق الا ببيع المنتج الذى تتخصص فيه الصناعة وعليه فما دام المخزون لا يباع بحالته فهو لا ينمو فى ذاته والنماء هو فكرة فرض الزكاة وعليه تخصم خامات التصنيع من وعاء الزكاة .  ",
+    "inputHint": "acceptingInput",
+    "suggestedActions": {
+      "actions": [
+        {
+          "type": "postBack",
+          "title": "تزكية التجارة شاملة خامات التصنيع",
+          "text": "NODE_098.choice0",
+          "displayText": "تزكية التجارة شاملة خامات التصنيع",
+          "value": "NODE_098.choice0"
+        },
+        {
+          "type": "postBack",
+          "title": "تزكية التجارة غير شاملة خامات التنصيع",
+          "text": "NODE_098.choice1",
+          "displayText": "تزكية التجارة غير شاملة خامات التنصيع",
+          "value": "NODE_098.choice1"
+        },
+        {
+          "type": "postBack",
+          "title": "on_go_back",
+          "text": "on_go_back",
+          "displayText": "on_go_back",
+          "value": "on_go_back"
+        }
+      ]
+    },
+    "attachments": [
+      {}
+    ],
+    "channelData": {
+      "quick_replies": [
+        {
+          "title": "تزكية التجارة شاملة خامات التصنيع",
+          "payload": "NODE_098.choice0"
+        },
+        {
+          "title": "تزكية التجارة غير شاملة خامات التنصيع",
+          "payload": "NODE_098.choice1"
+        },
+        {
+          "title": "on_go_back",
+          "payload": "on_go_back"
+        }
+      ]
+    },
+    "replyToId": "dcdbc440-47bb-11ed-8be4-8db49c4cd3f1",
+    "id": "dcdf1fa0-47bb-11ed-8be4-8db49c4cd3f1",
+    "localTimestamp": "2022-10-09T12:19:30+02:00",
+    "timestamp": "2022-10-09T10:19:30.842Z"
+  },
+  {
+    "channelData": {
+      "postBack": true,
+      "clientActivityID": "1665310772831no8s9xj8m98",
+      "clientTimestamp": "2022-10-09T10:19:32.831Z"
+    },
+    "text": "NODE_098.choice0",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "localTimestamp": "2022-10-09T12:19:32+02:00",
+    "localTimezone": "Africa/Cairo",
+    "timestamp": "2022-10-09T10:19:32.892Z",
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "id": "de17edc0-47bb-11ed-8be4-8db49c4cd3f1",
+    "recipient": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:49508"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:49508",
+    "channelId": "emulator",
+    "from": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "recipient": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "text": "ادخال قيمة الاصول المتداولة ",
+    "inputHint": "acceptingInput",
+    "channelData": {
+      "attachment": [
+        {
+          "title": "NODE_098_1",
+          "contentType": "application/vnd.microsoft.input",
+          "content": {
+            "validation": "*",
+            "type": "money"
+          }
+        }
+      ]
+    },
+    "replyToId": "de17edc0-47bb-11ed-8be4-8db49c4cd3f1",
+    "id": "de18ff30-47bb-11ed-8be4-8db49c4cd3f1",
+    "localTimestamp": "2022-10-09T12:19:32+02:00",
+    "timestamp": "2022-10-09T10:19:32.899Z"
+  },
+  {
+    "channelData": {
+      "clientActivityID": "1665310775926m7iplmy30b",
+      "clientTimestamp": "2022-10-09T10:19:35.926Z"
+    },
+    "text": "1000000",
+    "textFormat": "plain",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "localTimestamp": "2022-10-09T12:19:35+02:00",
+    "localTimezone": "Africa/Cairo",
+    "timestamp": "2022-10-09T10:19:35.973Z",
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "id": "dfee0d50-47bb-11ed-8be4-8db49c4cd3f1",
+    "recipient": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:49508"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:49508",
+    "channelId": "emulator",
+    "from": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "recipient": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "text": "ادخال قيمة الخصوم المتداولة",
+    "inputHint": "acceptingInput",
+    "channelData": {
+      "attachment": [
+        {
+          "title": "NODE_098_1_1",
+          "contentType": "application/vnd.microsoft.input",
+          "content": {
+            "validation": "*",
+            "type": "money"
+          }
+        }
+      ]
+    },
+    "replyToId": "dfee0d50-47bb-11ed-8be4-8db49c4cd3f1",
+    "id": "dfef1ec0-47bb-11ed-8be4-8db49c4cd3f1",
+    "localTimestamp": "2022-10-09T12:19:35+02:00",
+    "timestamp": "2022-10-09T10:19:35.980Z"
+  },
+  {
+    "channelData": {
+      "clientActivityID": "1665310777076lweh67wf2y",
+      "clientTimestamp": "2022-10-09T10:19:37.076Z"
+    },
+    "text": "20000",
+    "textFormat": "plain",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "localTimestamp": "2022-10-09T12:19:37+02:00",
+    "localTimezone": "Africa/Cairo",
+    "timestamp": "2022-10-09T10:19:37.126Z",
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "id": "e09dfc60-47bb-11ed-8be4-8db49c4cd3f1",
+    "recipient": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:49508"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:49508",
+    "channelId": "emulator",
+    "from": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "recipient": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "text": " - مقداة الزكاة yusuf : 24,500 جنيه مصري \n[missing  value]\n - في الفترة من ١٢ نوفمبر ٢٠٢٠ الي ١١ نوفمبر ٢٠٢١",
+    "inputHint": "acceptingInput",
+    "suggestedActions": {
+      "actions": [
+        {
+          "type": "postBack",
+          "title": "متابعه حساب الزكاة عن باقي الاحوال (الاعوام)",
+          "text": "NODE_104.choice0",
+          "displayText": "متابعه حساب الزكاة عن باقي الاحوال (الاعوام)",
+          "value": "NODE_104.choice0"
+        },
+        {
+          "type": "postBack",
+          "title": "الخروج وادخال نوع زكاة اخر , لا تنسي تذكية الاعوام وقت الاستطاعه لانها دين عليك",
+          "text": "NODE_104.choice2",
+          "displayText": "الخروج وادخال نوع زكاة اخر , لا تنسي تذكية الاعوام وقت الاستطاعه لانها دين عليك",
+          "value": "NODE_104.choice2"
+        },
+        {
+          "type": "postBack",
+          "title": "on_go_back",
+          "text": "on_go_back",
+          "displayText": "on_go_back",
+          "value": "on_go_back"
+        }
+      ]
+    },
+    "attachments": [
+      {}
+    ],
+    "channelData": {
+      "quick_replies": [
+        {
+          "title": "متابعه حساب الزكاة عن باقي الاحوال (الاعوام)",
+          "payload": "NODE_104.choice0"
+        },
+        {
+          "title": "الخروج وادخال نوع زكاة اخر , لا تنسي تذكية الاعوام وقت الاستطاعه لانها دين عليك",
+          "payload": "NODE_104.choice2"
+        },
+        {
+          "title": "on_go_back",
+          "payload": "on_go_back"
+        }
+      ]
+    },
+    "replyToId": "e09dfc60-47bb-11ed-8be4-8db49c4cd3f1",
+    "id": "e0a109a0-47bb-11ed-8be4-8db49c4cd3f1",
+    "localTimestamp": "2022-10-09T12:19:37+02:00",
+    "timestamp": "2022-10-09T10:19:37.146Z"
+  },
+  {
+    "channelData": {
+      "postBack": true,
+      "clientActivityID": "1665310778519mlum2jpjcr",
+      "clientTimestamp": "2022-10-09T10:19:38.519Z"
+    },
+    "text": "NODE_104.choice0",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "localTimestamp": "2022-10-09T12:19:38+02:00",
+    "localTimezone": "Africa/Cairo",
+    "timestamp": "2022-10-09T10:19:38.595Z",
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "id": "e17e2330-47bb-11ed-8be4-8db49c4cd3f1",
+    "recipient": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:49508"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:49508",
+    "channelId": "emulator",
+    "from": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "recipient": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "text": "لك ان :\nتزكية التجارة شاملة خامات التصنيع .. وذلك على الأصل باعتبار أن كل المال المستثمرفى التجارة ينمو ويساعد فى النماء – على اعتبار فكرة القيمة المضافة فى الصناعة والمحاسبة حيث ان تحديد سعر بيع المنتج  ومن ثم الربح العائد كدالة للتكلفة التى تدخل فيها الخامات وبالتالى تساهم الخامات فى الربح فيتم تزكيتها\n تزكية التجارة غير شاملة خامات التصنيع .. باعتبار ان الربح لا يتحقق الا ببيع المنتج الذى تتخصص فيه الصناعة وعليه فما دام المخزون لا يباع بحالته فهو لا ينمو فى ذاته والنماء هو فكرة فرض الزكاة وعليه تخصم خامات التصنيع من وعاء الزكاة .  ",
+    "inputHint": "acceptingInput",
+    "suggestedActions": {
+      "actions": [
+        {
+          "type": "postBack",
+          "title": "تزكية التجارة شاملة خامات التصنيع",
+          "text": "NODE_098.choice0",
+          "displayText": "تزكية التجارة شاملة خامات التصنيع",
+          "value": "NODE_098.choice0"
+        },
+        {
+          "type": "postBack",
+          "title": "تزكية التجارة غير شاملة خامات التنصيع",
+          "text": "NODE_098.choice1",
+          "displayText": "تزكية التجارة غير شاملة خامات التنصيع",
+          "value": "NODE_098.choice1"
+        },
+        {
+          "type": "postBack",
+          "title": "on_go_back",
+          "text": "on_go_back",
+          "displayText": "on_go_back",
+          "value": "on_go_back"
+        }
+      ]
+    },
+    "attachments": [
+      {}
+    ],
+    "channelData": {
+      "quick_replies": [
+        {
+          "title": "تزكية التجارة شاملة خامات التصنيع",
+          "payload": "NODE_098.choice0"
+        },
+        {
+          "title": "تزكية التجارة غير شاملة خامات التنصيع",
+          "payload": "NODE_098.choice1"
+        },
+        {
+          "title": "on_go_back",
+          "payload": "on_go_back"
+        }
+      ]
+    },
+    "replyToId": "e17e2330-47bb-11ed-8be4-8db49c4cd3f1",
+    "id": "e1806d20-47bb-11ed-8be4-8db49c4cd3f1",
+    "localTimestamp": "2022-10-09T12:19:38+02:00",
+    "timestamp": "2022-10-09T10:19:38.610Z"
+  },
+  {
+    "channelData": {
+      "postBack": true,
+      "clientActivityID": "1665310779871s98sbpfj7v",
+      "clientTimestamp": "2022-10-09T10:19:39.871Z"
+    },
+    "text": "NODE_098.choice0",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "localTimestamp": "2022-10-09T12:19:39+02:00",
+    "localTimezone": "Africa/Cairo",
+    "timestamp": "2022-10-09T10:19:39.954Z",
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "id": "e24d8120-47bb-11ed-8be4-8db49c4cd3f1",
+    "recipient": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:49508"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:49508",
+    "channelId": "emulator",
+    "from": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "recipient": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "text": "ادخال قيمة الاصول المتداولة ",
+    "inputHint": "acceptingInput",
+    "channelData": {
+      "attachment": [
+        {
+          "title": "NODE_098_1",
+          "contentType": "application/vnd.microsoft.input",
+          "content": {
+            "validation": "*",
+            "type": "money"
+          }
+        }
+      ]
+    },
+    "replyToId": "e24d8120-47bb-11ed-8be4-8db49c4cd3f1",
+    "id": "e24eb9a0-47bb-11ed-8be4-8db49c4cd3f1",
+    "localTimestamp": "2022-10-09T12:19:39+02:00",
+    "timestamp": "2022-10-09T10:19:39.962Z"
+  },
+  {
+    "channelData": {
+      "clientActivityID": "1665310797897rxs0hxbpag",
+      "clientTimestamp": "2022-10-09T10:19:57.897Z"
+    },
+    "text": "2300000",
+    "textFormat": "plain",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "localTimestamp": "2022-10-09T12:19:57+02:00",
+    "localTimezone": "Africa/Cairo",
+    "timestamp": "2022-10-09T10:19:57.978Z",
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "id": "ed0be6b0-47bb-11ed-8be4-8db49c4cd3f1",
+    "recipient": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:49508"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:49508",
+    "channelId": "emulator",
+    "from": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "recipient": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "text": "ادخال قيمة الخصوم المتداولة",
+    "inputHint": "acceptingInput",
+    "channelData": {
+      "attachment": [
+        {
+          "title": "NODE_098_1_1",
+          "contentType": "application/vnd.microsoft.input",
+          "content": {
+            "validation": "*",
+            "type": "money"
+          }
+        }
+      ]
+    },
+    "replyToId": "ed0be6b0-47bb-11ed-8be4-8db49c4cd3f1",
+    "id": "ed0cd110-47bb-11ed-8be4-8db49c4cd3f1",
+    "localTimestamp": "2022-10-09T12:19:57+02:00",
+    "timestamp": "2022-10-09T10:19:57.985Z"
+  },
+  {
+    "channelData": {
+      "clientActivityID": "1665310799176dmauh9yg15e",
+      "clientTimestamp": "2022-10-09T10:19:59.176Z"
+    },
+    "text": "23999",
+    "textFormat": "plain",
+    "type": "message",
+    "channelId": "emulator",
+    "from": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "name": "User",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "localTimestamp": "2022-10-09T12:19:59+02:00",
+    "localTimezone": "Africa/Cairo",
+    "timestamp": "2022-10-09T10:19:59.240Z",
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "id": "edcc5080-47bb-11ed-8be4-8db49c4cd3f1",
+    "recipient": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "serviceUrl": "http://localhost:49508"
+  },
+  {
+    "type": "message",
+    "serviceUrl": "http://localhost:49508",
+    "channelId": "emulator",
+    "from": {
+      "id": "31393690-47b1-11ed-935f-69879856d20f",
+      "name": "Bot",
+      "role": "bot"
+    },
+    "conversation": {
+      "id": "d1967b71-47bb-11ed-935f-69879856d20f|livechat"
+    },
+    "recipient": {
+      "id": "f05185c6-650a-45d1-83b0-1a03547cdd1e",
+      "role": "user"
+    },
+    "locale": "en-US",
+    "text": " - مقداة الزكاة yusuf : 56,900.03 جنيه مصري \n[missing  value]\n - في الفترة من ١٢ نوفمبر ٢٠١٩ الي ١١ نوفمبر ٢٠٢٠",
+    "inputHint": "acceptingInput",
+    "suggestedActions": {
+      "actions": [
+        {
+          "type": "postBack",
+          "title": "زكاة شركة اخرى",
+          "text": "NODE_104.choice0",
+          "displayText": "زكاة شركة اخرى",
+          "value": "NODE_104.choice0"
+        },
+        {
+          "type": "postBack",
+          "title": "اجمالي زكاة الشركات",
+          "text": "NODE_104.choice3",
+          "displayText": "اجمالي زكاة الشركات",
+          "value": "NODE_104.choice3"
+        },
+        {
+          "type": "postBack",
+          "title": "on_go_back",
+          "text": "on_go_back",
+          "displayText": "on_go_back",
+          "value": "on_go_back"
+        }
+      ]
+    },
+    "attachments": [
+      {}
+    ],
+    "channelData": {
+      "quick_replies": [
+        {
+          "title": "زكاة شركة اخرى",
+          "payload": "NODE_104.choice0"
+        },
+        {
+          "title": "اجمالي زكاة الشركات",
+          "payload": "NODE_104.choice3"
+        },
+        {
+          "title": "on_go_back",
+          "payload": "on_go_back"
+        }
+      ]
+    },
+    "replyToId": "edcc5080-47bb-11ed-8be4-8db49c4cd3f1",
+    "id": "edcdb010-47bb-11ed-8be4-8db49c4cd3f1",
+    "localTimestamp": "2022-10-09T12:19:59+02:00",
+    "timestamp": "2022-10-09T10:19:59.249Z"
+  }
+]
