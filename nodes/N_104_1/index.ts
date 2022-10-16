@@ -30,8 +30,6 @@ export function NODE_104_1(convo: BotkitConversation): string {
 
       return translate(NODE_ID + ".title", {
         iacZakatYears: answerIs,
-        // answerDate: answerDate.replace(/undefined/g, " "),
-        // answerNumber: answerNumber.replace(/undefined/g, " "),
       });
     }
   );

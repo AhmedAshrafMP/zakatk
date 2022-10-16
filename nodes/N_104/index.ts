@@ -19,8 +19,9 @@ function setZakatPerYear(vars, leftYears) {
   }
 }
 
-function clearYearsValue(convo, leftYears) {
+function clearYearsValue(convo, leftYears, numberOfSingleCompany) {
   convo.setVar("NO_OF_SINGLECOMPANYYEARS_LEFT", leftYears);
+  convo.setVar("numberOfSingleCompany", numberOfSingleCompany);
   convo.setVar("myYears", setZakatPerYear(convo.vars, leftYears));
 }
 
@@ -30,13 +31,48 @@ export function NODE_104(convo: BotkitConversation): string {
     NODE_ID + ".title",
     (_tmp, vars) => {
       let leftYears = parseFloat(vars.NO_OF_SINGLECOMPANYYEARS_LEFT) - 1;
+      let numberOfSingleCompany = parseFloat(vars.numberOfSingleCompany) - 1;
+
+      if (numberOfSingleCompany > 0) {
+        return [
+          {
+            title: translate(NODE_ID + ".opt3"),
+            payload: NODE_ID + ".choice2",
+            onChoose: async (_answer, convo, _bot, _msg) => {
+              clearYearsValue(convo, leftYears, numberOfSingleCompany);
+              const diff = getYearsDiff(
+                convo.vars.LAST_SINGLECOMPANY_DAY,
+                convo.vars.NO_OF_SINGLECOMPANYYEARS_LEFT
+              );
+              let theSingleCompanyNames = "";
+              singleCompanyNames.forEach((key, value) => {
+                theSingleCompanyNames = `${value} : ${numberWithCommas(
+                  safeParseFloat(key)
+                )}`;
+              });
+
+              allZakatIacYears.set(diff, theSingleCompanyNames);
+              convo.setVar("allZakatIacYears", allZakatIacYears);
+              convo.gotoThread("t_NODE_095");
+            },
+          },
+          {
+            title: translate(NODE_ID + ".opt5"),
+            payload: NODE_ID + ".choice4",
+            onChoose: async (_answer, convo, _bot, _msg) => {
+              convo.stop();
+            },
+          },
+        ];
+      }
+
       if (leftYears > 0) {
         return [
           {
             title: translate(NODE_ID + ".opt1"),
             payload: NODE_ID + ".choice0",
             onChoose: async (_answer, convo, _bot, _msg) => {
-              clearYearsValue(convo, leftYears);
+              clearYearsValue(convo, leftYears, numberOfSingleCompany);
               const diff = getYearsDiff(
                 convo.vars.LAST_SINGLECOMPANY_DAY,
                 convo.vars.NO_OF_SINGLECOMPANYYEARS_LEFT
@@ -54,8 +90,8 @@ export function NODE_104(convo: BotkitConversation): string {
             },
           },
           {
-            title: translate(NODE_ID + ".opt3"),
-            payload: NODE_ID + ".choice2",
+            title: translate(NODE_ID + ".opt5"),
+            payload: NODE_ID + ".choice4",
             onChoose: async (_answer, convo, _bot, _msg) => {
               convo.stop();
             },
@@ -74,7 +110,7 @@ export function NODE_104(convo: BotkitConversation): string {
             title: translate(NODE_ID + ".opt4"),
             payload: NODE_ID + ".choice3",
             onChoose: async (_answer, convo, bot, _msg) => {
-              clearYearsValue(convo, leftYears);
+              clearYearsValue(convo, leftYears, numberOfSingleCompany);
               const diff = getYearsDiff(
                 convo.vars.LAST_SINGLECOMPANY_DAY,
                 convo.vars.NO_OF_SINGLECOMPANYYEARS_LEFT
