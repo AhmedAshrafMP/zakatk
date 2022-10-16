@@ -42,8 +42,8 @@ if (process.env.MONGO_URI) {
 
   botCtrl = new Botkit({
     webhook_uri: "/api/messages",
-    // adapter,
-    // storage: mongoDbStorage,
+    adapter,
+    storage: mongoDbStorage,
   });
 }
 
