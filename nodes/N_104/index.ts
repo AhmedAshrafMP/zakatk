@@ -39,8 +39,7 @@ export function NODE_104(convo: BotkitConversation): string {
             title: translate(NODE_ID + ".opt1"),
             payload: NODE_ID + ".choice0",
             onChoose: async (_answer, convo, _bot, _msg) => {
-              clearYearsValue(convo, leftYears);
-              const diff = getYearsDiff(
+              let diff = getYearsDiff(
                 convo.vars.LAST_SINGLECOMPANY_DAY,
                 convo.vars.NO_OF_SINGLECOMPANYYEARS_LEFT
               );
@@ -50,10 +49,10 @@ export function NODE_104(convo: BotkitConversation): string {
                   safeParseFloat(key)
                 )}`;
               });
-
+              clearYearsValue(convo, leftYears);
               allZakatIacYears.set(diff, theSingleCompanyNames);
               convo.setVar("allZakatIacYears", allZakatIacYears);
-              convo.gotoThread("t_NODE_095");
+              convo.gotoThread("t_NODE_098");
             },
           },
           {
@@ -77,7 +76,6 @@ export function NODE_104(convo: BotkitConversation): string {
             title: translate(NODE_ID + ".opt4"),
             payload: NODE_ID + ".choice3",
             onChoose: async (_answer, convo, bot, _msg) => {
-              clearYearsValue(convo, leftYears);
               const diff = getYearsDiff(
                 convo.vars.LAST_SINGLECOMPANY_DAY,
                 convo.vars.NO_OF_SINGLECOMPANYYEARS_LEFT
@@ -89,6 +87,7 @@ export function NODE_104(convo: BotkitConversation): string {
                 )}`;
               });
 
+              clearYearsValue(convo, leftYears);
               allZakatIacYears.set(diff, theSingleCompanyNames);
               convo.setVar("allZakatIacYears", allZakatIacYears);
               convo.gotoThread("t_NODE_104_1");
@@ -125,7 +124,10 @@ export function NODE_104(convo: BotkitConversation): string {
       }
 
       text.push(
-        translate(NODE_ID + ".NODE_PERIOD", { from: diff.from, to: diff.to })
+        translate(NODE_ID + ".NODE_PERIOD", {
+          from: diff.from,
+          to: diff.to,
+        })
       );
       return " - " + text.join("\n - ");
     }
