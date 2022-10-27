@@ -12,16 +12,30 @@ export function NODE_165(convo: BotkitConversation): string {
       {
         title: NODE_ID + ".opt1",
         payload: NODE_ID + ".choice0",
-        onChoose: async (answer, convo, bot, msg) => {},
+        onChoose: async (answer, convo, bot, msg) => {
+          convo.gotoThread("t_NODE_157_1");
+        },
+      },
+      {
+        title: NODE_ID + ".opt2",
+        payload: NODE_ID + ".choice1",
+        onChoose: async (answer, convo, bot, msg) => {
+          convo.stop();
+        },
       },
     ],
     NODE_ID,
-
     {},
     (_tmp, vars) => {
+      let allBuildingsZakat = vars.allBuildingsZakat;
+      const currency = convertVarToCurrency(vars.NODE_004);
+      let answerIs = "";
+      allBuildingsZakat.forEach((key, value) => {
+        answerIs += `${value.from} الى ${value.to} ${key} ${currency}\n`;
+      });
+
       return translate(NODE_ID + ".title", {
-        fromYear: vars.NO_OF_BUILDINGSYEARS_LEFT,
-        fromDay: vars.LAST_BUILDINGS_DAY,
+        buildings: answerIs,
       });
     }
   );

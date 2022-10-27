@@ -2,6 +2,7 @@ import { BotkitConversation } from "botkit";
 import bkStrAsk from "../../bot_nodes/ask_str";
 import { safeParseFloat } from "../../helpers/variables";
 
+export let zakatIAC = new Map();
 const NODE_ID = "NODE_144";
 export function NODE_144(convo: BotkitConversation): string {
   bkStrAsk(
@@ -21,18 +22,24 @@ export function NODE_144(convo: BotkitConversation): string {
         NODE_141 + netZakat + NODE_142 + NODE_144 - NODE_143;
       const zakatWithOutMaterials = netZakat + NODE_142 + NODE_144 - NODE_143;
 
+      zakatIAC.set(
+        convo.vars.NODE_131,
+        zakatWithMaterials || zakatWithOutMaterials
+      );
+
       if (NODE_144 && NODE_144 > 0) {
         if (
           zakatWithMaterials >= convo.vars.gold_prices.gThreshold ||
           zakatWithOutMaterials >= convo.vars.gold_prices.gThreshold
         ) {
           if (NODE_141 && NODE_141 > 0) {
+            convo.setVar("zakatIAC", zakatIAC);
             convo.setVar("zakatWithMaterials", zakatWithMaterials);
-            console.log("zakatWithMaterials", zakatWithMaterials);
+
             convo.gotoThread("t_NODE_149_1");
           } else {
+            convo.setVar("zakatIAC", zakatIAC);
             convo.setVar("zakatWithOutMaterials", zakatWithOutMaterials);
-            console.log("zakatWithOutMaterials", zakatWithOutMaterials);
             convo.gotoThread("t_NODE_149_1");
           }
         } else {

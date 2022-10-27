@@ -23,7 +23,7 @@ export function NODE_104_1(convo: BotkitConversation): string {
       const currency = convertVarToCurrency(vars.NODE_004);
       let answerIs = "";
       allZakatIacYears.forEach((key, value) => {
-        answerIs += `${value.from} الى ${value.to} ${key} ${currency} \n`;
+        answerIs += `${key} ${currency} ${value.from} الى ${value.to} \n`;
       });
 
       console.log(allZakatIacYears, "allZakatIacYears");

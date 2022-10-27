@@ -3,6 +3,8 @@ import bkStrAsk from "../../bot_nodes/ask_str";
 import { safeParseFloat } from "../../helpers/variables";
 
 const NODE_ID = "NODE_122";
+
+export let zakatIAC1 = new Map();
 export function NODE_122(convo: BotkitConversation): string {
   bkStrAsk(
     convo,
@@ -18,12 +20,15 @@ export function NODE_122(convo: BotkitConversation): string {
       const iacValues = NODE_116 - NODE_116_1 + NODE_119 + NODE_120;
       const iacZakat = iacValues + NODE_122 - NODE_121;
 
+      zakatIAC1.set(convo.vars.NODE_109, iacZakat);
+
       if (NODE_122 && NODE_122 > 0) {
         if (
           iacZakat &&
           iacZakat >= safeParseFloat(convo.vars.gold_prices.gThreshold)
         ) {
           convo.setVar("iacZakat", iacZakat);
+          console.log(zakatIAC1, " hello fomr ZAKATIAC1");
           convo.gotoThread("t_NODE_127_1");
         } else {
           convo.gotoThread("t_NODE_124");

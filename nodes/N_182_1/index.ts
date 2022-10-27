@@ -1,12 +1,12 @@
 import { translate } from "i18n-js";
 import { BotkitConversation } from "botkit";
 import bkQRAsk from "../../bot_nodes/ask_qr";
-import { numberWithCommas, safeParseFloat } from "../../helpers/variables";
 import { convertVarToCurrency } from "../../helpers";
+import { numberWithCommas, safeParseFloat } from "../../helpers/variables";
 import { buildingsZakat } from "../N_171";
 
-const NODE_ID = "NODE_182";
-export function NODE_182(convo: BotkitConversation): string {
+const NODE_ID = "NODE_182_1";
+export function NODE_182_1(convo: BotkitConversation): string {
   bkQRAsk(
     convo,
     NODE_ID + ".title",
@@ -22,7 +22,7 @@ export function NODE_182(convo: BotkitConversation): string {
         title: NODE_ID + ".opt2",
         payload: NODE_ID + ".choice1",
         onChoose: async (answer, convo, bot, msg) => {
-          convo.gotoThread("t_NODE_182_1");
+          convo.stop();
         },
       },
     ],
@@ -32,12 +32,12 @@ export function NODE_182(convo: BotkitConversation): string {
       const currency = convertVarToCurrency(vars.NODE_004);
       let buildings = "";
       buildingsZakat.forEach((key, value) => {
-        buildings = `${value} : ${numberWithCommas(
+        buildings += `${value} : ${numberWithCommas(
           safeParseFloat(key)
         )} ${currency}\n`;
       });
       return translate(NODE_ID + ".title", {
-        buildingsOneTime: buildings,
+        buildingsOneTime1: buildings,
       });
     }
   );

@@ -2,6 +2,8 @@ import { BotkitConversation } from "botkit";
 import bkStrAsk from "../../bot_nodes/ask_str";
 import { safeParseFloat } from "../../helpers/variables";
 
+import { buildingsZakat } from "../N_171";
+
 const NODE_ID = "NODE_181";
 export function NODE_181(convo: BotkitConversation): string {
   bkStrAsk(
@@ -9,6 +11,8 @@ export function NODE_181(convo: BotkitConversation): string {
     NODE_ID + ".hello",
     async (answer, convo, bot, message) => {
       const NODE_181 = safeParseFloat(convo.vars.NODE_181);
+
+      buildingsZakat.set(convo.vars.NODE_157_1, NODE_181 / 40);
 
       if (NODE_181 >= convo.vars.gold_prices.gThreshold) {
         convo.setVar("NODE_181", NODE_181);

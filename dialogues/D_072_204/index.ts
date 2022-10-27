@@ -175,6 +175,8 @@ import {
   NODE_998,
   NODE_226,
   NODE_254_1,
+  NODE_127_2,
+  NODE_165,
 } from "../../nodes";
 import NODE_077 from "../../nodes/N_077";
 import { NODE_078_1 } from "../../nodes/N_078_1";
@@ -183,9 +185,11 @@ import { NODE_078_3 } from "../../nodes/N_078_3";
 import NODE_096 from "../../nodes/N_096";
 import NODE_113 from "../../nodes/N_113";
 import NODE_135 from "../../nodes/N_135";
+import { NODE_149_2 } from "../../nodes/N_149_2";
 import { NODE_157_1 } from "../../nodes/N_157_1";
 import NODE_166 from "../../nodes/N_166";
 import { NODE_182 } from "../../nodes/N_182";
+import { NODE_182_1 } from "../../nodes/N_182_1";
 import NODE_189 from "../../nodes/N_189";
 import NODE_213 from "../../nodes/N_213";
 import { NODE_217_1 } from "../../nodes/N_217_1";
@@ -419,6 +423,10 @@ export function D_072_204(botCtrl: Botkit) {
   NODE_354(thisDialogue);
   NODE_357(thisDialogue);
   NODE_358(thisDialogue);
+  NODE_127_2(thisDialogue);
+  NODE_149_2(thisDialogue);
+  NODE_165(thisDialogue);
+  NODE_182_1(thisDialogue);
 
   thisDialogue.addChildDialog("d_014_023", "d_014_023", "t_d_014_023");
   thisDialogue.addChildDialog("d_393_406", "d_393_406", "t_d_393_406");
