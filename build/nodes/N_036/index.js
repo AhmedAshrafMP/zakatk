@@ -43,6 +43,7 @@ exports.NODE_036 = void 0;
 var ask_str_1 = __importDefault(require("../../bot_nodes/ask_str"));
 var helpers_1 = require("../../helpers");
 var yearsdiff_1 = require("../../helpers/dates/yearsdiff");
+var variables_1 = require("../../helpers/variables");
 var N_023_1 = require("../N_023");
 var NODE_ID = "NODE_036";
 function NODE_036(convo) {
@@ -50,9 +51,9 @@ function NODE_036(convo) {
     ask_str_1["default"](convo, NODE_ID + ".hello", function (answer, convo, bot, message) { return __awaiter(_this, void 0, void 0, function () {
         var nodeIntValue;
         return __generator(this, function (_a) {
-            nodeIntValue = parseFloat(answer);
-            if (nodeIntValue && nodeIntValue > 0) {
-                convo.setVar("totalDebit", parseFloat(answer));
+            nodeIntValue = variables_1.safeParseFloat(answer);
+            if (nodeIntValue >= 0) {
+                convo.setVar("totalDebit", variables_1.safeParseFloat(convo.vars.totalDebit) + variables_1.safeParseFloat(answer));
                 // clear each period
                 if (convo.vars.NODE_039) {
                     N_023_1.markOptionAsDone(convo);

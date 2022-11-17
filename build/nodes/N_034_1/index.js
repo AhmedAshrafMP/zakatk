@@ -52,7 +52,7 @@ function NODE_034_1(convo) {
             onChoose: function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
                 return __generator(this, function (_a) {
                     N_023_1.markOptionAsDone(convo);
-                    convo.gotoThread("t_NODE_040_1");
+                    convo.gotoThread("t_NODE_35");
                     return [2 /*return*/];
                 });
             }); }

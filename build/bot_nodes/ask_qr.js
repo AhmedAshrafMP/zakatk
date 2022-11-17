@@ -54,7 +54,17 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from) {
 exports.__esModule = true;
 exports.BlackListedBack = void 0;
 var helpers_1 = require("../helpers");
-exports.BlackListedBack = ["NODE_001", "NODE_023", "NODE_009"];
+exports.BlackListedBack = [
+    "NODE_001",
+    "NODE_023",
+    "NODE_009",
+    "NODE_408",
+    "NODE_386",
+    "NODE_072",
+    "NODE_154",
+    "NODE_362",
+    "NODE_262",
+];
 function bkQRAsk(dialogue, tx, replies, key, attachment, txFn) {
     var _this = this;
     var stringKey = typeof key === "string" ? key : key.key;

@@ -39,7 +39,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 exports.__esModule = true;
-exports.botCtrl = void 0;
 var storage_mongodb_1 = require("@botbuildercommunity/storage-mongodb");
 var botbuilder_adapter_web_1 = require("botbuilder-adapter-web");
 var botkit_1 = require("botkit");
@@ -48,30 +47,43 @@ var moment_1 = __importDefault(require("moment"));
 var dialogues_1 = require("./dialogues");
 var D_023_071_1 = require("./dialogues/D_023_071");
 require("./helpers/i18n/i18n");
+var D_362_385_1 = require("./dialogues/D_362_385");
 // if (process.env.MONGO_URI) {
 console.log("MONGO_URI", process.env.MONGO_URI);
 var mongoDbStorage = undefined;
+var botCtrl;
 // Grab a collection handle off the connected client
 if (process.env.MONGO_URI) {
     mongoDbStorage = new storage_mongodb_1.MongoDbStorage(process.env.MONGO_URI || "", "botkitdb", "testCollection");
+    var adapter = new botbuilder_adapter_web_1.WebAdapter({});
+    botCtrl = new botkit_1.Botkit({
+        webhook_uri: "/api/messages",
+        adapter: adapter,
+        storage: mongoDbStorage
+    });
 }
-var adapter = new botbuilder_adapter_web_1.WebAdapter({});
-//
-exports.botCtrl = new botkit_1.Botkit({
-    webhook_uri: "/api/messages",
-    adapter: adapter
-});
+else {
+    var adapter = new botbuilder_adapter_web_1.WebAdapter({});
+    // unComment adapter and storage before uploading
+    botCtrl = new botkit_1.Botkit({
+        webhook_uri: "/api/messages",
+        adapter: adapter,
+        storage: mongoDbStorage
+    });
+}
 i18n_js_1["default"].locale = "ar";
 moment_1["default"].locale("ar");
-exports.botCtrl; // botCtrl.publicFolder("/", path.join(__dirname, "..", "public"));
-var d_000_009 = dialogues_1.D_000_009(exports.botCtrl);
-dialogues_1.D_014_023(exports.botCtrl, d_000_009);
-dialogues_1.D_055_056(exports.botCtrl);
-D_023_071_1.D_023_071(exports.botCtrl);
-dialogues_1.D_386_406(exports.botCtrl);
-dialogues_1.D_393_406(exports.botCtrl);
-dialogues_1.D_408_439(exports.botCtrl);
-exports.botCtrl.hears(["hello", "bot_start_action"], "message", function (bot, message) { return __awaiter(void 0, void 0, void 0, function () {
+botCtrl; // botCtrl.publicFolder("/", path.join(__dirname, "..", "public"));
+var d_000_009 = dialogues_1.D_000_009(botCtrl);
+dialogues_1.D_014_023(botCtrl, d_000_009);
+dialogues_1.D_055_056(botCtrl);
+D_023_071_1.D_023_071(botCtrl);
+dialogues_1.D_072_204(botCtrl);
+D_362_385_1.D_362_385(botCtrl);
+dialogues_1.D_386_406(botCtrl);
+dialogues_1.D_393_406(botCtrl);
+dialogues_1.D_408_439(botCtrl);
+botCtrl.hears(["hello", "bot_start_action"], "message", function (bot, message) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
@@ -84,7 +96,7 @@ exports.botCtrl.hears(["hello", "bot_start_action"], "message", function (bot, m
         }
     });
 }); });
-exports.botCtrl.interrupts("NO_ZAKAT", "message", function (bot, message) {
+botCtrl.interrupts("NO_ZAKAT", "message", function (bot, message) {
     return bot.beginDialog("d_055_056");
 });
 //# sourceMappingURL=index.js.map

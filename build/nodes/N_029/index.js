@@ -42,14 +42,15 @@ exports.__esModule = true;
 exports.NODE_029 = void 0;
 var ask_str_1 = __importDefault(require("../../bot_nodes/ask_str"));
 var helpers_1 = require("../../helpers");
+var variables_1 = require("../../helpers/variables");
 var NODE_ID = "NODE_029";
 function NODE_029(convo) {
     var _this = this;
     ask_str_1["default"](convo, NODE_ID + ".hello", function (answer, convo, bot, message) { return __awaiter(_this, void 0, void 0, function () {
         var nodeIntValue;
         return __generator(this, function (_a) {
-            nodeIntValue = parseFloat(answer);
-            if (nodeIntValue && nodeIntValue > 0) {
+            nodeIntValue = variables_1.safeParseFloat(answer);
+            if (nodeIntValue >= 0) {
                 convo.gotoThread("t_NODE_030");
             }
             else {

@@ -53,6 +53,7 @@ function NODE_018(convo) {
                     .startOf("D")
                     .diff(moment_1["default"](moment_1["default"](answer)), "days");
                 NoOfYears = Math.floor(NoOfDays / 365);
+                console.log(NoOfYears, "NOOFYEARS");
                 if (NoOfYears > 0) {
                     convo.setVar("NO_OF_YEARS_LEFT", NoOfYears);
                     convo.gotoThread("t_d_023_071");

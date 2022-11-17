@@ -61,7 +61,7 @@ function getGoldPrices(currency) {
                     resp = _a.sent();
                     goldGramPrice = resp.data.items[0].xauPrice / 31.1;
                     silverGramPrice = resp.data.items[0].xagPrice / 28.3495;
-                    console.log("respose", resp.data.items[0]);
+                    // console.log("respose", resp.data.items[0]);
                     return [2 /*return*/, {
                             gold: goldGramPrice,
                             silver: silverGramPrice,

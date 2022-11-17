@@ -43,13 +43,14 @@ exports.NODE_056_3 = void 0;
 var ask_str_1 = __importDefault(require("../../bot_nodes/ask_str"));
 var helpers_1 = require("../../helpers");
 var yearsdiff_1 = require("../../helpers/dates/yearsdiff");
+var variables_1 = require("../../helpers/variables");
 var NODE_ID = "NODE_056_3";
 function NODE_056_3(convo) {
     var _this = this;
     ask_str_1["default"](convo, NODE_ID + ".hello", function (answer, convo, bot, message) { return __awaiter(_this, void 0, void 0, function () {
         var inputValue;
         return __generator(this, function (_a) {
-            inputValue = parseFloat(answer);
+            inputValue = variables_1.safeParseFloat(answer);
             if (inputValue >= 0) {
                 convo.gotoThread("t_NODE_056_4");
             }

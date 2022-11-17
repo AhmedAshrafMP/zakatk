@@ -59,7 +59,7 @@ function NODE_009(convo) {
             payload: NODE_ID + ".choice0",
             onChoose: function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
                 return __generator(this, function (_a) {
-                    convo.gotoThread("t_NODE_000");
+                    convo.gotoThread("t_d_072_204");
                     return [2 /*return*/];
                 });
             }); }
@@ -69,7 +69,7 @@ function NODE_009(convo) {
             payload: NODE_ID + ".choice2",
             onChoose: function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
                 return __generator(this, function (_a) {
-                    convo.gotoThread("t_NODE_000");
+                    convo.gotoThread("t_d_362_385");
                     return [2 /*return*/];
                 });
             }); }
@@ -79,6 +79,7 @@ function NODE_009(convo) {
             payload: NODE_ID + ".choice3",
             onChoose: function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
                 return __generator(this, function (_a) {
+                    //convo.gotoThread("t_d_386_406");
                     convo.gotoThread("t_d_386_406");
                     return [2 /*return*/];
                 });

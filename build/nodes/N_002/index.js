@@ -45,21 +45,21 @@ function NODE_002(convo) {
     var _this = this;
     ask_qr_1["default"](convo, NODE_ID + ".title", [
         {
-            title: NODE_ID + ".opt1",
-            payload: NODE_ID + ".choice0",
-            onChoose: function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
-                return __generator(this, function (_a) {
-                    convo.gotoThread("t_NODE_000");
-                    return [2 /*return*/];
-                });
-            }); }
-        },
-        {
             title: NODE_ID + ".opt2",
             payload: NODE_ID + ".choice1",
             onChoose: function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
                 return __generator(this, function (_a) {
                     convo.gotoThread("t_NODE_004");
+                    return [2 /*return*/];
+                });
+            }); }
+        },
+        {
+            title: NODE_ID + ".opt1",
+            payload: NODE_ID + ".choice0",
+            onChoose: function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
+                return __generator(this, function (_a) {
+                    convo.gotoThread("t_NODE_000");
                     return [2 /*return*/];
                 });
             }); }

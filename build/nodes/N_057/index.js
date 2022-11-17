@@ -52,14 +52,14 @@ function NODE_057(convo) {
             payload: NODE_ID + ".choice0",
             onChoose: function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
                 return __generator(this, function (_a) {
-                    convo.setVar("totalGold", variables_1.safeParseFloat("" + convo.vars.NODE_056_1) * 8 +
+                    convo.setVar("totalGold", variables_1.safeParseFloat("" + convo.vars.NODE_056_1) * 7 +
                         variables_1.safeParseFloat(convo.vars.NODE_056_2) +
                         variables_1.safeParseFloat(convo.vars.NODE_056_2_1) * 0.9166 +
                         variables_1.safeParseFloat(convo.vars.NODE_056_2_2) * 0.75 +
                         variables_1.safeParseFloat(convo.vars.NODE_061_0) +
                         variables_1.safeParseFloat(convo.vars.NODE_061_0_1) * 0.9166 +
                         variables_1.safeParseFloat(convo.vars.NODE_061_0_2) * 0.75);
-                    convo.setVar("totalSilver", variables_1.safeParseFloat("" + convo.vars.NODE_056_3) * 8 +
+                    convo.setVar("totalSilver", variables_1.safeParseFloat("" + convo.vars.NODE_056_3) * 7 +
                         variables_1.safeParseFloat(convo.vars.NODE_056_4) +
                         variables_1.safeParseFloat(convo.vars.NODE_056_4_1) * 0.9259 +
                         variables_1.safeParseFloat(convo.vars.NODE_056_4_2) * 0.9009 +

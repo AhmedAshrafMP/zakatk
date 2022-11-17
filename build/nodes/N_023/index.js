@@ -154,9 +154,10 @@ function NODE_023(convo) {
     return "t_" + NODE_ID;
 }
 exports.NODE_023 = NODE_023;
-function markOptionAsDone(convo) {
+function markOptionAsDone(convo, parentNode) {
+    if (parentNode === void 0) { parentNode = "NODE_023"; }
     var oldOptions = convo.vars.doneMoneyOptions || [];
-    oldOptions.push(convo.vars.NODE_023);
+    oldOptions.push(convo.vars[parentNode]);
     convo.setVar("doneMoneyOptions", oldOptions);
     // clear each period
 }

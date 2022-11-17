@@ -40,6 +40,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 exports.__esModule = true;
 exports.NODE_056 = void 0;
+var __1 = require("..");
 var ask_qr_1 = __importDefault(require("../../bot_nodes/ask_qr"));
 var NODE_ID = "NODE_056";
 function NODE_056(convo) {
@@ -50,6 +51,18 @@ function NODE_056(convo) {
             payload: NODE_ID + ".choice0",
             onChoose: function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
                 return __generator(this, function (_a) {
+                    __1.markOptionAsDone(convo);
+                    convo.gotoThread("t_NODE_058_5");
+                    return [2 /*return*/];
+                });
+            }); }
+        },
+        {
+            title: NODE_ID + ".opt2",
+            payload: NODE_ID + ".choice1",
+            onChoose: function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
+                return __generator(this, function (_a) {
+                    __1.markOptionAsDone(convo);
                     convo.gotoThread("t_NODE_056_1");
                     return [2 /*return*/];
                 });

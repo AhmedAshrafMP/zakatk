@@ -2,7 +2,7 @@
 exports.__esModule = true;
 exports.numberWithCommas = exports.safeParseFloat = void 0;
 function safeParseFloat(n) {
-    return parseFloat(typeof n != "undefined" && n != "undefined" ? "" + n : "0");
+    return parseFloat(parseFloat(typeof n != "undefined" && n != "undefined" ? "" + n : "0").toFixed(2));
 }
 exports.safeParseFloat = safeParseFloat;
 function numberWithCommas(x) {

@@ -41,6 +41,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 exports.__esModule = true;
 exports.NODE_035_3 = void 0;
 var ask_qr_1 = __importDefault(require("../../bot_nodes/ask_qr"));
+var variables_1 = require("../../helpers/variables");
 var NODE_ID = "NODE_035_3";
 function NODE_035_3(convo) {
     var _this = this;
@@ -52,8 +53,8 @@ function NODE_035_3(convo) {
                 var totalGameyaPaid, totalGameyaReceivable;
                 return __generator(this, function (_a) {
                     if (convo.vars.NODE_031 === "NODE_031.choice0") {
-                        totalGameyaPaid = parseFloat(convo.vars.NODE_032);
-                        totalGameyaReceivable = parseFloat(convo.vars.NODE_032_1);
+                        totalGameyaPaid = variables_1.safeParseFloat(convo.vars.NODE_032);
+                        totalGameyaReceivable = variables_1.safeParseFloat(convo.vars.NODE_032_1);
                         convo.setVar("totalDebit", Math.abs(totalGameyaPaid - totalGameyaReceivable));
                         convo.gotoThread("t_NODE_037");
                     }

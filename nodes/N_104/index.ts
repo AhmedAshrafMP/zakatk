@@ -10,9 +10,7 @@ const NODE_ID = "NODE_104";
 function setZakatPerYear(vars, leftYears) {
   const diff = getYearsDiff(vars.LAST_SINGLECOMPANY_DAY, leftYears + 1);
   const myYears = vars.myYears || {};
-
   const singleCompany = safeParseFloat(vars.singleCompany);
-
   if (singleCompany >= vars.gold_prices.gThreshold) {
     // set the value here in obj for the finalSingleZakatCompany
     myYears[diff.toMoment.toISOString()] = singleCompany;
@@ -22,7 +20,6 @@ function setZakatPerYear(vars, leftYears) {
 function clearYearsValue(convo, leftYears) {
   convo.setVar("NO_OF_SINGLECOMPANYYEARS_LEFT", leftYears);
   // convo.setVar("numberOfSingleCompany", numberOfSingleCompany);
-  convo.setVar("myYears", setZakatPerYear(convo.vars, leftYears));
 }
 
 export function NODE_104(convo: BotkitConversation): string {
@@ -103,8 +100,6 @@ export function NODE_104(convo: BotkitConversation): string {
         vars.LAST_SINGLECOMPANY_DAY,
         vars.NO_OF_SINGLECOMPANYYEARS_LEFT
       );
-
-      console.log(vars.NO_OF_SINGLECOMPANYYEARS_LEFT, "diff.from , diff.to");
       const text: string[] = [];
       const currency = convertVarToCurrency(vars.NODE_004);
       // الشركات الفردية
@@ -112,9 +107,7 @@ export function NODE_104(convo: BotkitConversation): string {
       let answerIs;
       if (singleCompanyNames) {
         singleCompanyNames.forEach((key, value) => {
-          answerIs = `${value} : ${numberWithCommas(
-            safeParseFloat(key)
-          )} ${currency}`;
+          answerIs = `${value} : ${numberWithCommas(key)} ${currency}`;
         }),
           text.push(
             translate(NODE_ID + ".singleCompany", {

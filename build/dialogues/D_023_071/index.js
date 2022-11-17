@@ -41,6 +41,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 exports.__esModule = true;
 exports.D_023_071 = void 0;
 var botkit_1 = require("botkit");
+var variables_1 = require("../../helpers/variables");
 var nodes_1 = require("../../nodes");
 var N_000_1 = __importDefault(require("../../nodes/N_000"));
 var N_037_1 = require("../../nodes/N_037");
@@ -92,6 +93,8 @@ function D_023_071(botCtrl) {
     nodes_1.NODE_056_4(thisDialogue);
     nodes_1.NODE_056_4_1(thisDialogue);
     nodes_1.NODE_056_4_2(thisDialogue);
+    nodes_1.NODE_058_5(thisDialogue);
+    nodes_1.NODE_059_6(thisDialogue);
     nodes_1.NODE_057(thisDialogue);
     nodes_1.NODE_058(thisDialogue);
     nodes_1.NODE_059(thisDialogue);
@@ -121,7 +124,7 @@ function D_023_071(botCtrl) {
     thisDialogue.addQuestion("Hello i`m d_023_071 {{vars.NO_OF_YEARS_LEFT}} {{vars.NODE_029}}", function (answer, convo, bot) { return __awaiter(_this, void 0, void 0, function () {
         var leftYears;
         return __generator(this, function (_a) {
-            leftYears = parseFloat(convo.vars.NO_OF_YEARS_LEFT) - 1;
+            leftYears = variables_1.safeParseFloat(convo.vars.NO_OF_YEARS_LEFT) - 1;
             convo.setVar("NO_OF_YEARS_LEFT", leftYears);
             if (leftYears > 0) {
                 // console.log("resp", convo.vars);

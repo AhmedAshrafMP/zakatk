@@ -43,7 +43,20 @@ var ask_qr_1 = __importDefault(require("../../bot_nodes/ask_qr"));
 var NODE_ID = "NODE_004";
 function NODE_004(convo) {
     var _this = this;
-    var CurrencyList = ["EGP", "SAR", "AED", "KWD", "USD", "EURO"];
+    var CurrencyList = [
+        "EGP",
+        "USD",
+        "EUR",
+        "SAR",
+        "AED",
+        "KWD",
+        "OMR",
+        "IQD",
+        "JOD",
+        "BHD",
+        "QAR",
+        "TND",
+    ];
     ask_qr_1["default"](convo, NODE_ID + ".title", CurrencyList.map(function (crs) { return ({
         title: NODE_ID + ".currency." + crs,
         payload: NODE_ID + "." + crs,

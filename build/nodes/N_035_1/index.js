@@ -63,8 +63,8 @@ function NODE_035_1(convo) {
             onChoose: function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
                 var totalGameyaPaid, totalGameyaReceivable;
                 return __generator(this, function (_a) {
-                    totalGameyaPaid = variables_1.safeParseFloat(convo.vars.NODE_032 || 0);
-                    totalGameyaReceivable = variables_1.safeParseFloat(convo.vars.NODE_032_1 || 0);
+                    totalGameyaPaid = variables_1.safeParseFloat(convo.vars.NODE_032);
+                    totalGameyaReceivable = variables_1.safeParseFloat(convo.vars.NODE_032_1);
                     convo.setVar("totalDebit", Math.abs(totalGameyaPaid - totalGameyaReceivable));
                     convo.gotoThread("t_NODE_036");
                     return [2 /*return*/];

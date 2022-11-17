@@ -58,6 +58,10 @@ function D_014_023(botCtrl, parent) {
     var thisDialogue = new botkit_1.BotkitConversation("d_014_023", botCtrl);
     thisDialogue.addChildDialog("d_023_071", "d_023_071", "t_d_023_071");
     thisDialogue.addChildDialog("d_055_056", "d_055_056", "t_d_055_056");
+    thisDialogue.addChildDialog("d_362_385", "d_362_385", "t_d_362_385");
+    thisDialogue.addChildDialog("d_386_406", "d_386_406", "t_d_386_406");
+    thisDialogue.addChildDialog("d_408_439", "d_408_439", "t_d_408_439");
+    thisDialogue.addChildDialog("d_072_204", "d_072_204", "t_d_072_204");
     var begin = N_009_1["default"](thisDialogue);
     thisDialogue.addAction(begin);
     N_014_1["default"](thisDialogue);

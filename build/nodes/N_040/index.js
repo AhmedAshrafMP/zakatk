@@ -43,6 +43,7 @@ exports.NODE_040 = void 0;
 var ask_str_1 = __importDefault(require("../../bot_nodes/ask_str"));
 var helpers_1 = require("../../helpers");
 var yearsdiff_1 = require("../../helpers/dates/yearsdiff");
+var variables_1 = require("../../helpers/variables");
 var N_023_1 = require("../N_023");
 var NODE_ID = "NODE_040";
 function NODE_040(convo) {
@@ -50,8 +51,8 @@ function NODE_040(convo) {
     ask_str_1["default"](convo, NODE_ID + ".hello", function (answer, convo, bot, message) { return __awaiter(_this, void 0, void 0, function () {
         var intAnswer;
         return __generator(this, function (_a) {
-            intAnswer = parseFloat(answer);
-            if (intAnswer && intAnswer >= 0) {
+            intAnswer = variables_1.safeParseFloat(answer);
+            if (intAnswer >= 0) {
                 convo.setVar("totalCredit", Math.abs(intAnswer));
                 N_023_1.markOptionAsDone(convo);
                 // go to calc node

@@ -43,6 +43,7 @@ exports.NODE_065 = void 0;
 var i18n_js_1 = require("i18n-js");
 var ask_str_1 = __importDefault(require("../../bot_nodes/ask_str"));
 var yearsdiff_1 = require("../../helpers/dates/yearsdiff");
+var variables_1 = require("../../helpers/variables");
 var N_023_1 = require("../N_023");
 var NODE_ID = "NODE_065";
 function NODE_065(convo) {
@@ -50,8 +51,8 @@ function NODE_065(convo) {
     ask_str_1["default"](convo, NODE_ID + ".hello", function (answer, convo, bot, message) { return __awaiter(_this, void 0, void 0, function () {
         var inputValue;
         return __generator(this, function (_a) {
-            inputValue = parseFloat(answer);
-            if (inputValue > 0) {
+            inputValue = variables_1.safeParseFloat(answer);
+            if (inputValue >= 0) {
                 N_023_1.markOptionAsDone(convo);
                 convo.gotoThread("t_NODE_030");
             }

@@ -43,14 +43,15 @@ exports.NODE_032_1 = void 0;
 var ask_str_1 = __importDefault(require("../../bot_nodes/ask_str"));
 var helpers_1 = require("../../helpers");
 var yearsdiff_1 = require("../../helpers/dates/yearsdiff");
+var variables_1 = require("../../helpers/variables");
 var NODE_ID = "NODE_032_1";
 function NODE_032_1(convo) {
     var _this = this;
     ask_str_1["default"](convo, NODE_ID + ".hello", function (answer, convo, bot, message) { return __awaiter(_this, void 0, void 0, function () {
         var totalGameyaPaid, totalGameyaReceivable;
         return __generator(this, function (_a) {
-            totalGameyaPaid = parseFloat(convo.vars.NODE_032);
-            totalGameyaReceivable = parseFloat(answer);
+            totalGameyaPaid = variables_1.safeParseFloat(convo.vars.NODE_032);
+            totalGameyaReceivable = variables_1.safeParseFloat(answer);
             if (totalGameyaPaid - totalGameyaReceivable > 0) {
                 convo.gotoThread("t_NODE_034");
             }
