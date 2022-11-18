@@ -1,21 +1,15 @@
-import {
-  convertVarToCurrency,
-  convertVarToCurrencySym,
-} from "../../helpers/i18n/index";
-import { BotkitConversation, Botkit } from "botkit";
-import { getGoldPrices } from "../../helpers/apis";
+import { Botkit, BotkitConversation } from "botkit";
 import { NODE_386 } from "../../nodes/N_386/index";
 import { NODE_387 } from "../../nodes/N_387/index";
-import { NODE_389 } from "../../nodes/N_389/index";
 import { NODE_388 } from "../../nodes/N_388/index";
 
 import { NODE_393 } from "../../nodes/N_393/index";
 
-import { NODE_391 } from "../../nodes/N_391/index";
 import NODE_008 from "../../nodes/N_008/index";
+import { NODE_391 } from "../../nodes/N_391/index";
 import NODE_392 from "../../nodes/N_392";
-import NODE_395 from "../../nodes/N_395";
 import NODE_394 from "../../nodes/N_394/index";
+import NODE_395 from "../../nodes/N_395";
 import { NODE_397 } from "../../nodes/N_397/index";
 import { NODE_435 } from "../../nodes/N_435";
 
@@ -30,7 +24,6 @@ export function D_386_406(botCtrl: Botkit) {
   NODE_008(thisDialogue);
   NODE_386(thisDialogue);
   NODE_387(thisDialogue);
-  NODE_389(thisDialogue);
   NODE_388(thisDialogue);
   NODE_391(thisDialogue);
   NODE_393(thisDialogue);

@@ -9,7 +9,7 @@ export function NODE_429(convo: BotkitConversation): string {
 		NODE_ID + '.hello',
 		async (answer, convo, bot, message) => {
 			const inputValue = safeParseFloat(answer);
-			convo.gotoThread('t_NODE_430');
+			convo.gotoThread("t_NODE_430");
 		},
 		NODE_ID,
 		{

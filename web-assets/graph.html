@@ -92,10 +92,11 @@
               x = leaderNodes.indexOf(id) * 100;
               y = leaderNodes.indexOf(id) * 100;
             } else {
-              x = weight / 2;
-              y = weight / 3;
               weight = 9;
             }
+
+            x = weight + 1;
+            y = weight * 2 + 1;
 
             if (!node.data.id.includes("d_")) {
               elements.push({
@@ -141,10 +142,7 @@
                 target: dst,
               },
             });
-
-
           });
-
 
           var cy = cytoscape({
             container: document.getElementById("cy"),
@@ -153,12 +151,12 @@
 
             layout: {
               name: "euler",
-              randomize: true,
+              randomize: false,
               animate: false,
-              padding: 30, // fit padding
-              gravity: -5.2,
-              pull: 0.002,
-              mass: (node) => node.data("weight"),
+              gravity: -10.22,
+              pull: 0.001,
+              springLength: (edge) => 50,
+              springCoeff: (edge) => 0.00095,
 
               // some more options here...
             },
