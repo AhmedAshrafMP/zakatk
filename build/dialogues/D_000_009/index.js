@@ -17,6 +17,7 @@ var N_007_1_1 = __importDefault(require("../../nodes/N_007_1"));
 var N_007_2_1 = __importDefault(require("../../nodes/N_007_2"));
 var N_008_1 = __importDefault(require("../../nodes/N_008"));
 function D_000_009(botCtrl) {
+    console.log("D_000_009 loaded");
     // init dialogue
     var thisDialogue = new botkit_1.BotkitConversation("d_000_009", botCtrl);
     var begin = N_001_1["default"](thisDialogue);

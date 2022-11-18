@@ -128,16 +128,11 @@ function NODE_041(convo) {
                     onChoose: function (_answer, convo, bot, _msg) { return __awaiter(_this, void 0, void 0, function () {
                         var zakat_per_years;
                         return __generator(this, function (_a) {
-                            switch (_a.label) {
-                                case 0:
-                                    zakat_per_years = setZakatPerYear(convo.vars, leftYears);
-                                    convo.setVar("zakat_per_years", zakat_per_years);
-                                    console.log(zakat_per_years, "_____________");
-                                    return [4 /*yield*/, bot.say("TODO: TOTAL ZAKAT CARD")];
-                                case 1:
-                                    _a.sent();
-                                    return [2 /*return*/, bot.cancelAllDialogs()];
-                            }
+                            zakat_per_years = setZakatPerYear(convo.vars, leftYears);
+                            convo.setVar("zakat_per_years", zakat_per_years);
+                            console.log(zakat_per_years, "_____________");
+                            // await bot?.say("TODO: TOTAL ZAKAT CARD");
+                            return [2 /*return*/, bot && bot.cancelAllDialogs ? bot.cancelAllDialogs() : null];
                         });
                     }); }
                 },

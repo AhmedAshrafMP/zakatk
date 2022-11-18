@@ -49,7 +49,7 @@ function NODE_023(convo) {
     var _this = this;
     ask_qr_1["default"](convo, NODE_ID + ".title", function (tmp, vars) {
         var quickReplies = [];
-        var doneOptions = vars.doneMoneyOptions || [];
+        var doneOptions = (vars === null || vars === void 0 ? void 0 : vars.doneMoneyOptions) || [];
         if (doneOptions.indexOf(NODE_ID + ".choice0") < 0) {
             quickReplies.push({
                 title: helpers_1.translate(NODE_ID + ".opt1"),
@@ -155,8 +155,9 @@ function NODE_023(convo) {
 }
 exports.NODE_023 = NODE_023;
 function markOptionAsDone(convo, parentNode) {
+    var _a;
     if (parentNode === void 0) { parentNode = "NODE_023"; }
-    var oldOptions = convo.vars.doneMoneyOptions || [];
+    var oldOptions = ((_a = convo.vars) === null || _a === void 0 ? void 0 : _a.doneMoneyOptions) || [];
     oldOptions.push(convo.vars[parentNode]);
     convo.setVar("doneMoneyOptions", oldOptions);
     // clear each period

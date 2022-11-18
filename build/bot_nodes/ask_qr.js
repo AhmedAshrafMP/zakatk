@@ -54,6 +54,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from) {
 exports.__esModule = true;
 exports.BlackListedBack = void 0;
 var helpers_1 = require("../helpers");
+var index_1 = require("../index");
 exports.BlackListedBack = [
     "NODE_001",
     "NODE_023",
@@ -70,7 +71,8 @@ function bkQRAsk(dialogue, tx, replies, key, attachment, txFn) {
     var stringKey = typeof key === "string" ? key : key.key;
     var IsBlackListed = exports.BlackListedBack.indexOf(stringKey) >= 0;
     var goBack = function (convo) {
-        var oldNodeTree = convo.vars.last_visited_node;
+        var _a;
+        var oldNodeTree = ((_a = convo.vars) === null || _a === void 0 ? void 0 : _a.last_visited_node) || [];
         // remove this item
         var index = oldNodeTree.indexOf(stringKey);
         if (index > -1) {
@@ -112,13 +114,14 @@ function bkQRAsk(dialogue, tx, replies, key, attachment, txFn) {
             }
             return defaultReplies;
         };
-    return dialogue.addQuestion({
+    var message = {
         text: txFn ? txFn : function () { return helpers_1.translate(tx); },
         quick_replies: quick_replies,
         attachments: [
             __assign({ title: key }, attachment),
         ]
-    }, function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
+    };
+    var handlers = function (answer, convo, bot, msg) { return __awaiter(_this, void 0, void 0, function () {
         var oldSteps;
         var _a, _b;
         return __generator(this, function (_c) {
@@ -127,7 +130,84 @@ function bkQRAsk(dialogue, tx, replies, key, attachment, txFn) {
             (_b = (_a = quick_replies(msg, convo.vars)) === null || _a === void 0 ? void 0 : _a.filter(function (el) { return el.payload === answer; })[0]) === null || _b === void 0 ? void 0 : _b.onChoose(answer, convo, bot, msg);
             return [2 /*return*/];
         });
-    }); }, key, "t_" + key);
+    }); };
+    var _key = key;
+    var thread_name = "t_" + (typeof key === "object" ? key.key : key);
+    if (index_1.cy.$id(thread_name).length === 0) {
+        index_1.cy.add({
+            group: "nodes",
+            data: {
+                id: thread_name,
+                name: thread_name
+            }
+        });
+    }
+    if (index_1.cy.$id("t_NODE_009").length === 0) {
+        index_1.cy.add({
+            group: "nodes",
+            data: {
+                id: "t_NODE_009",
+                name: "t_NODE_009"
+            }
+        });
+    }
+    /// if dev env draw graph
+    // if (process.env.NODE_ENV === "development") {
+    //   quick_replies(null, {}).forEach((el) => {
+    //     el.onChoose(
+    //       el.payload,
+    //       {
+    //         setVar: (key, value) => {},
+    //         vars: {
+    //           gold_prices: {
+    //             gold: 1,
+    //             silver: 1,
+    //           },
+    //         },
+    //         gotoThread: async (goToThreadId) => {
+    //           if (
+    //             goToThreadId === "t_on_go_back" ||
+    //             !goToThreadId ||
+    //             goToThreadId === "t_" ||
+    //             goToThreadId === "t_undefined"
+    //           ) {
+    //             return;
+    //           }
+    //           if (cy.$id(goToThreadId).length === 0) {
+    //             cy.add({
+    //               group: "nodes",
+    //               data: { id: goToThreadId, name: goToThreadId },
+    //             });
+    //           }
+    //           if (cy.$id(`${thread_name}_${goToThreadId}`).length === 0) {
+    //             cy.add({
+    //               data: {
+    //                 id: `${thread_name}_${goToThreadId}`,
+    //                 target: goToThreadId,
+    //                 source: thread_name,
+    //               },
+    //             });
+    //           }
+    //         },
+    //         repeat: async () => {},
+    //         stop: async () => {
+    //           if (cy.$id(`${thread_name}_t_NODE_009`).length === 0) {
+    //             cy.add({
+    //               data: {
+    //                 id: `${thread_name}_t_NODE_009`,
+    //                 target: "t_NODE_009",
+    //                 source: thread_name,
+    //               },
+    //             });
+    //           }
+    //         },
+    //       },
+    //       botCtrlInstance,
+    //       undefined
+    //     );
+    //   });
+    // }
+    return dialogue.addQuestion(message, handlers, _key, thread_name);
 }
 exports["default"] = bkQRAsk;
 //# sourceMappingURL=ask_qr.js.map
