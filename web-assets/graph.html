@@ -50,7 +50,7 @@
     </style>
 
     <script>
-      const leaderNodes = ["n001", "n386", "n362", "n014", "n072", "n408"];
+      const leaderNodes = ["n001", "n386", "n362", "n014", "n072", "n408", "n009"];
       window.addEventListener("DOMContentLoaded", function () {
         fetch("/api/graph.json").then(async function (res) {
           const resp = await res.json();
@@ -69,7 +69,7 @@
                 .replace("t_d_", "d")
             );
             if (leaderNodes.indexOf(id) > -1) {
-              weight = 1;
+              weight = 100;
             }else{
               weight = 10;
             }
