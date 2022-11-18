@@ -18,7 +18,6 @@ export function transNoDefault(key: string, options?: object) {
   const opts: TranslateOptions = {
     ...options,
     defaultValue: "",
-    defaults: [{ message: "" }],
   };
   return key ? i18n.t(key, opts) : "";
 }

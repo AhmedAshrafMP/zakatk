@@ -3,12 +3,13 @@ import cytoscape, { Core } from "cytoscape";
 import { transNoDefault } from "../i18n";
 
 export function getTransFromThreadName(threadName: string): string {
-  const nodeNamePart = threadName?.replaceAll("t_", "") || "";
-
-  return (
+  const nodeNamePart =
+    typeof threadName === "string" ? threadName?.replaceAll("t_", "") : "";
+  const translated =
     transNoDefault(nodeNamePart + ".title") ||
-    transNoDefault(nodeNamePart + ".hello")
-  );
+    transNoDefault(nodeNamePart + ".hello");
+
+  return translated;
 }
 
 export async function getTargetNodesFromFileArray(files): Promise<Core> {
