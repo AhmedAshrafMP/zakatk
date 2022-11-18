@@ -47,45 +47,7 @@ export function NODE_040_2(convo: BotkitConversation): string {
           convo.gotoThread("t_NODE_397");
         },
       },
-      {
-        title: NODE_ID + ".opt2",
-        payload: NODE_ID + ".choice1",
-        onChoose: async (answer, convo, bot, msg) => {
-          // calc threshold
-          const calculatedZakat = getZakatForThisYear(convo.vars);
-          const paperZakat =
-            calculatedZakat.money +
-            calculatedZakat.savings +
-            calculatedZakat.stocks;
-          const goldZakat = calculatedZakat.gold_money;
-          const silverZakat = calculatedZakat.silver_money;
-          console.log(
-            calculatedZakat,
-            paperZakat + goldZakat + silverZakat,
-            convo.vars.gold_prices.sThreshold,
-            paperZakat + goldZakat + silverZakat <
-              safeParseFloat(convo.vars.gold_prices.sThreshold)
-          );
-          if (
-            paperZakat + goldZakat + silverZakat <
-            safeParseFloat(convo.vars.gold_prices.sThreshold)
-          ) {
-            convo.gotoThread("t_NODE_049");
-          } else {
-            if (
-              paperZakat + goldZakat > convo.vars.gold_prices.gThreshold &&
-              silverZakat > convo.vars.gold_prices.sThreshold
-            ) {
-              convo.gotoThread("t_NODE_043");
-            } else if (paperZakat > convo.vars.gold_prices.gThreshold) {
-              convo.setVar("NODE_045", "NODE_045.choice0");
-              convo.gotoThread("t_NODE_046");
-            } else {
-              convo.gotoThread("t_NODE_045");
-            }
-          }
-        },
-      },
+
     ],
     NODE_ID
   );
