@@ -4,7 +4,7 @@ import { transNoDefault } from "../i18n";
 
 export function getTransFromThreadName(threadName: string): string {
   const nodeNamePart =
-    typeof threadName === "string" ? threadName?.replaceAll("t_", "") : "";
+    typeof threadName === "string" ? threadName?.replace("t_", "") : "";
   const translated =
     transNoDefault(nodeNamePart + ".title") ||
     transNoDefault(nodeNamePart + ".hello");
@@ -46,8 +46,8 @@ export async function getTargetNodesFromFileArray(files): Promise<Core> {
                 group: "nodes",
                 data: {
                   id: targetNode,
-                  name: currentNode,
-                  label: getTransFromThreadName(currentNode),
+                  name: targetNode,
+                  label: getTransFromThreadName(targetNode),
                 },
               });
             }
