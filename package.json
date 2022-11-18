@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "DEBUG=botkit:web  nodemon --config nodemon.json ./index.ts ",
     "dev:debug": "DEBUG=botkit:web  nodemon --config nodemon.json --inspect-brk ./index.ts",
-    "build": "rimraf ./build && tsc",
+    "build": "rimraf ./build && mkdir ./build && npm run copy-files && tsc",
     "copy-files": "cp -R web-assets build/web-assets",
     "start": "pm2-runtime start ecosystem.config.js --env production"
   },
