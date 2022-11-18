@@ -3,10 +3,11 @@ import cytoscape, { Core } from "cytoscape";
 import { transNoDefault } from "../i18n";
 
 export function getTransFromThreadName(threadName: string): string {
-  const nodeNamePart = threadName.replaceAll("t_", "");
+  const nodeNamePart = threadName?.replaceAll("t_", "") || "";
 
   return (
-    transNoDefault(nodeNamePart + ".title") || transNoDefault(nodeNamePart + ".hello")
+    transNoDefault(nodeNamePart + ".title") ||
+    transNoDefault(nodeNamePart + ".hello")
   );
 }
 
