@@ -71,6 +71,12 @@ export async function getTargetNodesFromFileArray(files): Promise<Core> {
                 data: { id: targetNode, name: targetNode },
               });
             }
+            if (cy.$id(`${currentNode}`).length <= 0) {
+              cy.add({
+                group: "nodes",
+                data: { id: currentNode, name: currentNode },
+              });
+            }
             if (cy.$id(`${currentNode}_${targetNode}`).length <= 0) {
               cy.add({
                 group: "edges",

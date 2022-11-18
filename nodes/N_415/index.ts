@@ -17,7 +17,8 @@ export function NODE_415(convo: BotkitConversation): string {
           if (NODE_411 - NODE_412 > convo.vars.gold_prices.gThreshold) {
             convo.gotoThread("t_NODE_418");
           } else {
-            convo.gotoThread("t_NODE_435");
+            //TODO:connect layes 3lek zakah
+            convo.stop();
           }
         },
       },
@@ -30,7 +31,8 @@ export function NODE_415(convo: BotkitConversation): string {
           if (NODE_411 - NODE_412 > convo.vars.gold_prices.sThreshold) {
             convo.gotoThread("t_NODE_418");
           } else {
-            convo.gotoThread("t_NODE_435");
+            //TODO:connect layes 3lek zakah
+            convo.stop();
           }
         },
       },
