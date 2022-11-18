@@ -14,14 +14,16 @@ export function NODE_428(convo: BotkitConversation): string {
           if (inputValue >= convo.vars.gold_prices.gThreshold) {
             convo.gotoThread("t_NODE_439");
           } else {
-            convo.gotoThread("t_NODE_435");
+            //TODO:connect layes 3lek zakah
+            convo.stop();
           }
         }
         if (convo.vars.NODE_413 && convo.vars.NODE_413 === "NODE_413.choice1") {
           if (inputValue >= convo.vars.gold_prices.sThreshold) {
             convo.gotoThread("t_NODE_439");
           } else {
-            convo.gotoThread("t_NODE_435");
+            //TODO:connect layes 3lek zakah
+            convo.stop();
           }
         }
       } else {

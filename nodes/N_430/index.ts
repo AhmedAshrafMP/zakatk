@@ -22,7 +22,8 @@ export function NODE_430(convo: BotkitConversation): string {
         } else if (NODE_429 - inputValue > 0) {
           convo.gotoThread("t_NODE_432");
         } else {
-          convo.gotoThread("t_NODE_435");
+          //TODO:connect layes 3lek zakah
+          convo.stop();
         }
       } else {
         convo.repeat();

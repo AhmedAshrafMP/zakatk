@@ -13,7 +13,7 @@ export function getTransFromThreadName(threadName: string): string {
 }
 
 export async function getTargetNodesFromFileArray(files): Promise<Core> {
-  const cy = cytoscape();
+  const cy = cytoscape({});
   if (files && Array.isArray(files)) {
     for (let i = 0; i < files.length; i++) {
       const filePath = files[i];
