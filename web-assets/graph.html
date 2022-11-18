@@ -228,14 +228,22 @@
 
           // tippyAB.show();
           const visibleTips = [];
+          cy.nodes().on("touchend", function (e) {
+            console.log("touchend")
+            showPop(e)
+          });
           cy.nodes().on("click", function (e) {
+            showPop(e)
+          });
+
+          function showPop(e) {
             visibleTips.forEach((tip) => tip.hide());
 
             var clickedNode = e.target;
             var tipNode = makeTippy(clickedNode, clickedNode.data("label"));
             tipNode.show();
             visibleTips.push(tipNode);
-          });
+          }
         });
       });
     </script>
