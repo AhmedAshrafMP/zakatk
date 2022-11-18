@@ -17,7 +17,7 @@ export default function NODE_392(convo: BotkitConversation): string {
             moment().subtract(364, "days").toISOString()
           );
           convo.setVar("ZAKAT_PERIOD_VALUES", {});
-          return convo.gotoThread("t_d_393_406");
+          return convo.gotoThread("t_d_397_406");
         },
       },
     ],

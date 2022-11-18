@@ -37,7 +37,7 @@ import { NODE_372_1, NODE_378_1, NODE_463 } from "../../nodes";
 
 export function D_393_406(botCtrl: Botkit) {
   // init dialogue
-  const thisDialogue = new BotkitConversation("d_393_406", botCtrl);
+  const thisDialogue = new BotkitConversation("d_397_406", botCtrl);
 
   const begin = NODE_397(thisDialogue);
   thisDialogue.addAction(begin);
@@ -88,7 +88,7 @@ export function D_393_406(botCtrl: Botkit) {
   thisDialogue.addChildDialog("d_000_009", "d_000_009", "t_d_000_009");
 
   thisDialogue.addQuestion(
-    "Hello i`m d_393_406 {{vars.NO_OF_YEARS_LEFT}} {{vars.NODE_029}}",
+    "Hello i`m d_397_406 {{vars.NO_OF_YEARS_LEFT}} {{vars.NODE_029}}",
     async (answer, convo, bot) => {
       let leftYears = parseFloat(convo.vars.NO_OF_YEARS_LEFT) - 1;
       convo.setVar("NO_OF_YEARS_LEFT", leftYears);
