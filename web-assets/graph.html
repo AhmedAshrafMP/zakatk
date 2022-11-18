@@ -20,6 +20,11 @@
     <script src="https://cytoscape.org/cytoscape.js-popper/cytoscape-popper.js"></script>
 
     <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="https://unpkg.com/dagre@0.7.4/dist/dagre.js"></script>
+    <script src="https://unpkg.com/cytoscape-dagre@2.2.2/cytoscape-dagre.js"></script>
+
+    <script src="https://unpkg.com/klayjs@0.4.1/klay.js"></script>
+    <script src="https://unpkg.com/cytoscape-klay@3.1.2/cytoscape-klay.js"></script>
 
     <style>
       body {
@@ -34,7 +39,7 @@
         top: 0;
         bottom: 0;
         right: 0;
-        z-index: 999;
+        z-index: 100;
       }
 
       h1 {
@@ -56,15 +61,12 @@
         return "00000".substring(0, 6 - c.length - 0) + c;
       }
 
-      const leaderNodes = [
-        "n009",
-        "n386",
-        "n362",
-        "n014",
-        "n072",
-        "n408",
-        "n009",
-      ];
+      function clearStringFromAlpha(str) {
+        var numsStr = str.replace("endt_", -1).replace(/[^0-9]/g, "");
+        return "_" + numsStr;
+      }
+
+      const leaderNodes = ["009", "386", "362", "014", "072", "408", "009"];
 
       window.addEventListener("DOMContentLoaded", function () {
         fetch("/api/graph.json").then(async function (res) {
@@ -72,167 +74,130 @@
           let { edges, nodes } = resp.elements;
           let elements = [];
           nodes.forEach((node) => {
-            const id = node.data.id
-              .replace("t_NODE_", "n")
-              .replace("_", "_")
-              .replace("t_d_", "d")
-              .replace("t.d_", "d");
-            let weight = parseFloat(
-              node.data.id
-                .replace("t_NODE_", "")
-                .replace("_", ".")
-                .replace("t_d_", "")
-            );
-
-            let x = 0;
-            let y = 0;
+            const id = clearStringFromAlpha(node.data.id);
+            let weight = clearStringFromAlpha(node.data.id);
 
             if (leaderNodes.indexOf(id) > -1) {
               weight = 50;
-              x = leaderNodes.indexOf(id) * 100;
-              y = leaderNodes.indexOf(id) * 100;
             } else {
               weight = 9;
             }
-
-            x = weight + 1;
-            y = weight * 2 + 1;
 
             if (!node.data.id.includes("d_")) {
               elements.push({
                 data: {
                   id: id,
                   label: node.data.label,
-                  name: node.data.id
-                    .replace("t_NODE_", "n")
-                    .replace("_", "_")
-                    .replace("t_d_", "d"),
-                  weight: weight,
-                  size: node.data.id.includes("d_") ? 60 : 30,
+                  name: id,
                 },
-                position: { x: x, y: y },
+                // position: { x: x, y: y },
               });
             }
           });
 
           edges.forEach((edge) => {
-            const src = edge.data.source
-              .replace("t_NODE_", "n")
-              .replace("_", "_")
-              .replace("t_d_", "d")
-              .replace("t.d_", "d");
-            let dst = edge.data.target
-              .replace("t_NODE_", "n")
-              .replace("_", "_")
-              .replace("t_d_", "d")
-              .replace("t.d_", "d");
+            const src = clearStringFromAlpha(edge.data.source);
+            let dst = clearStringFromAlpha(edge.data.target);
 
-            if (dst.startsWith("d")) {
-              dst = dst.split("_")[0].replace("d", "n");
-              console.log("dist_dialog", dst);
+            if (
+              edge.data.target.includes("t_d_") &&
+              edge.data.target.split("t_d_").length > 0
+            ) {
+              dst = clearStringFromAlpha(
+                edge.data.target.split("t_d_")[1].split("_")[0]
+              );
             }
 
             elements.push({
               data: {
-                id: edge.data.id
-                  .replace("t_NODE_", "n")
-                  .replace("_", "_")
-                  .replace("t_d_", "d"),
                 source: src,
                 target: dst,
               },
             });
           });
+          const style = cytoscape
+            .stylesheet()
+
+            .selector("node")
+            .css({
+              "background-color": "#ccc",
+              "background-color": "#ccc",
+              label: "data(name)",
+              "font-size": 10,
+              "text-valign": "center",
+              "text-halign": "center",
+              "text-outline-color": "white",
+              "text-outline-width": "1px",
+              "text-wrap": "wrap",
+              "text-max-width": 50,
+              "border-width": 1,
+              "border-color": "#ccc",
+            })
+            .selector("edge")
+            .css({
+              width: "2px",
+              "target-arrow-shape": "triangle",
+              "line-color": "#9dbaea",
+              "target-arrow-color": "#9dbaea",
+              "curve-style": "bezier",
+              opacity: 0.5,
+            })
+            .selector(".highlighted")
+            .style({
+              "background-color": "red",
+              "line-color": "red",
+              "target-arrow-color": "red",
+              "transition-property":
+                "background-color, line-color, target-arrow-color",
+
+              "transition-duration": "0.2s",
+            });
+
+          const layout = {
+            name: "euler",
+            randomize: true,
+            animate: false,
+            gravity: -10.22,
+            pull: 0.001,
+            springLength: (edge) => 50,
+            springCoeff: (edge) => 0.00095,
+            // some more options here...
+          };
 
           var cy = cytoscape({
             container: document.getElementById("cy"),
-
             boxSelectionEnabled: false,
-
-            layout: {
-              name: "euler",
-              randomize: false,
-              animate: false,
-              gravity: -10.22,
-              pull: 0.001,
-              springLength: (edge) => 50,
-              springCoeff: (edge) => 0.00095,
-
-              // some more options here...
-            },
-
-            style: cytoscape
-              .stylesheet()
-              .selector(":parent")
-              .css({
-                "text-valign": "center",
-                "text-margin-y": function (node) {
-                  return -node.height() + 5;
-                },
-              })
-              .selector("node")
-              .css({
-                "background-color": "#ccc",
-                height: "data(size)",
-                width: "data(size)",
-                "background-color": "#ccc",
-                label: "data(name)",
-                "font-size": 10,
-                "text-valign": "center",
-                "text-halign": "center",
-                "text-outline-color": "white",
-                "text-outline-width": "1px",
-                "text-wrap": "wrap",
-                "text-max-width": 50,
-                "border-width": 1,
-                "border-color": "#ccc",
-              })
-              .selector("edge")
-              .css({
-                width: "2px",
-                "target-arrow-shape": "triangle",
-                "line-color": "#9dbaea",
-                "target-arrow-color": "#9dbaea",
-                "curve-style": "bezier",
-                opacity: 0.5,
-              })
-              .selector(".highlighted")
-              .style({
-                "background-color": "#61bffc",
-                "line-color": "#61bffc",
-                "target-arrow-color": "#61bffc",
-                "transition-property":
-                  "background-color, line-color, target-arrow-color",
-                "transition-duration": "0.5s",
-              }),
-
+            layout,
+            style,
             elements,
           });
+
+          // cy2.remove('*');
 
           // workable
 
           var highlightNextEle = function (node_name) {
-            var bfs = cy.elements().bfs("#n" + node_name, function () {}, true);
+            var bfs = cy.elements().bfs("#" + node_name, function () {}, true);
             for (let i = 0; i < bfs.path.length; i++) {
               const element = bfs.path[i];
-              const color = intToRGB(node_name);
-              element.css("background-color", "#" + intToRGB(node_name));
+              const color = intToRGB(parseFloat(node_name.replace("_", "")));
+              element.css("background-color", "#" + color);
             }
           };
 
           // kick off first highlight
-          highlightNextEle("014");
-          highlightNextEle("072");
-          highlightNextEle("386");
-          highlightNextEle("408");
-          highlightNextEle("362");
+          highlightNextEle("_014");
+          highlightNextEle("_072");
+          highlightNextEle("_386");
+          highlightNextEle("_408");
+          highlightNextEle("_362");
 
-          var a = cy.getElementById("n009");
-          var b = cy.getElementById("n386");
-          var c = cy.getElementById("n362");
-          var d = cy.getElementById("n014");
-          var e = cy.getElementById("n072");
-          var f = cy.getElementById("n408");
+          var a = cy.getElementById("_009");
+          var b = cy.getElementById("_386");
+          var c = cy.getElementById("_362");
+          var d = cy.getElementById("_014");
+          var e = cy.getElementById("_072");
+          var f = cy.getElementById("_408");
 
           // var ab = cy.getElementById("ab");
 
@@ -281,9 +246,13 @@
           var tippyf = makeTippy(f, "الركاز");
           tippyf.show();
 
-          // var tippyAB = makeTippy(ab, "baz");
+          function showPop(e) {
+            visibleTips.forEach((tip) => tip.hide());
+            var clickedNode = e.target;
+            var tipNode = makeTippy(clickedNode, clickedNode.data("label"));
+            tipNode.show();
+          }
 
-          // tippyAB.show();
           const visibleTips = [];
           cy.nodes().on("touchend", function (e) {
             console.log("touchend");
@@ -295,11 +264,23 @@
 
           function showPop(e) {
             visibleTips.forEach((tip) => tip.hide());
-
+            cy.elements().each((ele) => {
+              ele.removeClass("highlighted");
+            });
             var clickedNode = e.target;
             var tipNode = makeTippy(clickedNode, clickedNode.data("label"));
             tipNode.show();
             visibleTips.push(tipNode);
+            const bfs = cy
+              .elements()
+              .bfs("#" + e.target.id(), function () {}, true);
+            for (let i = 0; i < bfs.path.length; i++) {
+              const element = bfs.path[i];
+              element.addClass("highlighted");
+              if (element.isNode()) {
+                console.log(element.id());
+              }
+            }
           }
         });
       });
