@@ -87,7 +87,7 @@ botCtrl.interrupts("NO_ZAKAT", "message", (bot, message) => {
 
 // serve express ts server
 // add end point get /api/graph
-const port = process.env.PORT || 3003;
+const port = parseInt(`${process.env.PORT}`) + 1;
 botCtrl.webserver.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
 });
