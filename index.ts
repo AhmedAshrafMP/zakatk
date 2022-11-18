@@ -15,7 +15,13 @@ import {
 import { D_023_071 } from "./dialogues/D_023_071";
 import "./helpers/i18n/i18n";
 import { D_362_385 } from "./dialogues/D_362_385";
+import cytoscape, { Core, EdgeSingular, NodeSingular } from "cytoscape";
+import * as path from "path";
+import { readdir } from "fs";
+import walk from "./helpers/fs/walk";
+import { getTargetNodesFromFileArray } from "./helpers/tree/constract_tree";
 
+console.log("Starting bot...");
 // if (process.env.MONGO_URI) {
 console.log("MONGO_URI", process.env.MONGO_URI);
 
@@ -50,7 +56,8 @@ if (process.env.MONGO_URI) {
 I18n.locale = "ar";
 moment.locale("ar");
 
-botCtrl; // botCtrl.publicFolder("/", path.join(__dirname, "..", "public"));
+export const botCtrlInstance = botCtrl; //
+export const cy: Core = cytoscape();
 
 const d_000_009 = D_000_009(botCtrl);
 D_014_023(botCtrl, d_000_009);
@@ -76,4 +83,22 @@ botCtrl.hears(
 
 botCtrl.interrupts("NO_ZAKAT", "message", (bot, message) => {
   return bot.beginDialog("d_055_056");
+});
+
+// serve express ts server
+// add end point get /api/graph
+const port = parseInt(`${process.env.PORT}`) + 1 || 3001;
+botCtrl.webserver.listen(port, () => {
+  console.log(`Server is listening on port ${port}`);
+});
+botCtrl.webserver.get("/api/graph.json", async (req, res) => {
+  // res.send(cy.json());
+  const files: string[] | unknown = await walk(path.join(__dirname, "nodes"));
+  const cyTree = await getTargetNodesFromFileArray(files);
+  res.send(cyTree.json());
+});
+// botCtrl.webserver.use('/static', botCtrl.webserver.static(path.join(__dirname, 'web-assets/static')))
+
+botCtrl.webserver.get("/api/graph.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "/web-assets/graph.html"));
 });

@@ -14,6 +14,14 @@ export function translate(key: string, options?: object) {
   return key ? i18n.t(key, opts) : "";
 }
 
+export function transNoDefault(key: string, options?: object) {
+  const opts: TranslateOptions = {
+    ...options,
+    defaultValue: "",
+  };
+  return key ? i18n.t(key, opts) : "";
+}
+
 export function convertVarToCurrencySym(varValue: string) {
   return varValue.substr(varValue.indexOf(".") + 1);
 }

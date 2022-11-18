@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 exports.__esModule = true;
-exports.convertVarToCurrency = exports.convertVarToCurrencySym = exports.translate = void 0;
+exports.convertVarToCurrency = exports.convertVarToCurrencySym = exports.transNoDefault = exports.translate = void 0;
 var i18n_js_1 = __importDefault(require("i18n-js"));
 /**
  * Translates text.
@@ -26,6 +26,11 @@ function translate(key, options) {
     return key ? i18n_js_1["default"].t(key, opts) : "";
 }
 exports.translate = translate;
+function transNoDefault(key, options) {
+    var opts = __assign(__assign({}, options), { defaultValue: "", defaults: [{ message: "" }] });
+    return key ? i18n_js_1["default"].t(key, opts) : "";
+}
+exports.transNoDefault = transNoDefault;
 function convertVarToCurrencySym(varValue) {
     return varValue.substr(varValue.indexOf(".") + 1);
 }

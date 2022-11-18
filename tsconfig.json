@@ -28,6 +28,9 @@
     "helpers",
     "public",
     "bot_nodes",
-    "helpers/i18n/*.json"
+    "helpers/i18n/*.json",
+    "helpers/i18n/*.ts",
+    "web-assets",
+    "web-assets/*",
   ]
 }

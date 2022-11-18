@@ -14,7 +14,7 @@ export function NODE_397(convo: BotkitConversation): string {
     (tmp, vars) => {
       const quickReplies: any[] = [];
 
-      const doneOptions: string[] = vars.doneMoneyOptions || [];
+      const doneOptions: string[] = vars?.doneMoneyOptions || [];
       if (doneOptions.indexOf(NODE_ID + ".choice0") < 0) {
         quickReplies.push({
           title: translate(NODE_ID + ".opt1"),
@@ -77,7 +77,7 @@ export function NODE_397(convo: BotkitConversation): string {
   return `t_${NODE_ID}`;
 }
 export function markOptionAsDone(convo: BotkitDialogWrapper) {
-  const oldOptions = convo.vars.doneMoneyOptions || [];
+  const oldOptions = convo.vars?.doneMoneyOptions || [];
   oldOptions.push(convo.vars.NODE_023);
   convo.setVar("doneMoneyOptions", oldOptions);
   // clear each period

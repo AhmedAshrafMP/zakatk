@@ -1,4 +1,23 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -39,6 +58,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 exports.__esModule = true;
+exports.cy = exports.botCtrlInstance = void 0;
 var storage_mongodb_1 = require("@botbuildercommunity/storage-mongodb");
 var botbuilder_adapter_web_1 = require("botbuilder-adapter-web");
 var botkit_1 = require("botkit");
@@ -48,6 +68,11 @@ var dialogues_1 = require("./dialogues");
 var D_023_071_1 = require("./dialogues/D_023_071");
 require("./helpers/i18n/i18n");
 var D_362_385_1 = require("./dialogues/D_362_385");
+var cytoscape_1 = __importDefault(require("cytoscape"));
+var path = __importStar(require("path"));
+var walk_1 = __importDefault(require("./helpers/fs/walk"));
+var constract_tree_1 = require("./helpers/tree/constract_tree");
+console.log("Starting bot...");
 // if (process.env.MONGO_URI) {
 console.log("MONGO_URI", process.env.MONGO_URI);
 var mongoDbStorage = undefined;
@@ -73,7 +98,8 @@ else {
 }
 i18n_js_1["default"].locale = "ar";
 moment_1["default"].locale("ar");
-botCtrl; // botCtrl.publicFolder("/", path.join(__dirname, "..", "public"));
+exports.botCtrlInstance = botCtrl; //
+exports.cy = cytoscape_1["default"]();
 var d_000_009 = dialogues_1.D_000_009(botCtrl);
 dialogues_1.D_014_023(botCtrl, d_000_009);
 dialogues_1.D_055_056(botCtrl);
@@ -98,5 +124,30 @@ botCtrl.hears(["hello", "bot_start_action"], "message", function (bot, message) 
 }); });
 botCtrl.interrupts("NO_ZAKAT", "message", function (bot, message) {
     return bot.beginDialog("d_055_056");
+});
+// serve express ts server
+// add end point get /api/graph
+var port = parseInt("" + process.env.PORT) + 1;
+botCtrl.webserver.listen(port, function () {
+    console.log("Server is listening on port " + port);
+});
+botCtrl.webserver.get("/api/graph.json", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var files, cyTree;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, walk_1["default"](path.join(__dirname, "nodes"))];
+            case 1:
+                files = _a.sent();
+                return [4 /*yield*/, constract_tree_1.getTargetNodesFromFileArray(files)];
+            case 2:
+                cyTree = _a.sent();
+                res.send(cyTree.json());
+                return [2 /*return*/];
+        }
+    });
+}); });
+// botCtrl.webserver.use('/static', botCtrl.webserver.static(path.join(__dirname, 'web-assets/static')))
+botCtrl.webserver.get("/api/graph.html", function (req, res) {
+    res.sendFile(path.join(__dirname, "/web-assets/graph.html"));
 });
 //# sourceMappingURL=index.js.map
