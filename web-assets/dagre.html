@@ -1,0 +1,144 @@
+<!DOCTYPE >
+
+<html>
+  <head>
+    <title>cytoscape-euler.js demo</title>
+
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.5.0/bluebird.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+    <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+
+    <script src="https://unpkg.com/dagre@0.7.4/dist/dagre.js"></script>
+    <script src="https://cytoscape.org/cytoscape.js-dagre/cytoscape-dagre.js"></script>
+    <style>
+      body {
+        font-family: helvetica neue, helvetica, liberation sans, arial,
+          sans-serif;
+        font-size: 14px;
+      }
+
+      #cy {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 999;
+      }
+
+      h1 {
+        opacity: 0.5;
+        font-size: 1em;
+        font-weight: bold;
+      }
+    </style>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        var cy = (window.cy = cytoscape({
+          container: document.getElementById("cy"),
+
+          boxSelectionEnabled: false,
+          autounselectify: true,
+
+          layout: {
+            name: "dagre",
+            rankDir: "LR",
+            ranker: "longest-path",
+            nodeDimensionsIncludeLabels: true,
+            animate: false,
+            padding: 30, // fit padding
+            spacingFactor: 1.2,
+            sort: function (a, b) {
+              return (
+                parseInt(`${a.data("name")}`.replace("t_NODE_", "")) -
+                parseInt(`${b.data("name")}`.replace("t_NODE_", ""))
+              );
+            },
+          },
+
+          style: [
+            {
+              selector: "node",
+              style: {
+                "background-color": "#11479e",
+                conent: "data(name)",
+              },
+            },
+
+            {
+              selector: "edge",
+              style: {
+                width: 4,
+                "target-arrow-shape": "triangle",
+                "line-color": "#9dbaea",
+                "target-arrow-color": "#9dbaea",
+                "curve-style": "bezier",
+              },
+            },
+          ],
+
+          style: cytoscape
+            .stylesheet()
+            .selector(":parent")
+            .css({
+              "text-valign": "center",
+              "text-margin-y": function (node) {
+                return -node.height() + 5;
+              },
+            })
+            .selector("node")
+            .css({
+              height: "data(size)",
+              width: "data(size)",
+              content: "data(name)",
+            })
+            .selector("edge")
+            .css({
+              width: "2px",
+              "target-arrow-shape": "triangle",
+              "line-color": "#9dbaea",
+              "target-arrow-color": "#9dbaea",
+              "curve-style": "bezier",
+              opacity: 0.5,
+            }),
+
+          elements: fetch("/api/graph.json").then(async function (res) {
+            const resp = await res.json();
+            let { edges, nodes } = resp.elements;
+            let elements = [];
+            nodes.forEach((node) => {
+              elements.push({
+                data: {
+                  id: node.data.id.replace("t_NODE_" , "").replace("t_d_" , "").replace("_" , "."),
+                  name: node.data.name.replace("t_NODE_" , "").replace("t_d_" , "").replace("_" , "."),
+                  weight: node.data.id.replace("t_NODE_" , "").replace("t_d_" , "").replace("_" , "."),
+                },
+              });
+            });
+            edges.forEach((edge) => {
+              elements.push({
+                data: {
+                  id: edge.data.id.replace("t_NODE_" , "").replace("t_d_" , "").replace("_" , "."),
+                  source: edge.data.source.replace("t_NODE_" , "").replace("t_d_" , "").replace("_" , "."),
+                  target: edge.data.target.replace("t_NODE_" , "").replace("t_d_" , "").replace("_" , "."),
+                },
+              });
+            });
+
+            return elements;
+          }),
+        }));
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="cy"></div>
+  </body>
+</html>

@@ -12,6 +12,7 @@ import NODE_007_2 from "../../nodes/N_007_2";
 import NODE_008 from "../../nodes/N_008";
 
 export function D_000_009(botCtrl: Botkit) {
+  console.log("D_000_009 loaded");
   // init dialogue
   const thisDialogue = new BotkitConversation("d_000_009", botCtrl);
 
