@@ -51,25 +51,7 @@ export function NODE_397(convo: BotkitConversation): string {
           },
         });
       }
-      // if (doneOptions.indexOf(NODE_ID + ".choice4") < 0) {
-      //   quickReplies.push({
-      //     title: translate(NODE_ID + ".opt5"),
-      //     payload: NODE_ID + ".choice4",
-      //     onChoose: async (answer, convo, bot, msg) => {
-      //       convo.gotoThread("t_NODE_058");
-      //     },
-      //   });
-      // }
 
-      // if (doneOptions.indexOf(NODE_ID + ".choice5") < 0) {
-      //   quickReplies.push({
-      //     title: translate(NODE_ID + ".opt6"),
-      //     payload: NODE_ID + ".choice5",
-      //     onChoose: async (answer, convo, bot, msg) => {
-      //       convo.gotoThread("t_NODE_397_1");
-      //     },
-      //   });
-      // }
       if (vars.NODE_397) {
         quickReplies.push({
           title: translate(NODE_ID + ".opt5"),
