@@ -50,7 +50,15 @@
     </style>
 
     <script>
-      const leaderNodes = ["n001", "n386", "n362", "n014", "n072", "n408", "n009"];
+      const leaderNodes = [
+        "n009",
+        "n386",
+        "n362",
+        "n014",
+        "n072",
+        "n408",
+        "n009",
+      ];
       window.addEventListener("DOMContentLoaded", function () {
         fetch("/api/graph.json").then(async function (res) {
           const resp = await res.json();
@@ -70,7 +78,7 @@
             );
             if (leaderNodes.indexOf(id) > -1) {
               weight = 100;
-            }else{
+            } else {
               weight = 10;
             }
 
@@ -126,7 +134,7 @@
               padding: 30, // fit padding
               gravity: -5.2,
               pull: 0.002,
-              mass: node => node.data('weight'),
+              mass: (node) => node.data("weight"),
 
               // some more options here...
             },
@@ -195,7 +203,7 @@
           //   // kick off first highlight
           //   highlightNextEle();
 
-          var a = cy.getElementById("n001");
+          var a = cy.getElementById("n009");
           var b = cy.getElementById("n386");
           var c = cy.getElementById("n362");
           var d = cy.getElementById("n014");

@@ -23,7 +23,7 @@ export function NODE_321(convo: BotkitConversation): string {
     (_tmp, vars) => {
       const calcPercentage = vars.calcPercentage;
       return translate(NODE_ID + ".title", {
-        zakatStructure: (vars.zakatStructure * calcPercentage) / 40,
+        zakatStructure: (vars.zakatStructure * calcPercentage) / 38.8,
         currency: convertVarToCurrency(vars.NODE_004),
         fromYear: vars.NO_OF_ZAKATSTRUCTURE_YEARS_LEFT,
         fromDay: vars.LAST_ZAKATSTRUCTURE_DAY,
