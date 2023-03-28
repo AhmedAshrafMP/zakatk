@@ -20,7 +20,7 @@ export function NODE_199(convo: BotkitConversation): string {
     NODE_ID,
     {},
     (_tmp, vars) => {
-      const calcRentZakat = safeParseFloat(vars.calcRentZakat / 40);
+      const calcRentZakat = safeParseFloat(vars.calcRentZakat / 38.8);
       return translate(NODE_ID + ".title", {
         calcRentZakat,
         currency: convertVarToCurrency(vars.NODE_004),

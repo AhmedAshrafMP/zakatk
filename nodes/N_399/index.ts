@@ -13,7 +13,7 @@ export function NODE_399(convo: BotkitConversation): string {
     async (answer, convo, bot, message) => {
       const nodeIntValue = safeParseFloat(answer);
 
-      const calcCows = nodeIntValue / 40;
+      const calcCows = nodeIntValue / 38.8;
 
       const stringCalcCows = JSON.stringify(calcCows);
 

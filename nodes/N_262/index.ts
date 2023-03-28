@@ -23,7 +23,7 @@ export function NODE_262(convo: BotkitConversation): string {
     {},
     (_tmp, vars) => {
       return translate(NODE_ID + ".title", {
-        zakatOnSale: vars.zakatOnSale / 40,
+        zakatOnSale: vars.zakatOnSale / 38.8,
         currency: convertVarToCurrency(vars.NODE_004),
         fromYear: vars.NO_OF_RENTYEARS_LEFT,
         fromDay: vars.LAST_RENT_DAY,

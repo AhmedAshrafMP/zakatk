@@ -38,7 +38,7 @@ export function NODE_226(convo: BotkitConversation): string {
       const calcPercentage = vars.calcPercentage;
 
       return translate(NODE_ID + ".title", {
-        rentZakat: (vars.rentZakat * calcPercentage) / 40,
+        rentZakat: (vars.rentZakat * calcPercentage) / 38.8,
         currency: convertVarToCurrency(vars.NODE_004),
         fromYear: vars.NO_OF_RENTYEARS_LEFT,
         fromDay: vars.LAST_RENT_DAY,

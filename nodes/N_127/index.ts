@@ -48,7 +48,7 @@ export function NODE_127(convo: BotkitConversation): string {
               let IAC1 = "";
               zakatIAC1.forEach((key, value) => {
                 IAC1 = `${value} : ${numberWithCommas(
-                  (safeParseFloat(key) * calcPercentage) / 40
+                  (safeParseFloat(key) * calcPercentage) / 38.8
                 )}`;
               });
 
@@ -88,7 +88,7 @@ export function NODE_127(convo: BotkitConversation): string {
               let IAC1 = "";
               zakatIAC1.forEach((key, value) => {
                 IAC1 = `${value} : ${numberWithCommas(
-                  (safeParseFloat(key) * calcPercentage) / 40
+                  (safeParseFloat(key) * calcPercentage) / 38.8
                 )}`;
               });
 
@@ -117,7 +117,7 @@ export function NODE_127(convo: BotkitConversation): string {
       if (zakatIAC1) {
         zakatIAC1.forEach((key, value) => {
           answerIs = `${value} : ${numberWithCommas(
-            (safeParseFloat(key) * calcPercentage) / 40
+            (safeParseFloat(key) * calcPercentage) / 38.8
           )} ${currency}`;
         }),
           text.push(

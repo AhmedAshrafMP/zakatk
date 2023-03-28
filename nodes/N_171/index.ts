@@ -13,7 +13,7 @@ export function NODE_171(convo: BotkitConversation): string {
       const NODE_171 = safeParseFloat(answer);
       const NODE_169 = safeParseFloat(convo.vars.NODE_169);
       const buildingsZakatk = NODE_169 - NODE_171;
-      buildingsZakat.set(convo.vars.NODE_157_1, buildingsZakatk / 40);
+      buildingsZakat.set(convo.vars.NODE_157_1, buildingsZakatk / 38.8);
       if (NODE_171 && NODE_171 > 0) {
         if (
           buildingsZakatk &&

@@ -23,7 +23,7 @@ export function NODE_357(convo: BotkitConversation): string {
     (_tmp, vars) => {
       const calcPercentage = safeParseFloat(vars.calcPercentage);
       return translate(NODE_ID + ".title", {
-        zakatSas1: (vars.zakatSas1 * calcPercentage) / 40,
+        zakatSas1: (vars.zakatSas1 * calcPercentage) / 38.8,
         currency: convertVarToCurrency(vars.NODE_004),
         fromYear: vars.NO_OF_ZAKATSAS_YEARS_LEFT,
         fromDay: vars.LAST_ZAKATSAS_DAY,

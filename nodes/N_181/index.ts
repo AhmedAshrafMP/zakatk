@@ -12,7 +12,7 @@ export function NODE_181(convo: BotkitConversation): string {
     async (answer, convo, bot, message) => {
       const NODE_181 = safeParseFloat(convo.vars.NODE_181);
 
-      buildingsZakat.set(convo.vars.NODE_157_1, NODE_181 / 40);
+      buildingsZakat.set(convo.vars.NODE_157_1, NODE_181 / 38.8);
 
       if (NODE_181 >= convo.vars.gold_prices.gThreshold) {
         convo.setVar("NODE_181", NODE_181);

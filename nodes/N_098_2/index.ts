@@ -11,7 +11,7 @@ export function NODE_098_2(convo: BotkitConversation): string {
     NODE_ID + ".hello",
     async (answer, convo, bot, message) => {
       const singleCompany = safeParseFloat(answer);
-      singleCompanyNames.set(convo.vars.NODE_095, singleCompany / 40);
+      singleCompanyNames.set(convo.vars.NODE_095, singleCompany / 38.8);
       if (singleCompany >= convo.vars.gold_prices.gThreshold) {
         convo.setVar("singleCompanyNames", singleCompanyNames);
         convo.setVar("singleCompany", singleCompany);

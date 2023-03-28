@@ -49,7 +49,7 @@ export function NODE_149(convo: BotkitConversation): string {
               let theAllZakatIAC = "";
               zakatIAC.forEach((key, value) => {
                 theAllZakatIAC = `${value} : ${numberWithCommas(
-                  (safeParseFloat(key) * calcPercentage) / 40
+                  (safeParseFloat(key) * calcPercentage) / 38.8
                 )}`;
               });
               allZakatIAC.set(diff, theAllZakatIAC);
@@ -88,7 +88,7 @@ export function NODE_149(convo: BotkitConversation): string {
               let theAllZakatIAC = "";
               zakatIAC.forEach((key, value) => {
                 theAllZakatIAC = `${value} : ${numberWithCommas(
-                  (safeParseFloat(key) * calcPercentage) / 40
+                  (safeParseFloat(key) * calcPercentage) / 38.8
                 )}`;
               });
               allZakatIAC.set(diff, theAllZakatIAC);
@@ -113,7 +113,7 @@ export function NODE_149(convo: BotkitConversation): string {
       if (zakatIAC) {
         zakatIAC.forEach((key, value) => {
           answerIs = `${value} : ${numberWithCommas(
-            (safeParseFloat(key) * calcPercentage) / 40
+            (safeParseFloat(key) * calcPercentage) / 38.8
           )} ${currency}`;
         }),
           text.push(

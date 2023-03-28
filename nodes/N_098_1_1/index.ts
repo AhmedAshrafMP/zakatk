@@ -12,7 +12,7 @@ export function NODE_098_1_1(convo: BotkitConversation): string {
       const NODE_098_1 = safeParseFloat(convo.vars.NODE_098_1);
       const nodeIntValue = safeParseFloat(answer);
       const singleCompany = NODE_098_1 - nodeIntValue;
-      singleCompanyNames.set(convo.vars.NODE_095, singleCompany / 40);
+      singleCompanyNames.set(convo.vars.NODE_095, singleCompany / 38.8);
 
       if (nodeIntValue && nodeIntValue > 0) {
         if (

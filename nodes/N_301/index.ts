@@ -13,7 +13,9 @@ export function NODE_301(convo: BotkitConversation): string {
       {
         title: NODE_ID + ".opt1",
         payload: NODE_ID + ".choice0",
-        onChoose: async (answer, convo, bot, msg) => {},
+        onChoose: async (answer, convo, bot, msg) => {
+          convo.stop();
+        },
       },
     ],
     NODE_ID,

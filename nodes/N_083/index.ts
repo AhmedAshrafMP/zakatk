@@ -39,7 +39,7 @@ export function NODE_083(convo: BotkitConversation): string {
 
       companyShares.forEach((key, value) => {
         answerIs += `${value} : ${numberWithCommas(
-          safeParseFloat(key / 40)
+          safeParseFloat(key / 38.8)
         )}\n `;
       });
 
