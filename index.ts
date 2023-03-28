@@ -1,8 +1,10 @@
 import { MongoDbStorage } from "@botbuildercommunity/storage-mongodb";
 import { WebAdapter } from "botbuilder-adapter-web";
 import { Botkit } from "botkit";
+import cytoscape, { Core } from "cytoscape";
 import I18n from "i18n-js";
 import moment from "moment";
+import * as path from "path";
 import {
   D_000_009,
   D_014_023,
@@ -10,15 +12,12 @@ import {
   D_072_204,
   D_386_406,
   D_393_406,
-  D_408_439,
+  D_408_439
 } from "./dialogues";
 import { D_023_071 } from "./dialogues/D_023_071";
-import "./helpers/i18n/i18n";
 import { D_362_385 } from "./dialogues/D_362_385";
-import cytoscape, { Core, EdgeSingular, NodeSingular } from "cytoscape";
-import * as path from "path";
-import { readdir } from "fs";
 import walk from "./helpers/fs/walk";
+import "./helpers/i18n/i18n";
 import { getTargetNodesFromFileArray } from "./helpers/tree/constract_tree";
 
 console.log("Starting bot...");
