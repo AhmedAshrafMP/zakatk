@@ -8,7 +8,7 @@ export function D_000_009(botCtrl: Botkit) {
   const begin = NODE_000(thisDialogue);
   thisDialogue.addAction(begin);
 
-  thisDialogue.addChildDialog("d_014_023", "d_014_023", "t_d_014_023");
+  thisDialogue.addChildDialog("d_014_023", "d_014_023", "t_d_009_023");
   thisDialogue.addChildDialog("d_000_009", "d_000_009", "t_d_000_009");
 
   botCtrl.addDialog(thisDialogue);

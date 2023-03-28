@@ -10,8 +10,6 @@ import {
   NODE_032_1,
   NODE_035,
   NODE_035_1,
-  NODE_035_2,
-  NODE_035_3,
   NODE_036,
   NODE_034,
   NODE_040_1,
@@ -20,12 +18,8 @@ import {
   NODE_038,
   NODE_039,
   NODE_040,
-  NODE_025,
-  NODE_024,
   NODE_067,
   NODE_062,
-  NODE_062_1,
-  NODE_062_2,
   NODE_063,
   NODE_065,
   NODE_067_1,
@@ -36,19 +30,14 @@ import {
   NODE_056,
   NODE_056_1,
   NODE_056_2,
-  NODE_056_3,
   NODE_056_4,
   NODE_057,
   NODE_060,
-  NODE_060_1,
-  NODE_060_2,
-  NODE_068_2,
   NODE_061_0,
   NODE_061_1,
   NODE_058,
   NODE_066,
   NODE_059,
-  NODE_041,
   NODE_049,
   NODE_043,
   NODE_046,
@@ -75,8 +64,6 @@ export function D_023_071(botCtrl: Botkit) {
   const begin = NODE_023(thisDialogue);
   thisDialogue.addAction(begin);
   NODE_023_1(thisDialogue);
-  NODE_025(thisDialogue);
-  NODE_024(thisDialogue);
 
   NODE_029(thisDialogue);
 
@@ -92,8 +79,6 @@ export function D_023_071(botCtrl: Botkit) {
 
   NODE_035(thisDialogue);
   NODE_035_1(thisDialogue);
-  NODE_035_2(thisDialogue);
-  NODE_035_3(thisDialogue);
 
   NODE_036(thisDialogue);
   NODE_037(thisDialogue);
@@ -103,7 +88,6 @@ export function D_023_071(botCtrl: Botkit) {
   NODE_040(thisDialogue);
   NODE_040_1(thisDialogue);
 
-  NODE_041(thisDialogue);
   NODE_043(thisDialogue);
   NODE_045(thisDialogue);
   NODE_046(thisDialogue);
@@ -114,20 +98,17 @@ export function D_023_071(botCtrl: Botkit) {
   NODE_056_2_1(thisDialogue);
   NODE_056_2_2(thisDialogue);
   NODE_056_2(thisDialogue);
-  NODE_056_3(thisDialogue);
   NODE_056_4(thisDialogue);
   NODE_056_4_1(thisDialogue);
   NODE_056_4_2(thisDialogue);
   NODE_058_5(thisDialogue);
-  NODE_059_6(thisDialogue)
+  NODE_059_6(thisDialogue);
 
   NODE_057(thisDialogue);
 
   NODE_058(thisDialogue);
   NODE_059(thisDialogue);
   NODE_060(thisDialogue);
-  NODE_060_1(thisDialogue);
-  NODE_060_2(thisDialogue);
 
   NODE_061_0(thisDialogue);
   NODE_061_0_1(thisDialogue);
@@ -136,8 +117,6 @@ export function D_023_071(botCtrl: Botkit) {
   NODE_061_1_1(thisDialogue);
   NODE_061_1_2(thisDialogue);
   NODE_062(thisDialogue);
-  NODE_062_1(thisDialogue);
-  NODE_062_2(thisDialogue);
 
   NODE_063(thisDialogue);
   NODE_065(thisDialogue);
@@ -147,7 +126,6 @@ export function D_023_071(botCtrl: Botkit) {
   NODE_067_1(thisDialogue);
 
   NODE_068(thisDialogue);
-  NODE_068_2(thisDialogue);
   NODE_069(thisDialogue);
   NODE_070(thisDialogue);
   NODE_000(thisDialogue);

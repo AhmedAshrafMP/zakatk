@@ -13,22 +13,31 @@ export function getTransFromThreadName(threadName: string): string {
 }
 
 export async function getTargetNodesFromFileArray(files): Promise<Core> {
-  const cy = cytoscape();
+  const cy = cytoscape({});
   if (files && Array.isArray(files)) {
     for (let i = 0; i < files.length; i++) {
       const filePath = files[i];
+
+      if (!files[i].includes("/nodes/N_")) continue;
+
       const content = await getFileContent(filePath);
       const nextTarget = content.match(
         /(go.*?_NODE\_[a-zA-Z0-9_]*)|convo\.stop()|(go.*?_d\_[a-zA-Z0-9_]*)/g
       );
+      const currentNode =
+        "t_NODE_" + filePath.split("/nodes/N_")[1].split("/")[0];
+
       if (nextTarget) {
         for (let j = 0; j < nextTarget.length; j++) {
           const target = nextTarget[j];
-          const currentNode =
-            "t_NODE_" + filePath.split("/nodes/N_")[1].split("/")[0];
 
-          if (target.includes('gotoThread("')) {
-            const targetNode = target.split('gotoThread("')[1];
+          if (
+            target.includes('gotoThread("') ||
+            target.includes("gotoThread('")
+          ) {
+            const targetNode = target
+              .replace("'", '"')
+              .split('gotoThread("')[1];
 
             if (cy.$id(currentNode).length === 0) {
               cy.add({

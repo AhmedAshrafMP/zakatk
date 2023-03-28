@@ -38,7 +38,7 @@ export function NODE_401(convo: BotkitConversation): string {
           convo.gotoThread("t_NODE_451");
         }
       } else {
-        convo.gotoThread("t_NODE_435");
+        convo.stop();
       }
     },
     NODE_ID,

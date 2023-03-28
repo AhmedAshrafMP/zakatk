@@ -83,7 +83,7 @@ export function D_393_406(botCtrl: Botkit) {
   //back to the main menu
   NODE_040_2(thisDialogue);
 
-  thisDialogue.addChildDialog("d_014_023", "d_014_023", "t_d_014_023");
+  thisDialogue.addChildDialog("d_014_023", "d_014_023", "t_d_009_023");
   thisDialogue.addChildDialog("d_386_406", "d_386_406", "t_d_386_406");
   thisDialogue.addChildDialog("d_000_009", "d_000_009", "t_d_000_009");
 
