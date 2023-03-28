@@ -22,8 +22,8 @@ export function NODE_336(convo: BotkitConversation): string {
     {},
     (_tmp, vars) => {
       return translate(NODE_ID + ".title", {
-        sasZakat: vars.zakatSas / 40,
-        currency: convertVarToCurrency(vars.NODE_004),
+        sasZakat: safeParseFloat(vars.zakatSas / 38.8),
+        // currency: convertVarToCurrency(vars.NODE_004),
         fromYear: vars.NO_OF_ZAKATSAS_YEARS_LEFT,
         fromDay: vars.LAST_ZAKATSAS_DAY,
       });
